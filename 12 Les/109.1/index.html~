@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>   
+    <meta name="author" content="Dion Dresschers">
+    <link href="include/css.css" rel="stylesheet">
+    <link href="include/impress-demo.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://bartaz.github.io/impress.js/favicon.png">
+    <link rel="apple-touch-icon" href="http://bartaz.github.io/impress.js/apple-touch-icon.png">
+</head>
+
+<body data-twttr-rendered="true" style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+
+<div class="fallback-message">
+    <p>Your browser doesn't support the features required</b>
+</div>
+
+
+
+
+<div style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(5495.53px) scale(0.181966);" id="impress">
+
+<!-- intro -->
+    <div id="intro" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="-1000" data-y="-1500">
+
+	     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">LPIC-1 2014 Cursus</p><p style="font-size:100%; position:relative; top:20px;">109.1 De basis van het Internet Protocol</p></div>
+
+<div style="position: absolute; top: 400px; left:100px; text-align:left; font-size:100%;">
+
+<p>Trainer: Dion Dresschers</p>
+<p>Assistent Trainer: Younes Idrissi</p>
+<p><br></p>
+<p>Licentie: CC BY-SA (Dion Dresschers & Younes Idrissi)</p>
+<p>Versie: 2014-11-24-00</p>
+
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 1/43</div>  
+
+	</div>
+</div>
+<!-- les -->
+    <div id="les" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="0" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">109.1</p><p style="font-size:100%; position:relative; top:20px;">De basis van het Internet Protocol</p></div>
+
+   
+<div style="position: absolute; top: 200px; left:400px; text-align:left; font-size:100%;">    
+    
+ 
+<ul>
+<li style="list-style:disc;">algemeen netwerken</li>
+<li style="list-style:disc;">/etc/services</li>
+<li style="list-style:disc;">ftp</li>
+<li style="list-style:disc;">telnet</li>
+<li style="list-style:disc;">host</li>
+<li style="list-style:disc;">ping</li>
+<li style="list-style:disc;">traceroute</li>
+<li style="list-style:disc;">tracepath</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 2/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-01 -->
+    <div id="netwerken-tekst-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="1000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Het netwerk dat we gebruiken is van de TCP/IP stack.</li>
+<li style="list-style:disc;">Hierin spelen IP, TCP en UDP een belangrijke rol.</li>
+<li style="list-style:disc;">Ook de applicaties spelen een rol. Deze kan je benaderen via een poort. Elke poort heeft een nummer en er zijn poortnummers die je moet kennen.</li>
+
+<li style="list-style:disc;">TCP/IP draait ook weer bovenop een ander protocol. Voorbeelden van deze protocollen kunnen zijn ethernet of PPP.</li>
+<li style="list-style:disc;">Ethernet gebruikt MAC-adresseringen om elkaar te kunnen vinden, daarboven gebruikt IP, IP-addressen als adressering.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 3/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-02 -->
+    <div id="netwerken-tekst-02" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="2000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; text-align:left; font-size:100%;">
+<img src="stack.png" target="_blank" width="80%" height="80%">
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 3/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-03 -->
+    <div id="netwerken-tekst-03" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="3000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+<img src="encapsulation.gif" target="_blank">
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 3/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-image-04 -->
+    <div id="netwerken-image-04" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="4000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken (ethernet frame)</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+<img src="ethernet.gif" target="_blank">
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 6/43</div>  
+
+	</div>
+</div>
+
+<!-- netwerken-tekst-05 -->
+    <div id="netwerken-tekst-05" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="5000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">IP addressen gaan gepaard met een zogenaamd masker.</li>
+<li style="list-style:disc;">Op basis van het masker kan je bepalen in welk netwerk een PC of server zit.</li>
+<li style="list-style:disc;">Is er een PC die in hetzelfde IP netwerk zit als een andere PC, dan kunnen ze elkaar direct benaderen met een cross-kabel, hub of een switch.</li>
+<li style="list-style:disc;">Zitten de PC's in verschillende IP netwerken dan moet er een router (of gateway) geconfigureerd worden die ervoor kan zorgen dat de IP pakketten van de een naar de andere kant bezorgd worden.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 7/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-06 -->
+    <div id="netwerken-tekst-06" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="6000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Elk IP netwerk heeft een IP netwerk adres, een broadcast adres en meestal een gateway adres gedefineerd.</li>
+<li style="list-style:disc;">Het IP addres van de gateway mag je zelf bepalen zolang deze maar in hetzelfde netwerk zit.</li>
+<li style="list-style:disc;">Je kan met het programma 'ipcalc' op basis van een IP adres en een masker (of zogenaamd 'prefix') zelf uitrekenen wat het netwerk en het broadcast adres is.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 8/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-07 -->
+    <div id="netwerken-tekst-07" style="position: absolute; transform: translate(-50%, -50%) translate3d(7000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="7000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+<div style="position: absolute; top: 100px; left:100px; text-align:left; font-size:100%;">
+<img src="host-network.png" target="_blank">
+</div>
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 8/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-08 -->
+    <div id="netwerken-tekst-08" style="position: absolute; transform: translate(-50%, -50%) translate3d(8000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="8000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">IP adressen kunnen lokaal zijn of globaal.</li>
+<li style="list-style:disc;">Locale IP adressen zijn niet schaars, maar op het internet worden ze niet geaccpeteerd. Je kan wel met je locale IP adres internetten door NAT (oftewel Network Adress Translation), waarbij het lokale adres omgekat wordt naar een globaal IP adres.</li>
+<li style="list-style:disc;">Locale IP adressen:</li>
+<li style="list-style:disc;">10./8</li>
+<li style="list-style:disc;">172.16/12</li>
+<li style="list-style:disc;">192.168/16</li>
+<li style="list-style:disc;">Globale IP adressen lopen (grofweg) van 1 tot 239</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 10/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-09 -->
+    <div id="netwerken-tekst-09" style="position: absolute; transform: translate(-50%, -50%) translate3d(9000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="9000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; text-align:left; font-size:100%;">
+<img src="ip.gif" target="_blank">
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 10/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-10 -->
+    <div id="netwerken-tekst-10" style="position: absolute; transform: translate(-50%, -50%) translate3d(10000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="10000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">In het IP packet zet weer een ander pakketje.</li>
+<li style="list-style:disc;">Dit pakketje kan zijn 'TCP' of 'UDP'</li>
+<li style="list-style:disc;">TCP is een meer robuust  protocol en zorgt dat pakketten herzonden worden als deze niet aankomen. TCP kan ook aan flow control doen.</li>
+<li style="list-style:disc;">UDP is een simpeler pakket, waardoor er meer en sneller gezonden kan worden ten koste van de betrouwbaarheid.</li>
+<li style="list-style:disc;">Daarnaast is er ook nog het ICMP protocol dat gebruikt wordt voor ping-verkeer.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 12/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-11 -->
+    <div id="netwerken-tekst-11" style="position: absolute; transform: translate(-50%, -50%) translate3d(11000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="11000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:200px; text-align:left; font-size:100%;">
+<img src="tcp.gif" target="_blank">
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 12/43</div>  
+
+	</div>
+</div>
+<!-- netwerken-tekst-12 -->
+    <div id="netwerken-tekst-12" style="position: absolute; transform: translate(-50%, -50%) translate3d(12000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="12000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:200px; text-align:left; font-size:100%;">
+<img src="udp.jpg" target="_blank">
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 12/43</div>  
+
+	</div>
+</div>
+
+<!-- netwerken-tekst-13 -->
+    <div id="netwerken-tekst-13" style="position: absolute; transform: translate(-50%, -50%) translate3d(13000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="13000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">netwerken</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">TCP en UDP applicaties worden benaderd via poorten.</li>
+<li style="list-style:disc;">Door het aanspreken van deze poort is het duidelijk voor welke applicatie het pakketje bedoelt is.</li>
+<li style="list-style:disc;">Hier volgen een aantal belangrijke poorten die je moet kennen:</li>
+<li style="list-style:disc;">20 & 21 ftp, 22 ssh, 23 telnet, 25 smtp, 53 dns, 80 http</li>
+<li style="list-style:disc;">110 pop3, 119 nntp, 139 netbios, 143 imap, 161 snmp </li>
+<li style="list-style:disc;">443 https, 465 smtps, 993 imaps, 995 pop3s</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 15/43</div>  
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- _etc_services-intro-00 -->
+    <div id="_etc_services-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(14000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="14000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/services</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">/etc/services</li>
+<li style="list-style:disc;">Het bestand /etc/services laat alle poorten zien.</li>
+<li style="list-style:disc;">Het geeft ook aan of het TCP en/of UDP is.</li>
+<li style="list-style:disc;">Het geeft ook vaker een uitleg over wat voor soort type programma het is</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 16/43</div>  
+
+	</div>
+</div>
+
+<!-- _etc_services-code-00 -->
+    <div id="_etc_services-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(15000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="15000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/services</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">less /etc/services</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 17/43</div>  
+
+	</div>
+</div>
+<!-- _etc_services-demo-00 -->
+    <div id="_etc_services-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(16000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="16000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/services</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_services-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 18/43</div>  
+
+	</div>
+</div>
+
+<!-- ftp-intro-00 -->
+    <div id="ftp-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(17000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="17000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">ftp</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">FTP is het File Tranport Protocol.</li>
+<li style="list-style:disc;">Er zijn FTP programma's zoals het grafische FileZilla om meerdere files te gelijkertijd te kunnen downloaden/uploaden.</li>
+<li style="list-style:disc;">ftp staat standaard waarschijnlijk niet meer op de CLI geinstalleerd</li>
+<li style="list-style:disc;">Type je ftp dan krijg je een interactief menu, waar je commando's kunt geven.</li>
+<li style="list-style:disc;">Gebruik 'help' of '?' voor hulp en 'exit' of 'quit' om te stoppen.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 19/43</div>  
+
+	</div>
+</div>
+
+<!-- ftp-code-00 -->
+    <div id="ftp-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(18000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="18000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">ftp</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">ftp</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 20/43</div>  
+
+	</div>
+</div>
+<!-- ftp-demo-00 -->
+    <div id="ftp-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(19000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="19000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">ftp</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="ftp-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 21/43</div>  
+
+	</div>
+</div>
+<!-- dig-intro-00 -->
+    <div id="dig-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(20000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="20000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">dig</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Dig gaat in een DNS server zoeken op basis van een hostnaam.</li>
+<li style="list-style:disc;">Een DNS server zorgt ervoor dat je een host kan gebruiken ipv. een IP adres voor een server.</li>
+<li style="list-style:disc;">Onder de motorkap vraag je computer aan de DNS server wat het IP adres is voor de server die je wilt benaderen.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 22/43</div>  
+
+	</div>
+</div>
+
+<!-- dig-code-00 -->
+    <div id="dig-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(21000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="21000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">dig</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">dig <i>serverhost.bedrijf.nl</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 23/43</div>  
+
+	</div>
+</div>
+<!-- dig-demo-00 -->
+    <div id="dig-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(22000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="22000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">dig</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="dig-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="dig-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+<li><a href="dig-demo-02.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 3</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 24/43</div>  
+
+	</div>
+</div>
+<!-- host-intro-00 -->
+    <div id="host-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="23000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">host</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'host' vraag je het IP adres op van een server of computer met een ping.</li>
+<li style="list-style:disc;">Dit kan echter ook andersom werken, dus je vraagt de ping een server als je het IP adres weet.</li>
+<li style="list-style:disc;">In tegenstelling to 'dig' hoeft de ping niet van een DNS server te komen, maar kan dit ook uit een localhost file komen.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 25/43</div>  
+
+	</div>
+</div>
+
+<!-- host-code-00 -->
+    <div id="host-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(24000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="24000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">host</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">host <i>server</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 26/43</div>  
+
+	</div>
+</div>
+<!-- host-code-01 -->
+    <div id="host-code-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(25000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="25000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">host</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">host <i>10.0.0.2</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 27/43</div>  
+
+	</div>
+</div>
+
+<!-- host-demo-00 -->
+    <div id="host-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(26000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="26000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">host</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="host-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 28/43</div>  
+
+	</div>
+</div>
+
+<!-- ping-intro-00 -->
+    <div id="ping-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(27000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="27000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">ping</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'ping' kan je controlleren of een server wel up en running is.</li>
+<li style="list-style:disc;">Daarnaast geeft 'ping' ook informatie over hoeveel vertraging er is van naar die server(latency) is.</li>
+<li style="list-style:disc;">Let op dat sinds 'Windows Server 2008, de standaard instelling is dat er niet geluisterd wordt naar een ping. Je weet zo dus ook niet 100% zeker dat de server ook uit staat als je geen reacties krijgt.</li>
+<li style="list-style:disc;">Dit bovenstaande kan dus voor allerlei besturingssystemen en versies gelden.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 29/43</div>  
+
+	</div>
+</div>
+
+<!-- ping-code-00 -->
+    <div id="ping-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(28000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="28000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">ping</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;"ping <i>servertelnet</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 30/43</div>  
+
+	</div>
+</div>
+<!-- ping-demo-00 -->
+    <div id="ping-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(29000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="29000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">ping</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="ping-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="ping-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 31/43</div>  
+
+	</div>
+</div>
+<!-- telnet-intro-00 -->
+    <div id="telnet-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(30000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="30000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">telnet</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Via telnet kan je naar een andere computer met een commando regel verbinden.</li>
+<li style="list-style:disc;">Het vervelende of gevaardlijke aan telnet is dat alle tekst blanko uit te lezen is (met een programma zoals Wireshark).</li>
+<li style="list-style:disc;">Beter is het om 'ssh' te gebruiken, wat hetzelfde bereikt maar wel veilig is.</li>
+<li style="list-style:disc;">Telnet staat nu ook standaart uit en we adviseren in prinicpe ook om het niet aan te zetten (in ieder geval liever niet in een productie omgeving).</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 32/43</div>  
+
+	</div>
+</div>
+
+<!-- telnet-code-00 -->
+    <div id="telnet-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(31000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="31000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">telnet</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">telnet 10.0.0.2</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 33/43</div>  
+
+	</div>
+</div>
+<!-- telnet-code-01 -->
+    <div id="telnet-code-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(32000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="32000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">telnet</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">ssh 10.0.0.2</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 34/43</div>  
+
+	</div>
+</div>
+<!-- telnet-demo-00 -->
+    <div id="telnet-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(33000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="33000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">telnet</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="telnet-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 35/43</div>  
+
+	</div>
+</div>
+
+<!-- tracepath-intro-00 -->
+    <div id="tracepath-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(34000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="34000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">tracepath</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'tracepath' kan je de verbinding naar een remote server zoeken.</li>
+<li style="list-style:disc;">Elke router die het verzonden pakket passeerd wordt weergegeven (mits deze routers dat niet blokkeren).</li>
+<li style="list-style:disc;">'tracepath' is ideaal voor troubleshooten om te kijken waar een verbinding problemen heeft of tot waar een verbinding wel nog goed is.</li>
+<li style="list-style:disc;">Zie je 'no reply' dan heeft doet de router niet mee en wilt ook zijn traceroute niet weergeven.</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 36/43</div>  
+
+	</div>
+</div>
+
+<!-- tracepath-code-00 -->
+    <div id="tracepath-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(35000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="35000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">tracepath</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">tracepath <i>linuxamsterdam.nl<i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 37/43</div>  
+
+	</div>
+</div>
+<!-- tracepath-demo-00 -->
+    <div id="tracepath-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(36000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="36000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">tracepath</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="tracepath-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 38/43</div>  
+
+	</div>
+</div>
+<!-- traceroute-intro-00 -->
+    <div id="traceroute-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(37000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="37000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">traceroute</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">'traceroute' doet bijna hetzelfde als 'tracepath', namelijk een pad weergeven (van routers) naar een opgegeven doel</li>
+<li style="list-style:disc;">In vele distributies heb je voor 'traceroute' root rechten nodig.</li>
+<li style="list-style:disc;">'traceroute' heeft meer mogelijkheden dan tracepath.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 39/43</div>  
+
+	</div>
+</div>
+
+<!-- traceroute-code-00 -->
+    <div id="traceroute-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(38000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="38000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">traceroute</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">traceroute <i>www.linuxamsterdam.nl</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 40/43</div>  
+
+	</div>
+</div>
+<!-- traceroute-demo-00 -->
+    <div id="traceroute-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(39000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="39000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">traceroute</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="traceroute-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 41/43</div>  
+
+	</div>
+</div>
+
+
+
+<!-- vraag_01 -->
+    <div id="vraag_01" style="position: absolute; transform: translate(-50%, -50%) translate3d(40000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="40000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 1</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>What is the purpose of the dig command?</p><br>
+<ul>
+<li style="list-style:disc;">To adjust a directory's hidden permissions</li>
+<li style="list-style:disc;">To search for files on the filesystem</li>
+<li style="list-style:disc;">To adjust a file's hidden permissions</li>
+<li style="list-style:disc;">To perform hostname lookups</li>
+<li style="list-style:disc;">To ping all known hosts on the current subnet</li>
+</ul>
+
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 42/43</div>  
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- vraag_02 -->
+    <div id="vraag_02" style="position: absolute; transform: translate(-50%, -50%) translate3d(41000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="41000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 2</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>What is the binary conversion of the IP address 192.168.1.10?</p><br>
+<ul>
+<li style="list-style:disc;">11000000.10101000.00000001.00001010</li>
+<li style="list-style:disc;">01101010.11000100.10101000.00000001</li>
+<li style="list-style:disc;">00000001.00001010.11000000.10101000</li>
+<li style="list-style:disc;">10101000.00000001.00001010.11000000</li>
+<li style="list-style:disc;">None of the choices</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 109.1 | Page 43/43</div>  
+
+	</div>
+</div>
+
+
+
+<!-- EINDE -->
+</div>
+
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script src="include/ga.js" async="" type="text/javascript"></script>
+<script>
+	if ("ontouchstart" in document.documentElement) {document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";}
+</script>
+
+<script src="include/impress.js"></script>
+<script>impress().init();</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-9117370-1']);_gaq.push(['_trackPageview']);
+	(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+</body>
+</html>
+

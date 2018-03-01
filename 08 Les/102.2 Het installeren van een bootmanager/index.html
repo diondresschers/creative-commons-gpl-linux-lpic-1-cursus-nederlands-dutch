@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>   
+    <meta name="author" content="Dion Dresschers">
+    <link href="include/css.css" rel="stylesheet">
+    <link href="include/impress-demo.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://bartaz.github.io/impress.js/favicon.png">
+    <link rel="apple-touch-icon" href="http://bartaz.github.io/impress.js/apple-touch-icon.png">
+</head>
+
+<body data-twttr-rendered="true" style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+
+<div class="fallback-message">
+    <p>Your browser doesn't support the features required</b>
+</div>
+
+
+
+
+<div style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(5495.53px) scale(0.181966);" id="impress">
+
+<!-- intro -->
+    <div id="intro" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="-1000" data-y="-1500">
+
+	     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">LPIC-1 2014 Cursus</p><p style="font-size:100%; position:relative; top:20px;">102.2 Het installeren van een bootmanager</p></div>
+
+<div style="position: absolute; top: 400px; left:100px; text-align:left; font-size:100%;">
+
+<p>Trainer: Dion Dresschers</p>
+<p>Assistent Trainer: Younes Idrissi</p>
+<p><br></p>
+<p>Licentie: CC BY-SA (Dion Dresschers & Younes Idrissi)</p>
+<p>Versie: 2014-09-28-00</p>
+
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 1/20</div>  
+
+	</div>
+</div>
+
+<!-- les -->
+    <div id="les" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="0" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">102.2</p><p style="font-size:100%; position:relative; top:20px;">Het installeren van een bootmanager</p></div>
+
+<div style="position: absolute; top: 200px; left:400px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">MBR</li>
+<li style="list-style:disc;">GRUB</li>
+<li style="list-style:disc;">/boot/grub/menu.lst</li>
+<li style="list-style:disc;">grub-install</li>
+<li style="list-style:disc;">superblock</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 2/20</div>  
+
+	</div>
+</div>
+<!-- mbr-intro-00 -->
+    <div id="mbr-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="1000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">mbr</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">In de 'BIOS' wordt bepaald wat de opstartvolgorde is van het systeem (bv eerst 'DVD', dan 'USB' en dan 'HD').</li>
+<li style="list-style:disc;">Eerst wordt gekeken naar het MBR dat de eerste sector van een disk is. Het gaat om de eerste 512 bytes van een (harde)schijf of (hard)disk of CD/DVD.</li>
+<li style="list-style:disc;">In de MBR staat de bootloader.</li>
+<li style="list-style:disc;">De bootloader (die in de MBR zit) is dus 512 bytes of kleiner.</li>
+<li style="list-style:disc;">Het kan zijn dat de bootloader meteen de kernel laadt of dat de bootloader weer doorverwijst naar een bootmanager (zoals GRUB).
+</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 3/20</div>  
+
+	</div>
+</div>
+<!-- mbr-intro-01 -->
+    <div id="mbr-intro-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="2000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">mbr</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Je kan van de MBR voor de zekerheid een backup maken.</li>
+<li style="list-style:disc;">Hiervoor kan je het programma 'dd' gebruiken.</li>
+<li style="list-style:disc;">Dit doe je door de eerste 512 bytes te copieren.</li>
+<li style="list-style:disc;">Als voorbeeld: 'dd if=/dev/sda of=/root/backup bs=512 count=1'</li>
+<li style="list-style:disc;">'bs=512' geldt voor de 512 bytes, 'count=1', want anders wordt de hele harde schijf gecopieerd.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 4/20</div>  
+
+	</div>
+</div>
+
+<!-- mbr-demo-00 -->
+    <div id="mbr-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="3000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">mbr</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="mbr-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="mbr-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 5/20</div>  
+
+	</div>
+</div>
+<!-- grub-intro-00 -->
+    <div id="grub-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="4000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grub</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Nu is het bij moderne Linux distributies zo dat de bootloader de partitietabel interpreteert en kijkt naar partities die zijn gemarkteerd als 'bootable'.</li>
+<li style="list-style:disc;">Dan start de bootloader de bootsector van die partitie en voert het uit.</li>
+<li style="list-style:disc;">De bootsector kan weer een bootmanager bevatten (zoals GRUB)</li>
+<li style="list-style:disc;">Via een bootmanager (GRUB) kan gekozen worden tussen meerdere besturingssystemen en meerdere kernels.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 6/20</div>  
+
+	</div>
+</div>
+<!-- grub-intro-01 -->
+    <div id="grub-intro-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="5000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grub</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">GRUB is een bootmanager.</li>
+<li style="list-style:disc;">GRUB heeft de oudere bootmanager 'LILO' vervangen.</li>
+<li style="list-style:disc;">Er bestaan GRUB en GRUB2, deze termen kunnen door elkaar heen gebruikt worden. Om de oude GRUB aan te duiden kan je gebruik maken van de term 'GRUB Legacy' of 'GRUB 1'</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 7/20</div>  
+
+	</div>
+</div>
+<!-- boot_grub_menu.lst-intro-00 -->
+    <div id="boot_grub_menu.lst-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="6000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/boot/grub/menu.lst</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">GRUB Legacy gebruikt '/boot/grub/menu.lst' om het selectiemenu weer te geven bij het opstarten.</li>
+<li style="list-style:disc;">GRUB2 gebruikt hiervoor '/boot/grub/grub.cfg'.</li>
+<li style="list-style:disc;">In de GRUB config wordt geen gebruik gemaakt van de benaming '/dev/sda', maar hier heet deze hd0.</li>
+<li style="list-style:disc;">De eerste partitie in Grub Legacy is 0 en de eerste partitie in GRUB2 is vreemdgenoeg 1.</li>
+<li style="list-style:disc;">'hd0,1' is dus de tweede GRUB Legacy partitie van '/dev/sda' en de eerste partitie van GRUB2.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 8/20</div>  
+
+	</div>
+</div>
+<!-- boot_grub_menu.lst-intro-01 -->
+    <div id="boot_grub_menu.lst-intro-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(7000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="7000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/boot/grub/menu.lst</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Je kan het GRUB boot menu (tijdelijk) aanpassen bij het opstarten.</li>
+<li style="list-style:disc;">Druk de ESC-toets als je het menu niet ziet.</li>
+<li style="list-style:disc;">Ga met de pijltjestoetsen naar de gewenste regel.</li>
+<li style="list-style:disc;">Druk de 'E'-toets om de regel aan te passen.</li>
+<li style="list-style:disc;">Daarna de 'B'-toets om te booten.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 9/20</div>  
+
+	</div>
+</div>
+<!-- boot_grub_menu.lst-intro-02 -->
+    <div id="boot_grub_menu.lst-intro-02" style="position: absolute; transform: translate(-50%, -50%) translate3d(8000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="8000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/boot/grub/menu.lst</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">In '/boot/grub/menu.lst' geeft 'timeout' aan hoeveel seconden de gebruiker de tijd heeft om de het starten te onderbreken.</li>
+<li style="list-style:disc;">'splashimage' geeft het grafische plaatje bij het opstarten</li>
+<li style="list-style:disc;">'title' geeft de titel aan van het OS.</li>
+<li style="list-style:disc;">'kernel' geeft het image van de kernel aan die gestart wordt.</li>
+<li style="list-style:disc;">GRUB2 gebruikt geen 'title' maar 'menuentry' zet dubbele quotes om de tekst heen en de config van die 'menuentry' is omsloten door accolades.</li>
+<li style="list-style:disc;">Zo zijn er nog meer wijzigingen in GRUB2 tov. GRUB Legacy in het menu.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 10/20</div>  
+
+	</div>
+</div>
+
+<!-- boot_grub_menu.lst-code-00 -->
+    <div id="boot_grub_menu.lst-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(9000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="9000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/boot/grub/menu.lst</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat /boot/grub/menu.lst</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 11/20</div>  
+
+	</div>
+</div>
+<!-- boot_grub_menu.lst-demo-00 -->
+    <div id="boot_grub_menu.lst-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(10000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="10000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/boot/grub/menu.lst</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="boot_grub_menu.lst-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="boot_grub_menu.lst-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 12/20</div>  
+
+	</div>
+</div>
+
+<!-- superblock-intro-00 -->
+    <div id="superblock-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(11000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="11000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">superblock</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Het superblock is een onderdeel van een filesysteem.</li>
+<li style="list-style:disc;">Het superblock bevat metadata over het fileysysteem zoals de grootte en de status.</li>
+<li style="list-style:disc;">Het aanpassen van het superblock kan leiden tot een niet werkend systeem.</li>
+<li style="list-style:disc;">Er worden meerdere backups van het superblock weggeschreven, deze kan je ook weer terugzetten.</li>
+<li style="list-style:disc;">Om informatie over het superblock weer te geven gebruik bv. 'dumpe2fs /dev/sda1 | grep -i superblock'</li>
+<li style="list-style:disc;">Om het superblock te terug te zetten van backup 'e2fsck -f -b 8193 /dev/sda1'</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 13/20</div>  
+
+	</div>
+</div>
+
+
+<!-- superblock-demo-00 -->
+    <div id="superblock-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(12000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="12000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">superblock</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="superblock-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 14/20</div>  
+
+	</div>
+</div>
+<!-- grub-install-intro-00 -->
+    <div id="grub-install-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(13000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="13000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grub-install</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Je kan GRUB Lecay (opnieuw) installeren op een schijf.</li>
+<li style="list-style:disc;">Je kan GRUB echter ook installeren op een partitie.</li>
+<li style="list-style:disc;">De schijf aanduiding kan via '/dev/sda0' of ''hd0,0''</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 15/20</div>  
+
+	</div>
+</div>
+
+<!-- grub-install-code-00 -->
+    <div id="grub-install-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(14000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="14000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grub-install</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">grub-install <i>/dev/sda</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 16/20</div>  
+
+	</div>
+</div>
+<!-- grub-install-code-01 -->
+    <div id="grub-install-code-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(15000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="15000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grub-install</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">sudo grub-install '<i>hd0,0</i>'</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 17/20</div>  
+
+	</div>
+</div>
+<!-- grub-install-demo-00 -->
+    <div id="grub-install-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(16000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="16000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grub-install</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="grub-install-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 18/20</div>  
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- vraag_01 -->
+    <div id="vraag_01" style="position: absolute; transform: translate(-50%, -50%) translate3d(17000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="17000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 1</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+
+<p>You've downloaded an image file of a boot floppy disk to your hard drive. What is the best utility to create a boot floppy from the disk image? (Specify a single command without options)</p><br>
+<ul>
+<li style="list-style:disc;">Your response:</li>
+
+</ul>
+
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 19/20</div>  
+
+	</div>
+</div>
+
+<!-- vraag_02 -->
+    <div id="vraag_02" style="position: absolute; transform: translate(-50%, -50%) translate3d(18000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="18000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 2</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>An administrator has issued the following command:
+grub-install --root-directory=/custom-grub /dev/sda
+In which directory will the new menu.lst file be found (Provide the full directory path only without the filename):</p><br>
+<ul>
+<li style="list-style:disc;">Your response:</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.2 | Page 20/20</div>  
+
+	</div>
+</div>
+
+
+<!-- EINDE -->
+</div>
+
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script src="include/ga.js" async="" type="text/javascript"></script>
+<script>
+	if ("ontouchstart" in document.documentElement) {document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";}
+</script>
+
+<script src="include/impress.js"></script>
+<script>impress().init();</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-9117370-1']);_gaq.push(['_trackPageview']);
+	(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,99 @@
+104.6 Het creeeren en veranderen van hard en symbolic links
+
+ln
+
+
+
+
+
+---
+
+inode-ln-00
+
+Om te begrijpen wat hard en symbolic links zijn, is het goed om te weten wat inodes zijn.
+Via <a href="http://en.wikipedia.org/wiki/Inode" target="_blank">inodes</a> <u>index</u> node worden op een filesysteem bijgehouden waar welk object (bestand) waar staat.
+De inode is eigenlijk de metadata (behalve de bestandsnaam) van een file.
+De inode bevat ook een link waar het de <a href="http://en.wikipedia.org/wiki/Inode_pointer_structure" target="_blank">data kan vinden op het filesysteem</a> (verdeeld over verschillende blocks).
+De inode wordt weergegeven door een decimaal nummer (het zogenaamde inode nummer).
+
+inode-ln-01
+
+Via 'df -i' krijg je informatie over het aantal inodes of je fileysystemen.
+Je kan via 'ls -i' en dan de bestandsnaam het inode nummer vinden van die file.
+Aangezien een bestandsnaam niet bepaald is in de inodes kan je meerdere bestandsnamen linken naar hetzelfde bestand.
+Met 'stat' en dan de filename kan je meer in de metadata kijken van die inode (dus net van de file zelf). Veel van deze metadata is ook te zien via 'ls -li'
+Ook directories bevatten hebben een inode (nummer).
+
+inode-ln-02
+
+Informatie die een inode bevat:
+Rechten/Permissions
+Groote van de file
+User ID
+Group ID
+Device waar de file staat
+Locatie van de file (een link, niet alle blokken worden benoemd)
+Access-tijd
+Modify-tijd
+Change-tijd (als metadata aangepast wordt)
+
+inode-code-00
+
+df 
+ls -i <i>bestandsnaam</i>
+
+stat <i>bestandsnaam</i>
+
+inode-demo-00
+inode-demo-01
+inode-demo-02
+
+---
+
+ln-intro-00
+
+Een inode is niks meer dan de metadata naar een file op de harde schijf, echter zonder de naam.
+We kunnen met het 'ln' (zonder opties) een zogenaamde 'hardlink' aanmaken dit is nieuwe bestandsnaam die verwijst naar een bestaande inode.
+Deze inode verwijst op zijn beurt weer naar de data op de harde schijf.
+Veranderen we de inode metadata of de inhoud van dat bestand, dan geldt dat dus voor beide (hard)links.
+
+ln-code-00
+
+ln bestand hardlink
+
+ln-demo-00
+
+---
+
+---
+
+ln-intro-01
+
+Wederom een inode is niks meer dan de metadata naar een file op de harde schijf, echter zonder de naam.
+We kunnen ook een softlink aanmaken met '-ln -s'. Nu wordt niet verwezen naar hetzelfde inode nummer als bij de hardlink, maar we verwijzen nu door naar de naam die verwijst naar de inode.
+De softlink krijgt in tegenstelling naar de hardlink wel een nieuw inode nummer.
+Je kan een softlink min of meer vergelijken met een snelkoppeling (of shortcut) in 'Windows'.
+
+ln-code-01
+
+ln -s bestand softlink
+
+ln-demo-01
+
+ln-demo-02
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+

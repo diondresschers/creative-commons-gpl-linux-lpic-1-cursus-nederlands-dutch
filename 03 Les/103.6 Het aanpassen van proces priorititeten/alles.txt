@@ -1,0 +1,81 @@
+---
+
+nice-demo-00.html
+
+sleep 12 &
+ps
+ps -l
+
+---
+nice-demo-01.html
+
+nice sleep 5 &
+ps -l
+
+nice -n 15 sleep 5 &
+ps -l
+
+---
+
+nice-demo-02.html
+
+nice -n -4 sleep 40 &
+
+ps -l
+
+sudo su - 
+
+nice -n -4 sleep 40 &
+
+ps -l
+
+---
+
+ps-demo-00.html
+
+ps
+ps -l
+nice -n 15 sleep 20 &
+ps -l
+ps -Al
+
+---
+
+renice-demo-00.html
+
+sleep 20 &
+ps -l
+renice 15 -p ????
+
+
+---
+
+top-demo-00.html
+
+top
+h
+q
+
+---
+
+top-demo-01.html
+
+top
+>
+<
+
+---
+
+top-demo-02.html
+
+top -d 10
+
+q
+
+---
+
+
+
+
+
+

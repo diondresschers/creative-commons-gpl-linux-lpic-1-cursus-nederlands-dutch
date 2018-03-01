@@ -1,0 +1,128 @@
+Het veranderen van runlevels en het uitzetten of herstarten van een systeem
+
+    /etc/inittab
+    shutdown
+    init
+    /etc/init.d
+    telinit
+
+---
+
+runlevels
+inittab
+init.d
+init/telinit
+reboot/shutdown
+
+
+---
+
+runlevel-intro-00 
+
+http://en.wikipedia.org/wiki/Runlevel
+
+Debian
+0 Halt (shut down)
+1 Single User (recovery) (no password for root)
+2-5 Multi User
+6 Reboot
+
+RedHat
+0 Halt (shut down)
+1 Single user (recovery) (no password for root)
+2 -
+3 Multi user tekst mode
+4 -
+5 Multu user grafisch
+6 Reboot
+
+cat /etc/inittab
+id:3:initdefault # 
+
+cd /etc/init
+cat splash-manager.conf
+
+cd /etc/rc.d
+
+Nu 'upstart' backwards compatible en gebruikt nog /etc/inittab
+Ubuntu heeft geen /etc/inittab file meer. RHEL 6 nog wel.
+
+
+cat /etc.init.d/ # scripts # stop start restart
+./network # IN VM CENTOS DEMO!!!
+# je kan nu stoppen en starten
+service networking
+
+ls -l | grep rc
+#volg rc symbolic link zijn runlevels
+
+cd /etc/rc.d/rc2.d # zie K=Kill of S=Start welke scripts gestart worden voor Runlevel 2
+ls -l # nu zie je symbolic links naar het script!
+Met nummer geef je het een prio... (alphabetische volgorder 00 het eerst 99  het laatst.
+ln -s /etc/init.d/network S00network # maken een symbolic link en start als eerte
+
+!!!!!!!!!!!!!!!!!!! NIET AF!!!!!!!!!!!!!!!!!!1
+
+---
+
+init-intro-00
+
+'init' is de 'parent' van alle andere processen.
+Init wordt gestart door de kernel en is verantwoordelijk voor het starten van alle andere processen.
+init heeft het proces id 1.
+Je kunt het init proces zien via 'pstree'
+Of met ps -ef (let op het proces id).
+'init' kan je echter ook als commando gebruiken en hiermee je runlevel wijzigen.
+
+init-code-00
+init 5
+
+init-demo-00
+init 1 # zie dat je netwerking niet meer werkt
+init-demo-01
+pstree
+init-demo-02
+top
+---
+
+tellinit
+
+Niet alleen met het commando 'init' kan je het runlevel wijzigen, maar ook met 'telinit'.
+'telinit' is dus niet het 'init' proces maar een tooltje om de runlevel te wijzigen.
+In de binary file /var/log/wtmp wordt de wijziging van de runlevels toegevoegd.
+Met 'runlevel' kan je het huidige runlevel zien.
+
+telinit-code-00
+
+telinit 4
+
+telinit-demo-00
+runlevel
+telinit 3
+runlevel
+
+---
+
+
+cd /etc/init.d/
+ls
+network
+./ 
+service
+
+cd /etc/rc.d
+ls -l
+ln -s /etc/rc.d/init.d/network S50network
+
+
+
+
+
+
+
+
+
+---
+
+
+

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>   
+    <meta name="author" content="Dion Dresschers">
+    <link href="include/css.css" rel="stylesheet">
+    <link href="include/impress-demo.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://bartaz.github.io/impress.js/favicon.png">
+    <link rel="apple-touch-icon" href="http://bartaz.github.io/impress.js/apple-touch-icon.png">
+</head>
+
+<body data-twttr-rendered="true" style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+
+<div class="fallback-message">
+    <p>Your browser doesn't support the features required</b>
+</div>
+
+
+
+
+<div style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(5495.53px) scale(0.181966);" id="impress">
+
+<!-- intro -->
+    <div id="intro" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="-1000" data-y="-1500">
+
+	     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">LPIC-1 2014 Cursus</p><p style="font-size:100%; position:relative; top:20px;">107.2 Administratie van het Systeem door tijdsgeboden taken</p></div>
+
+<div style="position: absolute; top: 400px; left:100px; text-align:left; font-size:100%;">
+
+<p>Trainer: Dion Dresschers</p>
+<p>Assistent Trainer: Younes Idrissi</p>
+<p><br></p>
+<p>Licentie: CC BY-SA (Dion Dresschers & Younes Idrissi)</p>
+<p>Versie: 2014-08-24-00</p>
+
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 1/42</div>  
+
+	</div>
+</div>
+
+<!-- les -->
+    <div id="les" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="0" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">107.2</p><p style="font-size:100%; position:relative; top:20px;">Administratie van het Systeem door tijdsgeboden taken</p></div>
+
+<div style="position: absolute; top: 150px; left:400px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">at</li>
+<li style="list-style:disc;">atq</li>
+<li style="list-style:disc;">atrm</li>
+<li style="list-style:disc;">/etc/at.deny</li>
+<li style="list-style:disc;">/etc/at.allow</li>
+<li style="list-style:disc;">/etc/crontab</li>
+<li style="list-style:disc;">crontab</li>
+<li style="list-style:disc;">/var/spool/cron/*</li>
+<li style="list-style:disc;">/etc/cron.deny</li>
+<li style="list-style:disc;">/etc/cron.allow</li>
+<li style="list-style:disc;">/etc/cron.*</li>
+<li style="list-style:disc;">anacron</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 2/42</div>  
+
+	</div>
+</div>
+<!-- at-intro-00 -->
+    <div id="at-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="1000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">at</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'at' kan je taken voor een gebruiker schedulen</li>
+<li style="list-style:disc;">Je geeft de tijd (en of datum) aan na het commando.</li>
+<li style="list-style:disc;">Daarna geef je je reeds gemaakte script aan, of je maakt een script ter plaatse.</li>
+<li style="list-style:disc;">Met de CTRL+D toetscombi kan eindig je het 'at'-commando en kan je verder werken achter de commandoregel.</li>
+<li style="list-style:disc;">Het script wordt automatisch uitgevoerd en je kan de uitput zien in je mail.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 3/42</div>  
+
+	</div>
+</div>
+
+<!-- at-code-00 -->
+    <div id="at-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="2000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">at</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">at 12:00 2014-11-30
+</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 4/42</div>  
+
+	</div>
+</div>
+<!-- at-demo-00 -->
+    <div id="at-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="3000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">at</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="at-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="at-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+</ul>
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 5/42</div>  
+
+	</div>
+</div>
+<!-- atq-intro-00 -->
+    <div id="atq-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="4000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">atq</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'atq' zie je de queue van 'at' commando's</li>
+<li style="list-style:disc;">De 'at' commando's die in het verleden liggen staan er niet in.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 6/42</div>  
+
+	</div>
+</div>
+
+<!-- atq-code-00 -->
+    <div id="atq-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="5000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">atq</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">atq</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 7/42</div>  
+
+	</div>
+</div>
+<!-- atq-demo-00 -->
+    <div id="atq-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="6000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">atq</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="atq-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 8/42</div>  
+
+	</div>
+</div>
+<!-- atrm-intro-00 -->
+    <div id="atrm-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(7000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="7000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">atrm</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'atrm' kan je '<u>at</u>' <u>r</u>e<u>m</u>oven</li>
+<li style="list-style:disc;">Je moet daarvoor wel het 'id' van de 'at' job weten die je weer kan vinden met 'atq' </li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 9/42</div>  
+
+	</div>
+</div>
+
+<!-- atrm-code-00 -->
+    <div id="atrm-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(8000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="8000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">atrm</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">atrm <i>4</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 10/42</div>  
+
+	</div>
+</div>
+<!-- atrm-demo-00 -->
+    <div id="atrm-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(9000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="9000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">atrm</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="atrm-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 11/42</div>  
+
+	</div>
+</div>
+<!-- _etc_at.deny-intro-00 -->
+    <div id="_etc_at.deny-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(10000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="10000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/at.deny</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Normaal mag je als gebruikers 'at' jobs aanmaken</li>
+<li style="list-style:disc;">De file ''/etc/at.deny' is normaliter leeg in een linux systeem.</li>
+<li style="list-style:disc;">Je kan in deze file wel gebruikers toevoegen die geen 'at' mogen draaien.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 12/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_at.deny-code-00 -->
+    <div id="_etc_at.deny-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(11000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="11000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/at.deny</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">echo 'dion' >> /etc/at.deny</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 13/42</div>  
+
+	</div>
+</div>
+<!-- _etc_at.deny-demo-00 -->
+    <div id="_etc_at.deny-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(12000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="12000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/at.deny</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_at.deny-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 14/42</div>  
+
+	</div>
+</div>
+<!-- _etc_at.allow-intro-00 -->
+    <div id="_etc_at.allow-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(13000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="13000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/at.allow</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Gebruikers in /etc/at.allow mogen wel 'at' gebruiken</li>
+<li style="list-style:disc;">Deze file is standaard niet aanwezig.</li>
+<li style="list-style:disc;">Maak je deze file zelf aan en voeg je hier gebruikers toen dan mogen alleen deze gebruikers 'at' gebruiken</li>
+<li style="list-style:disc;">Bestaat deze file, dan mogen gebruikers die niet in deze file staan 'at' automatisch niet gebruiker! (behalve root).</li>
+<li style="list-style:disc;">Sta je zowel in de '/etc/at.allow' en '/etc/at.deny' dan heeft '/etc/at.allow' voorrang</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 15/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_at.allow-code-00 -->
+    <div id="_etc_at.allow-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(14000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="14000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/at.allow</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">echo dion >> /etc/at.allow</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 16/42</div>  
+
+	</div>
+</div>
+<!-- _etc_at.allow-demo-00 -->
+    <div id="_etc_at.allow-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(15000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="15000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/at.allow</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_at.allow-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 17/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_crontab-intro-00 -->
+    <div id="_etc_crontab-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(16000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="16000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Je kan jobs schedulen (op een bepaalde tijd laten lopen) in het /etc/crontab bestand</li>
+<li style="list-style:disc;">Daarin geef je aan wanneer welk commando of script moet draaien</li>
+<li style="list-style:disc;">Als je geluk hebt staat er een template voor je klaar met hoe je de file moet inrichten. Zo niet zie de andere slide.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 18/42</div>  
+
+	</div>
+</div>
+<!-- _etc_crontab-intro-01 -->
+    <div id="_etc_crontab-intro-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(17000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="17000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">De /etc/ctrontab file is ingedeeld volgens volgens formaat:</li>
+<li style="list-style:disc;">minuut uur dag maand dag_van_de_week gebruikerscrontab commando</li>
+<li style="list-style:disc;">Een '*' betekent elke, dus bv een '*' bij dag betekent elke dag.</li>
+<li style="list-style:disc;">Zie hier enkele <a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/ "voorbeelden  aantal voorbeelden" target="_blank">voorbeelden</a></li>
+
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 19/42</div>  
+
+	</div>
+</div>
+<!-- _etc_crontab-intro-02 -->
+    <div id="_etc_crontab-intro-02" style="position: absolute; transform: translate(-50%, -50%) translate3d(18000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="18000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">#MI HO DA MO DW USER COMMAND</li>
+<li style="list-style:disc;">'05  *  *  *  *' is elke 5 over (van elk uur, elke dag, elke maand, elke dag van de week)</li>
+<li style="list-style:disc;">'00 15  *  *  *' is elke dag om 15:00</li>
+<li style="list-style:disc;">'15 05  *  *  0' is elke zondagnacht om 05:15</li>
+<li style="list-style:disc;">'55 23  5  6  * 5' is elke juni om 23:55</li>
+<li style="list-style:disc;">05-10 (5, 6, 7, 8, 9, 10)</li>
+<li style="list-style:disc;">*/2 (is letterlijk 1/2)</li>
+<li style="list-style:disc;">10,30,55 (10, 30 en 55)</li>
+<li style="list-style:disc;">sun-tue (van zondag t/m dinsdag)</li>
+<li style="list-style:disc;">jan-jul (van januari t/m juli)</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 20/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_crontab-code-00 -->
+    <div id="_etc_crontab-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(19000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="19000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">vi /etc/crontab</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 21/42</div>  
+
+	</div>
+</div>
+<!-- _etc_crontab-demo-00 -->
+    <div id="_etc_crontab-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(20000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="20000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_crontab-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="_etc_crontab-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 22/42</div>  
+
+	</div>
+</div>
+<!-- crontab-intro-00 -->
+    <div id="crontab-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(21000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="21000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">'crontab' is niet alleen een file als in '/etc/crontab', maar is ook een commando</li>
+<li style="list-style:disc;">Het bestand '/etc/crontab' is alleen te benaderen door root. Alle andere gebruikers kunnen hun eigen persoonlijke crontab-file aanmaken via het commando 'crontab'.</li>
+<li style="list-style:disc;">Gebruik de optie '-e' om je persoonlijke crontab te <u>e</u>diteren.</li>
+<li style="list-style:disc;">Het verschil met de '/etc/crontab' is dat je bij 'crontab' geen gebruiker opgeeft (want het is al onder je eigen naam.</li>
+
+
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 23/42</div>  
+
+	</div>
+</div>
+
+<!-- crontab-code-00 -->
+    <div id="crontab-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(22000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="22000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">crontab -e</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 24/42</div>  
+
+	</div>
+</div>
+<!-- crontab-demo-00 -->
+    <div id="crontab-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="23000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">crontab</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="crontab-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 25/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_spool_cron_-intro-00 -->
+    <div id="_etc_spool_cron_-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(24000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="24000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/spool/cron/*</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Zoals net in de demo gezien zitten in '/etc/spool/cron/*' de crontab files van de gebruikers</li>
+<li style="list-style:disc;">Dit zijn gewone textfiles die je ook direct kan aanpassen.</li>
+<li style="list-style:disc;">Je past deze aan met 'crontab -e'.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 26/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_spool_cron_-code-00 -->
+    <div id="_etc_spool_cron_-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(25000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="25000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/spool/cron*</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">ls -l /var/spool/cron</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 27/42</div>  
+
+	</div>
+</div>
+<!-- _etc_spool_cron_-demo-00 -->
+    <div id="_etc_spool_cron_-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(26000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="26000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/spool/cron*</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_spool_cron_-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 28/42</div>  
+
+	</div>
+</div>
+
+
+<!-- _etc_cron.deny-intro-00 -->
+    <div id="_etc_cron.deny-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(27000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="27000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.deny</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Zoals er de '/etc/at.deny' file is, is er ook een '/etc/cron.deny'</li>
+<li style="list-style:disc;">Gebruikers die hierin staan mogen geen 'crontab' commando uitvoeren</li>
+<li style="list-style:disc;">Standaard bestaat deze file in Linux, maar is deze leeg.</li>
+<li style="list-style:disc;">Wil je gebruikers weigeren zet dan de desbetreffende gebruikersnaam er in (een per regel)</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 29/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_cron.deny-code-00 -->
+    <div id="_etc_cron.deny-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(28000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="28000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.deny</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">echo '<i>dion</i>' >> /etc/cron.deny</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 30/42</div>  
+
+	</div>
+</div>
+<!-- _etc_cron.deny-demo-00 -->
+    <div id="_etc_cron.deny-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(29000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="29000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.deny</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_cron.deny-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 31/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_cron.allow-intro-00 -->
+    <div id="_etc_cron.allow-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(30000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="30000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.allow</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Standaard bestaat de file /etc/cron.allow niet op Linux machines.</li>
+<li style="list-style:disc;">Je kan deze file zelf aanmaken en er gebruikers inzetten (een per regel)</li>
+<li style="list-style:disc;">Aleen de gebruikers in deze file mogen 'crontab' gebruiker (root mag dit altijd).</li>
+<li style="list-style:disc;">Is er ook een /etc/cron.deny file, dan wordt deze genegeerd.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 32/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_cron.allow-code-00 -->
+    <div id="_etc_cron.allow-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(31000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="31000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.allow</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">echo dion >> /etc/cron.allow</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 33/42</div>  
+
+	</div>
+</div>
+<!-- _etc_cron.allow-demo-00 -->
+    <div id="_etc_cron.allow-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(32000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="32000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.allow</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_cron.allow-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 34/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_cron._-intro-00 -->
+    <div id="_etc_cron._-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(33000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="33000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.*</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Naast '/etc/crontab' en 'crontab' heb je ook nog verschillende cron folders waar je direct scripts in kan plaatsen.</li>
+<li style="list-style:disc;">Voorbeelden van deze folders zijn: '/etc/cron.hourly', '/etc/cron.daily', '/etc/cron.weekly' en '/etc/cron.monthly' </li>
+<li style="list-style:disc;">Je hoeft hier dus geen gebruiker in te zetten of een tijdsaanduiding, het script loopt automatisch zoals aangegeven in de folderbenaming.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 35/42</div>  
+
+	</div>
+</div>
+
+<!-- _etc_cron._-code-00 -->
+    <div id="_etc_cron._-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(34000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="34000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.*</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cp ~/script.sh /etc/cron.hourly</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 36/42</div>  
+
+	</div>
+</div>
+<!-- _etc_cron._-demo-00 -->
+    <div id="_etc_cron._-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(35000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="35000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/cron.*</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_cron._-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 37/42</div>  
+
+	</div>
+</div>
+
+<!-- anacron-intro-00 -->
+    <div id="anacron-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(36000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="36000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">anacron</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Anacron is bedoelt voor workstations zoals laptops en desktops.</li>
+<li style="list-style:disc;">Mocht een cron job niet uitgevoerd worden omdat de computer uit staat, dan zorgt anacron er voor dat deze alsnog uitgevoerd wordt op het moment dat de computer weer aan staat.</li>
+<li style="list-style:disc;">Er is geen aparte daemon voor nodig, anacron maakt gebruik van de huidige cron configuraties.</li>
+<li style="list-style:disc;">Sommige configuratiefiles/scripts beginnen met een '0' zodat deze als eerste gedraait worden (alfabetisch) voor andere scripts.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 38/42</div>  
+
+	</div>
+</div>
+
+<!-- anacron-code-00 -->
+    <div id="anacron-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(37000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="37000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">anacron</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat /etc/cron.hourly/0anacron</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 39/42</div>  
+
+	</div>
+</div>
+<!-- anacron-demo-00 -->
+    <div id="anacron-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(38000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="38000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">anacron</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="anacro-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 40/42</div>  
+
+	</div>
+</div>
+
+
+
+
+
+<!-- vraag_01 -->
+    <div id="vraag_01" style="position: absolute; transform: translate(-50%, -50%) translate3d(39000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="39000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 1</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>Which two files are responsible for allowing users to execute cron jobs?</p><br>
+<ul>
+<li style="list-style:disc;">/etc/cron.allow</li>
+<li style="list-style:disc;">/var/spool/cron.allow</li>
+<li style="list-style:disc;">/var/spool/cron.deny</li>
+<li style="list-style:disc;">/etc/cron.deny</li>
+</ul>
+
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 41/42</div>  
+
+	</div>
+</div>
+
+<!-- vraag_02 -->
+    <div id="vraag_02" style="position: absolute; transform: translate(-50%, -50%) translate3d(40000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="40000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 2</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>You discover a pending job for the at command. Which of the following do you have to use to remove it?</p><br>
+<ul>
+<li style="list-style:disc;">atrm</li>
+<li style="list-style:disc;">atq -r</li>
+<li style="list-style:disc;">at -r</li>
+<li style="list-style:disc;">rmat</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 107.2 | Page 42/42</div>  
+
+	</div>
+</div>
+
+
+<!-- EINDE -->
+</div>
+
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script src="include/ga.js" async="" type="text/javascript"></script>
+<script>
+	if ("ontouchstart" in document.documentElement) {document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";}
+</script>
+
+<script src="include/impress.js"></script>
+<script>impress().init();</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-9117370-1']);_gaq.push(['_trackPageview']);
+	(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+</body>
+</html>
+

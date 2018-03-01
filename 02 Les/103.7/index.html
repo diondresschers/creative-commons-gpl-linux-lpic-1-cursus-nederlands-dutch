@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>   
+    <meta name="author" content="Dion Dresschers">
+    <link href="include/css.css" rel="stylesheet">
+    <link href="include/impress-demo.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://bartaz.github.io/impress.js/favicon.png">
+    <link rel="apple-touch-icon" href="http://bartaz.github.io/impress.js/apple-touch-icon.png">
+</head>
+
+<body data-twttr-rendered="true" style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+
+<div class="fallback-message">
+    <p>Your browser doesn't support the features required</b>
+</div>
+
+
+
+
+<div style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(5495.53px) scale(0.181966);" id="impress">
+
+<!-- INTRO -->
+    <div id="intro" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="-1000" data-y="-1500">
+
+	     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">LPIC-1 2014 Cursus</p><p style="font-size:100%; position:relative; top:20px;">103.7 Zoeken in teksten met reguliere expressies</p></div>
+
+<div style="position: absolute; top: 400px; left:100px; text-align:left; font-size:100%;">
+
+<p>Trainer: Dion Dresschers</p>
+<p>Assistent Trainer: Younes Idrissi</p>
+<p><br></p>
+<p>Licentie: CC BY-SA (Dion Dresschers & Younes Idrissi)</p>
+<p>Versie: 2014-08-18-00</p>
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 1/17</div>  
+
+	</div>
+</div>
+
+<!-- LES -->
+    <div id="les" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="0" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">103.7</p><p style="font-size:100%; position:relative; top:20px;">Zoeken in teksten met reguliere expressies</p></div>
+
+<div style="position: absolute; top: 200px; left:400px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">grep</li>
+<li style="list-style:disc;">egrep</li>
+<li style="list-style:disc;">fgrep</li>
+<li style="list-style:disc;">sed</li>
+<li style="list-style:disc;">regex</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 2/17</div>  
+
+	</div>
+</div>
+<!-- GREP-00 -->
+    <div id="grep-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="1000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Via grep kan je zoeken in de inhoud van bestanden</li>
+<li style="list-style:disc;">'grep' accepteert ook text input (stdin)</li>
+<li style="list-style:disc;">Optie '-i' (insensitive) maakt het hoofdletterongevoelig</li>
+<li style="list-style:disc;">Optie '-n' geeft regelnummers voor de resultaten</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 3/17</div>  
+
+	</div>
+</div>
+
+<!-- GREP-CODE -->
+    <div id="grep-code" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="2000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">grep <i>zoekterm bestand.txt</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 4/17</div>  
+
+	</div>
+</div>
+
+<!-- GREP-DEMO -->
+    <div id="grep-demo" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="3000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">grep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="103.7_grep_00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="103.7_grep_01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+<li><a href="103.7_grep_02.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 3</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 5/17</div>  
+
+	</div>
+</div>
+
+<!-- regex-00 -->
+    <div id="regex-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="4000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">regex</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">regex staat voor 'regular' 'expressions'</li>
+<li style="list-style:disc;"><a href="http://http://en.wikipedia.org/wiki/Regex" target="_blank">regex</a> is geen commando</li>
+<li style="list-style:disc;">Je kan regex oa. gebruiken in combinatie met 'grep'</li>
+<li style="list-style:disc;">Met regex kan je via zelf te definieren patronen zoeken op bepaalde delen in een tekst</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 6/17</div>  
+
+	</div>
+</div>
+
+<!-- regex-01 -->
+    <div id="regex-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="5000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">regex</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">^ Geeft aan waarmee een tekst moet beginnen</li>
+<li style="list-style:disc;">$ Geeft aan waarmee een tekst moet eindigen</li>
+<li style="list-style:disc;">. Is elke karakter (dit moet er precies een zijn, mag niet leeg zijn)</li>
+<li style="list-style:disc;"><a href="http://regexone.com/" target="_blank">RegexOne</a> is een geweldige regex tutorial	</li>
+
+
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 7/17</div>  
+
+	</div>
+</div>
+
+<!-- regex-code -->
+    <div id="regex-code" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="6000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">regex</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">grep ^<i>cursus bestand.txt</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 8/17</div>  
+
+	</div>
+</div>
+
+<!-- regex-demo -->
+    <div id="regex-demo" style="position: absolute; transform: translate(-50%, -50%) translate3d(7000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="7000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">regex</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="103.7_regex_00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 9/17</div>  
+
+	</div>
+</div>
+
+<!-- EGREP-00 -->
+    <div id="egrep-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(8000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="8000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">egrep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">egrep staat voor extended grep</li>
+<li style="list-style:disc;">Je kan met grep reguliere expressies uitvoeren</li>
+<li style="list-style:disc;">Echter kent egrep meer regex zoekmogelijkheden dan grep</li>
+<li style="list-style:disc;">Je kan ipv. egrep ook 'grep' met de optie -E geven</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 10/17</div>  
+
+	</div>
+</div>
+
+<!-- EGREP-CODE -->
+    <div id="egrep-code" style="position: absolute; transform: translate(-50%, -50%) translate3d(9000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="9000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">egrep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">egrep '^(<i>a</i>|<i>e</i>|<i>i</i>|<i>o</i>)' <i>bestand.txt</i></i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 11/17</div>  
+
+	</div>
+</div>
+
+<!-- EGREP-DEMO -->
+    <div id="egrep-demo" style="position: absolute; transform: translate(-50%, -50%) translate3d(10000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="10000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">egrep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="103.7_egrep_00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="103.7_egrep_01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+<li><a href="103.7_sed_00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 3</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 12/17</div>  
+
+	</div>
+</div>
+
+<!-- FGREP-00 -->
+    <div id="fgrep-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(11000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="11000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">fgrep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">fgrep staat voor fast grep</li>
+<li style="list-style:disc;">fgrep kent geen reguliere expressies</li>
+<li style="list-style:disc;">Als je zoekt op '$', dan zoek je letterlijk op een dollarteken</li>
+<li style="list-style:disc;">Zo vind fgrep makkelijk bv '.' en '^' en '$'</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 13/17</div>  
+
+	</div>
+</div>
+
+<!-- FGREP-CODE -->
+    <div id="fgrep-code" style="position: absolute; transform: translate(-50%, -50%) translate3d(12000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="12000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">fgrep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">fgrep <i>e</i>$ <i>bestand.txt</i></i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 14/17</div>  
+
+	</div>
+</div>
+
+<!-- FGREP-DEMO -->
+    <div id="fgrep-demo" style="position: absolute; transform: translate(-50%, -50%) translate3d(13000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="13000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">fgrep</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="103.7_fgrep_00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.7 | Page 15/17</div>  
+
+	</div>
+</div>
+<!-- vragen_01 -->
+    <div id="vragen_01" style="position: absolute; transform: translate(-50%, -50%) translate3d(14000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="14000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 1</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>You want to search the file myfile for all occurances of string containing at least five characters,
+where characters number 2 and 5 are 'a' and character number 3 is NOT 'b'.</p><br>
+<ul>
+<li style="list-style:disc;">grep a*^b*a myfile</li>
+<li style="list-style:disc;">grep .a[^b].a myfile</li>
+<li style="list-style:disc;">grep .[a].*.[a] myfile</li>
+<li style="list-style:disc;">.a*^b..a  myfile</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.3 | Page 14/15</div>  
+
+	</div>
+</div>
+
+<!-- vragen_02 -->
+    <div id="vragen_02" style="position: absolute; transform: translate(-50%, -50%) translate3d(15000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="15000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 2</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<p>Which of the following commands will print to standard out only the lines that do not begin with #
+(pound symbol) in the file foobar?</p><br>
+<ul>
+<li style="list-style:disc;">/bin/grep ^# foobar</li>
+<li style="list-style:disc;">/bin/grep -v ^# foobar</li>
+<li style="list-style:disc;">/bin/grep #$ foobar</li>
+<li style="list-style:disc;">/bin/grep -v #$ foobar</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 102.3 | Page 15/15</div>  
+
+	</div>
+</div>
+
+
+
+<!-- EINDE -->
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script src="include/ga.js" async="" type="text/javascript"></script>
+<script>
+	if ("ontouchstart" in document.documentElement) {document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";}
+</script>
+
+<script src="include/impress.js"></script>
+<script>impress().init();</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-9117370-1']);_gaq.push(['_trackPageview']);
+	(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+</body>
+</html>
+

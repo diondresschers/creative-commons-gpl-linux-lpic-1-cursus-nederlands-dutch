@@ -1,0 +1,45 @@
+Het vinden van bestanden en het plaatsen in de juiste lokatie
+
+    find
+    locate
+    updatedb
+    whereis
+    which
+    type
+    /etc/updatedb.conf
+
+---
+
+FHS
+
+http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+
+/
+/bin essentiele binaries that need to be avaiable in single user mode (cat, ls, cp)
+/boot kernerls, bootloader, initrd
+/dev devices /dev/sda
+/etc config files
+/home homed dir for users
+/lib library essentiatl for binaries in /bin and /sbin
+/media mount point for removable media
+/mnt temporary moutned filesystems
+/opt optional application softare packages
+/proc virtual processes
+/root home dir for user 'root'
+/run informtion abou the running systme since last boot
+/sbin essential system binaries: init, ip mount,
+/srv site secidif data which are served by the system (http stuff that serves for the server)
+/tmp temporary files
+/usr (read only user data, utilities and applications) ook /usr/bin
+/var variable files (like /var/log)
+
+---
+
+find-intro
+
+
+
+
+
+
+

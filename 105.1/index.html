@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>   
+    <meta name="author" content="Dion Dresschers">
+    <link href="include/css.css" rel="stylesheet">
+    <link href="include/impress-demo.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://bartaz.github.io/impress.js/favicon.png">
+    <link rel="apple-touch-icon" href="http://bartaz.github.io/impress.js/apple-touch-icon.png">
+</head>
+
+<body data-twttr-rendered="true" style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+
+<div class="fallback-message">
+    <p>Your browser doesn't support the features required</b>
+</div>
+
+
+
+
+<div style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(5495.53px) scale(0.181966);" id="impress">
+
+<!-- intro -->
+    <div id="intro" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="-1000" data-y="-1500">
+
+	     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">LPIC-1 2014 Cursus</p><p style="font-size:100%; position:relative; top:20px;">105.1 Het aanpassen van de shell omgeving</p></div>
+
+<div style="position: absolute; top: 400px; left:100px; text-align:left; font-size:100%;">
+
+<p>Trainer: Dion Dresschers</p>
+<p>Assistent Trainer: Younes Idrissi</p>
+<p><br></p>
+<p>Licentie: CC BY-SA (Dion Dresschers & Younes Idrissi)</p>
+<p>Versie: 2014-12-01-00</p>
+
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 1/47</div>  
+
+	</div>
+</div>
+
+<!-- les -->
+    <div id="les" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="0" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">105.1</p><p style="font-size:100%; position:relative; top:20px;">Het aanpassen van de shell environment</p></div>
+
+<div style="position: absolute; top: 150px; left:400px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">/etc/profile</li>
+<li style="list-style:disc;">~/.bash_profile</li>
+<li style="list-style:disc;">~/.profile</li>
+<li style="list-style:disc;">~/.bash_login</li>
+<li style="list-style:disc;">~/.bashrc</li>
+<li style="list-style:disc;">~/.bash_logout</li>
+<li style="list-style:disc;">alias</li>
+<li style="list-style:disc;">function</li>
+<li style="list-style:disc;">lists</li>
+<li style="list-style:disc;">env</li>
+<li style="list-style:disc;">export</li>
+<li style="list-style:disc;">set</li>
+<li style="list-style:disc;">unset</li>
+</ul>    
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 2/47</div>  
+
+	</div>
+</div>
+<!-- _etc_profile-intro-00 -->
+    <div id="_etc_profile-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="1000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">De globale file '/etc/profile' zet variabelen en laadt verschillende andere files, zodat daarmee je bash omgeving, met functies, aliassen en prompt ingesteld wordt.</li>
+<li style="list-style:disc;">Zo wordt door deze file de hele /etc/profile.d' directory afgegaan, wordt gekeken naar de globale file '/etc/bashrc' en wordt gekeken in de homedirectory van de gebruiker voor andere scripts.</li>
+<li style="list-style:disc;">De '/etc/profile' is geschreven in bash en door het volgen van deze config zul je de verwijzingen zien naar de andere files.</li>
+<li style="list-style:disc;">Welke files weer aangeroepen hangt af van het bash script en deze is weer distributie afhankelijk.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 3/47</div>  
+
+	</div>
+</div>
+
+<!-- _etc_profile-code-00 -->
+    <div id="_etc_profile-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="2000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat /etc/profile</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 4/47</div>  
+
+	</div>
+</div>
+<!-- _etc_profile-demo-00 -->
+    <div id="_etc_profile-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="3000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">/etc/profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="_etc_profile-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 5/47</div>  
+
+	</div>
+</div>
+
+<!-- __.bash_profile-intro-00 -->
+    <div id="__.bash_profile-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="4000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash_profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">De persoonlijke bash instellingen van de gebruiker kunnen gezet worden door de volgende bestanden:</li>
+<li style="list-style:disc;">~/.bash_profile</li>
+<li style="list-style:disc;">~/.bash_login</li>
+<li style="list-style:disc;">~/.profile</li>
+<li style="list-style:disc;">Elke distributie gebruikt andere files. </li>
+<li style="list-style:disc;">In deze files kunnen paden en umasken gedefineerd staan.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 6/47</div>  
+
+	</div>
+</div>
+
+<!-- __.bash_profile-code-00 -->
+    <div id="__.bash_profile-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="5000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash_profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat ~/.bash_profile</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 7/47</div>  
+
+	</div>
+</div>
+<!-- __.bash_profile-demo-00 -->
+    <div id="__.bash_profile-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="6000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash_profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="__.bash_profile-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 8/47</div>  
+
+	</div>
+</div>
+
+<!-- __.profile-intro-00 -->
+    <div id="__.profile-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(7000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="7000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">'~/.profile' is het broertje van '~/.bash_profile' (en neefje van '~/.bash_login')</li>
+<li style="list-style:disc;">'~/.profile' wordt gebruikt in Ubuntu systemen en doet dus min of meer hetzelfde als '~/.bash_profile'.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 9/47</div>  
+
+	</div>
+</div>
+
+<!-- __.profile-code-00 -->
+    <div id="__.profile-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(8000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="8000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat ~/.profile</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 10/47</div>  
+
+	</div>
+</div>
+<!-- __.profile-demo-00 -->
+    <div id="__.profile-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(9000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="9000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.profile</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="__.profile-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 11/47</div>  
+
+	</div>
+</div>
+
+<!-- __.bash_login-intro-00 -->
+    <div id="__.bash_login-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(10000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="10000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash_login</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">De laatste file '~/.bash_login' staat waarschijnlijk niet standaard in je homedirectory.</li>
+<li style="list-style:disc;">Je kan deze file zelf aanmaken en wordt uitgevoerd op het moment dat je inlogt.</li>
+<li style="list-style:disc;">Het tegenovergestelde van '~/.bash_login', is de ''~/.bash_logout' file dat dus gedraait wordt op het moment dat je uitlogt.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 12/47</div>  
+
+	</div>
+</div>
+
+<!-- __.bash_login-code-00 -->
+    <div id="__.bash_login-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(11000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="11000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash_login</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">vi ~/.bash_login</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 13/47</div>  
+
+	</div>
+</div>
+<!-- __.bash_login-demo-00 -->
+    <div id="__.bash_login-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(12000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="12000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash_login</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="__.bash_login-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 14/47</div>  
+
+	</div>
+</div>
+<!-- __.bashrc-intro-00 -->
+    <div id="__.bashrc-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(13000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="13000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bashrc</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">De '~/.bashrc' file is wel in veel distributies terug te vinden.</li>
+<li style="list-style:disc;">Hierin kan je als gebruiker je eigen functies en aliassen neerzetten.</li>
+<li style="list-style:disc;">Zoals bij meerdere files wordt bij een nieuwe gebruiker een zogenaamde 'skeleton' file gebruikt als template. Deze files zijn te vinden onder '/etc/skel/'</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 15/47</div>  
+
+	</div>
+</div>
+
+<!-- __.bashrc-code-00 -->
+    <div id="__.bashrc-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(14000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="14000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bashrc</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat ~/.bashrc</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 16/47</div>  
+
+	</div>
+</div>
+<!-- __.bashrc-demo-00 -->
+    <div id="__.bashrc-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(15000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="15000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bashrc</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="__.bashrc-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="__.bashrc-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 17/47</div>  
+
+	</div>
+</div>
+<!-- __.bash_logout-intro-00 -->
+    <div id="__.bash_logout-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(16000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="16000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash/logout</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">In tegenstelling tot '~/bash_login', is '~/bash_logout' wel standaard aanwezig op een distributie (al dan niet leeg).</li>
+<li style="list-style:disc;">De file wordt aangeroepen als er uitgelogd wordt. </li>
+<li style="list-style:disc;">Hiermee kan je de console leeg maken, de history weggooien of iets anders doen.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 18/47</div>  
+
+	</div>
+</div>
+
+<!-- __.bash_logout-code-00 -->
+    <div id="__.bash_logout-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(17000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="17000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash/logout</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">cat ~/.bash_logout</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 19/47</div>  
+
+	</div>
+</div>
+<!-- __.bash_logout-demo-00 -->
+    <div id="__.bash_logout-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(18000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="18000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">~/.bash/logout</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="__.bash_logout-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="__.bash_logout-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 20/47</div>  
+
+	</div>
+</div>
+
+<!-- alias-intro-00 -->
+    <div id="alias-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(19000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="19000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">alias</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Je kan een alias aanmaken voor commando's en opties de je vaak gebruikt.</li>
+<li style="list-style:disc;">Als je de naam van je alias kort maakt, kan je dat veel typwerk en denkwerk schelen.</li>
+<li style="list-style:disc;">Je kan alle aliassen zien door 'alias' in te voeren.</li>
+<li style="list-style:disc;">Zo blijkt het commando 'll'' (voor Long Listing) geen commando te zijn maar een alias voor 'ls -l'.</li>
+<li style="list-style:disc;">Wil je je alias bewaren voor na een reboot, sla deze dan op in ~/.bashrc</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 21/47</div>  
+
+	</div>
+</div>
+
+<!-- alias-code-00 -->
+    <div id="alias-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(20000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="20000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">alias</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">alias <i>lijst</i>='ls -lsa' </p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 22/47</div>  
+
+	</div>
+</div>
+
+<!-- alias-demo-00 -->
+    <div id="alias-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(21000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="21000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">alias</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="alias-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="alias-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+</ul>
+
+
+</div>
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 23/47</div>  
+
+	</div>
+</div>
+<!-- function-intro-00 -->
+    <div id="function-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(22000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="22000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">function</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Een function is een klein bash programmaatje dat je kan schrijven om taken makkelijker te maken.</li>
+<li style="list-style:disc;">Je kan zo'n complexe programma's maken als je wilt (in tegenstelling tot alias wat zeer bepertk is).</li>
+<li style="list-style:disc;">Zowel als de alias, plaats je deze in je ~/.bashrc file.</li>
+<li style="list-style:disc;">In de .bashrc file moet je je wel houden aan de functie format (je kan niet zomaar bash beginnen te typen).</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 24/47</div>  
+
+	</div>
+</div>
+
+<!-- function-code-00 -->
+    <div id="function-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(23000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="23000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">function</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">vi ~/.bashrc</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 25/47</div>  
+
+	</div>
+</div>
+<!-- function-demo-00 -->
+    <div id="function-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(24000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="24000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">function</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="functions-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 26/47</div>  
+
+	</div>
+</div>
+<!-- lists-intro-00 -->
+    <div id="lists-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(25000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="25000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">In Linux commando's kan je de volgende leestekens tussen twee (of meer) commando's terugvinden: '&&', '||', ';' en '&'</li>
+<li style="list-style:disc;">De '&&' is een AND teken, dit betekent als het eerste commando waar is, dan wordt ook het tweede commando uitgevoerd.</li>
+<li style="list-style:disc;">Het '||' teken is een exculieve OF teken, het tweede commando wordt alleen uitgevoerd als het resultaat van het eerste onwaar is.</li>
+<li style="list-style:disc;">Je kan controlleren of het resultaat van een command waar of niet waar is door na het commando 'echo $?' te geven.</li>
+<li style="list-style:disc;">Is het resultaat '0' dan is het commando waar, in alle andere gevallen is het onwaar.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 27/47</div>  
+
+	</div>
+</div>
+<!-- lists-intro-01 -->
+    <div id="lists-intro-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(26000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="26000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Het ';' teken is om na het eerste commando, direct een tweede te kunnen ingeven. Je hoeft dus geen enter te geven en het tweede commando erna te typen.</li>
+<li style="list-style:disc;">Een '&' kennen we al van het in de achtergrond draaien van een commando, achter dit teken kan je meteen een tweede commando geven.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 28/47</div>  
+
+	</div>
+</div>
+
+<!-- lists-code-00 -->
+    <div id="lists-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(27000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="27000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">ECHO een && echo twee</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 29/47</div>  
+
+	</div>
+</div>
+<!-- lists-code-01 -->
+    <div id="lists-code-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(28000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="28000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">ECHO een || echo twee</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 30/47</div>  
+
+	</div>
+</div>
+<!-- lists-code-02 -->
+    <div id="lists-code-02" style="position: absolute; transform: translate(-50%, -50%) translate3d(29000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="29000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">ECHO een ; echo twee</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 31/47</div>  
+
+	</div>
+</div>
+<!-- lists-code-03 -->
+    <div id="lists-code-03" style="position: absolute; transform: translate(-50%, -50%) translate3d(30000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="30000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">echo een & echo twee</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 32/47</div>  
+
+	</div>
+</div>
+
+<!-- lists-demo-00 -->
+    <div id="lists-demo-03" style="position: absolute; transform: translate(-50%, -50%) translate3d(31000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="31000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">lists</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="lists-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="lists-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+<li><a href="lists-demo-02.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 3</a></li><br>
+<li><a href="lists-demo-03.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 4</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 33/47</div>  
+
+	</div>
+</div>
+<!-- env-intro-00 -->
+    <div id="env-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(32000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="32000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">env</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">'env' laat alle environment variabelen zien.</li>
+<li style="list-style:disc;">Variabelen zijn gedeeltes in het geheugen waar je data in kan zetten.</li>
+<li style="list-style:disc;">Je kan de variabele zelf een naam geven en de inhoud zetten.</li>
+<li style="list-style:disc;">Een normale variabele werkt alleen maar in de bash shell zelf en is niet bekend andere opgestarte shells.</li>
+<li style="list-style:disc;">De environment variabele zijn wel bekend en bereikbaar voor andere shells (mits het dezelfde gebruiker is).</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 34/47</div>  
+
+	</div>
+</div>
+
+<!-- env-code-00 -->
+    <div id="env-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(33000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="33000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">env</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">env</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 35/47</div>  
+
+	</div>
+</div>
+<!-- env-demo-00 -->
+    <div id="env-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(34000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="34000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">env</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="env-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px>demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 36/47</div>  
+
+	</div>
+</div>
+<!-- export-intro-00 -->
+    <div id="export-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(35000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="35000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">export</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met 'export' maak je van een gewone variabele een 'environment variabele'</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 37/47</div>  
+
+	</div>
+</div>
+
+<!-- export-code-00 -->
+    <div id="export-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(36000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="36000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">export</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">export VARIABELE_NAAM</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 38/47</div>  
+
+	</div>
+</div>
+<!-- export-demo-00 -->
+    <div id="export-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(37000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="37000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">export</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="export-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 39/47</div>  
+
+	</div>
+</div>
+<!-- unset-intro-00 -->
+    <div id="unset-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(38000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="38000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">unset</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">'unset' is het tegenovergestelde van 'export' en dus niet het tegenovergestelde van 'set'</li>
+<li style="list-style:disc;">Met 'unset' maak je van environment variabelen weer een gewone variable</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 40/47</div>  
+
+	</div>
+</div>
+
+<!-- unset-code-00 -->
+    <div id="unset-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(39000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="39000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">unset</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">unset VARIABELE_NAAM</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 41/47</div>  
+
+	</div>
+</div>
+<!-- unset-demo-00 -->
+    <div id="unset-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(40000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="40000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">unset</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="unset-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 42/47</div>  
+
+	</div>
+</div>
+<!-- set-intro-00 -->
+    <div id="set-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(41000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="41000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">set</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">'set' is dus niet het tegenovergestelde van unset.</li>
+<li style="list-style:disc;">'set' laat alle gezette variabelen en functies zien voor de gebruiker.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 43/47</div>  
+
+	</div>
+</div>
+
+<!-- set-code-00 -->
+    <div id="set-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(42000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="42000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">set</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">set</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 44/47</div>  
+
+	</div>
+</div>
+<!-- set-demo-00 -->
+    <div id="set-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(43000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="43000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">set</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="set-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 45/47</div>  
+
+	</div>
+</div>
+
+
+<!-- vraag_01 -->
+    <div id="vraag_01" style="position: absolute; transform: translate(-50%, -50%) translate3d(44000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="44000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 1</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+<p>Which command will print the exit value of the previous command to the screen in bash?</p><br>
+<ul>
+<li style="list-style:disc;">echo $?</li>
+<li style="list-style:disc;">echo $#</li>
+<li style="list-style:disc;">echo $exit</li>
+<li style="list-style:disc;">echo $status</li>
+<li style="list-style:disc;">echo $&</li>
+</ul>
+
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 46/47</div>  
+
+	</div>
+</div>
+
+<!-- vraag_02 -->
+    <div id="vraag_02" style="position: absolute; transform: translate(-50%, -50%) translate3d(45000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="45000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 2</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+<p>A user complained that programs started from his shell won't use his favorite editor.
+Which of the following files should you edit to change this?</p><br>
+<ul>
+<li style="list-style:disc;">.editor</li>
+<li style="list-style:disc;">.bashrc</li>
+<li style="list-style:disc;">.bash_rc</li>
+<li style="list-style:disc;">~/bash.conf</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 105.1 | Page 47/47</div>  
+
+	</div>
+</div>
+
+
+<!-- EINDE -->
+</div>
+
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script src="include/ga.js" async="" type="text/javascript"></script>
+<script>
+	if ("ontouchstart" in document.documentElement) {document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";}
+</script>
+
+<script src="include/impress.js"></script>
+<script>impress().init();</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-9117370-1']);_gaq.push(['_trackPageview']);
+	(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+</body>
+</html>
+

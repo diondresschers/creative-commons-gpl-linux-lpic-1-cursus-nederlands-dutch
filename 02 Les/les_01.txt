@@ -1,0 +1,18 @@
+103.7 
+Zoeken in teksten met reguliere expressies
+
+ grep
+ egrep
+ fgrep
+ sed
+ regex
+
+---
+
+grep
+* Via grep kan je zoeken in de inhoud van bestanden
+* Grep accepteert ook text input (stdin)
+
+
+
+

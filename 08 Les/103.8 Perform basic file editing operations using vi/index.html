@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>   
+    <meta name="author" content="Younes Idrissi">
+    <link href="include/css.css" rel="stylesheet">
+    <link href="include/impress-demo.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://bartaz.github.io/impress.js/favicon.png">
+    <link rel="apple-touch-icon" href="http://bartaz.github.io/impress.js/apple-touch-icon.png">
+</head>
+
+<body data-twttr-rendered="true" style="height: 100%; overflow: hidden;" class="impress-supported impress-enabled impress-on-title">
+
+<div class="fallback-message">
+    <p>Your browser doesn't support the features required</b>
+</div>
+
+
+
+
+<div style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(5495.53px) scale(0.181966);" id="impress">
+
+<!-- intro -->
+    <div id="intro" style="position: absolute; transform: translate(-50%, -50%) translate3d(-1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="-1000" data-y="-1500">
+
+	     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">LPIC-1 2014 Cursus</p><p style="font-size:100%; position:relative; top:20px;">103.8 Uitvoeren van eenvoudige bestands bewerkingen met behulp van vi</p></div>
+
+<div style="position: absolute; top: 400px; left:100px; text-align:left; font-size:100%;">
+
+<p>Trainer: Dion Dresschers</p>
+<p>Assistent Trainer: Younes Idrissi</p>
+<p><br></p>
+<p>Licentie: CC BY-SA (Dion Dresschers & Younes Idrissi)</p>
+<p>Versie: 2014-08-24-00</p>
+
+</div>
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 1/12</div>  
+
+	</div>
+</div>
+
+<!-- les -->
+    <div id="les" style="position: absolute; transform: translate(-50%, -50%) translate3d(0px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="0" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">103.8</p><p style="font-size:100%; position:relative; top:20px;"> Uitvoeren van eenvoudige bestands bewerkingen met behulp van vi</p></div>
+
+<div style="position: absolute; top: 200px; left:300px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Wat is VI?</li>
+<li style="list-style:disc;">Wat kan je met VI?</li>
+<li style="list-style:disc;">Commando's en begrippen VI</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 2/12</div>  
+
+	</div>
+</div>
+
+<!-- vi-intro-00 -->
+    <div id="vi-intro-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(1000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="1000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Wat is VI?</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">VI (<u>v</u>isual <u>i</u>nterface) is de meest gebruikte teksteditor van Unix-sytemen.</li>
+<li style="list-style:disc;">VI is ontstaan in de jaren 70 en is ook standaard geinstalleerd op (bijna) alle Linux distrubuties.</li>
+<li style="list-style:disc;">Doordat VI als lastig en niet gebruiksvriendelijk werd gezien is de editor VIM (<u>VI</u> i<u>M</u>proved) ontstaan.</li>
+<li style="list-style:disc;">De meeste distributies gebruiken VIM en niet VI. Om het wat duidelijker te maken: als je de opdracht 'vi' typt, wordt eigenlijk 'vim' gestart.</li>
+<li style="list-style:disc;">Echter wordt VIM ook nog als moeilijk bestempeld en sommige distrubuties gebruiken daarom 'nano'.</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 3/12</div>  
+
+	</div>
+</div>
+<!-- vi-intro-01 -->
+    <div id="vi-intro-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(2000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="2000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Wat kan je met VI?</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;">Met de teksteditor VI kan je visueel alle taken uitvoeren die je zou kunnen verwachten van een teksteditor. </li>
+<li style="list-style:disc;">Taken zoals nummering, zoeken, wijzigen, opslaan zijn uit te voeren met VI.</li>
+<li style="list-style:disc;">Via VIM (modules) kan je zelf kleuren weergeven en autocompletion bewerkstelligen.</li>
+<li style="list-style:disc;">In VI werk je in twee modes: de command mode en de insert mode. Standaard zit je in de command mode.</li>
+<li style="list-style:disc;">Meer informatie vind je op de wikipedia pagina van <a href="http://en.wikipedia.org/wiki/Vi" target="_blank">VI</a> of <a href="http://en.wikipedia.org/wiki/Vim_%28text_editor%29" target="_blank">VIM</a></li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 4/12</div>  
+
+	</div>
+</div>
+
+<!-- vi-intro-02 -->
+    <div id="vi-intro-02" style="position: absolute; transform: translate(-50%, -50%) translate3d(3000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="3000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Begrippen en commando's</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;"><FONT COLOR="red">'esc'</FONT>  hiermee kan je terug naar de command mode</li>
+<li style="list-style:disc;"><FONT COLOR="red">'i'</FONT>  hiermee ga je naar de insert (invoer) mode op de huidige positie</li>
+<li style="list-style:disc;"><FONT COLOR="red">'/'</FONT>  hiermee kan je vooruit zoeken vanaf de huidige cursor positie en met de letter <FONT COLOR="red">'n'</FONT> kan je naar de volgende</li>
+<li style="list-style:disc;"><FONT COLOR="red">'?'</FONT>  hiermee kan je terug zoeken vanaf de huidige cursor positie</li>
+<li style="list-style:disc;"><FONT COLOR="red">'h, j, k, l'</FONT>  worden gebruikt als pijltoetesen <br> h = links l = rechts j = beneden k = boven</li>
+<li style="list-style:disc;"><FONT COLOR="red">'o'</FONT>  hiermee kan je een regel openen onder de positie van de cursor</li>
+<li style="list-style:disc;"><FONT COLOR="red">'O'</FONT>  hiermee kan je een regel openen boven de positie van de cursor</li>
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 5/12</div>  
+
+	</div>
+</div>
+
+<!-- vi-intro-03 -->
+    <div id="vi-intro-03" style="position: absolute; transform: translate(-50%, -50%) translate3d(4000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="4000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Begrippen en commando's</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;"><FONT COLOR="red">'yy'</FONT> hiermee kan je een regel copieren (y staat voor yank) </li>
+<li style="list-style:disc;"><FONT COLOR="red">'5yy'</FONT> hiermee kan je 5 regels copieren (y staat voor yank) </li>
+<li style="list-style:disc;"><FONT COLOR="red">'p'</FONT>  hiermee kan je plakken wat in de buffer staat</li>
+<li style="list-style:disc;"><FONT COLOR="red">'dd'</FONT> hiermee delete je een regel</li>
+<li style="list-style:disc;"><FONT COLOR="red">'18dd'</FONT> hiermee delete je 18 regels</li>
+
+</ul>
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 6/12</div>  
+
+	</div>
+</div>
+
+<!-- vi-intro-04 -->
+    <div id="vi-intro-04" style="position: absolute; transform: translate(-50%, -50%) translate3d(5000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="5000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Begrippen en commando's</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 100px; left:100px; right:100px; text-align:left; font-size:100%;">
+
+<ul>
+<li style="list-style:disc;"><FONT COLOR="red">':q'</FONT> hiermee sluit je VI af zonder op te slaan.</li>
+<li style="list-style:disc;"><FONT COLOR="red">':w'</FONT> hiermee schrijf je de wijzigingen weg ('w' van 'w'rite)</li>
+<li style="list-style:disc;"><FONT COLOR="red">'!'</FONT> hiermee kan je een commando forceren (bv 'q!')</li>
+<li style="list-style:disc;"><FONT COLOR="red">':wq!'</FONT> Dit is een combinatie tussen 'w'rite en 'q'uit</li>
+<li style="list-style:disc;"><FONT COLOR="red">':set number'</FONT> Laat regelnummers zien.</li>
+<li style="list-style:disc;"><FONT COLOR="red">':syntax on'</FONT> Gebruik kleuren (of gebruik 'syntax off' om het uit te zetten).</li>
+<li style="list-style:disc;"><FONT COLOR="red">':s/OLD/NEW/g'</FONT> Gebruik de <u>s</u>tream <u>ed</u>itor in VI.</li>
+<li style="list-style:disc;"><FONT COLOR="red">'!ls'</FONT> Geef het bash commando 'ls'</li>
+<li style="list-style:disc;">Typ <FONT COLOR="red">'vmtutor'</FONT> in de CLI voor een hands-on oefening!</li>
+<li style="list-style:disc;">Zie hier voor een volledige les en uitleg over <a href="https://wiki.gentoo.org/wiki/Vim/Learning" target="_blank">VI<a/></li>
+
+
+</ul>
+</div>
+
+<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 7/12</div>  
+
+	</div>
+</div>
+
+
+<!-- vi-code-00 -->
+    <div id="vi-code-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(6000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="6000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">VI</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">vi</p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 8/12</div>  
+
+	</div>
+</div>
+
+<!-- vi-code-01 -->
+    <div id="vi-code-01" style="position: absolute; transform: translate(-50%, -50%) translate3d(7000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="7000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">VI</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 200px; left:100px; text-align:left; font-size:100%;">
+
+<div style="
+border:2px solid #a1a1a1;
+margin-top:20px;
+padding:10px 40px; 
+background:#dddddd;
+width:600px;
+border-radius:10px;">
+<p style="font-family:'Courier New', Courier, monospace;">vi <i>bestandsnaam.txt</i></p>
+</div>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 9/12</div>  
+
+	</div>
+</div>
+
+<!-- vi-demo-00 -->
+    <div id="vi-demo-00" style="position: absolute; transform: translate(-50%, -50%) translate3d(8000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="8000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">VI</p><p style="font-size:100%; position:relative; top:20px;"> </p></div>
+
+<div style="position: absolute; top: 150px; left:350px; text-align:left; font-size:150%;">
+
+<ul>
+<li><a href="vi-demo-00.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 1</a></li><br>
+<li><a href="vi-demo-01.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 2</a></li><br>
+<li><a href="vi-demo-02.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 3</a></li><br>
+<li><a href="vi-demo-03.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 4</a></li><br>
+<li><a href="vi-demo-04.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 5</a></li><br>
+<li><a href="vi-demo-05.html" target="_blank"><img src="play.svg" width=40px height=40px> demo 6</a></li><br>
+</ul>
+
+
+</div>
+
+
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 10/12</div>  
+
+	</div>
+</div>
+
+
+<!-- vraag_01 -->
+    <div id="vraag_01" style="position: absolute; transform: translate(-50%, -50%) translate3d(9000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="9000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 1</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 100px; left:100px; text-align:left; font-size:100%;">
+
+<p>In the vi editor, which of the following commands will delete the current line at the cursor and the 16 lines following it (17 lines total)?</p><br>
+<ul>
+<li style="list-style:disc;">17d</li>
+<li style="list-style:disc;">17dd</li>
+<li style="list-style:disc;">17x</li>
+<li style="list-style:disc;">d17d</li>
+<li style="list-style:disc;">16d</li>
+</ul>
+
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 11/12</div>  
+
+	</div>
+</div>
+
+<!-- vraag_02 -->
+    <div id="vraag_02" style="position: absolute; transform: translate(-50%, -50%) translate3d(10000px, -1500px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); transform-style: preserve-3d; "  class="step slide past" data-x="10000" data-y="-1500">
+
+     <div style="width: 90%;  position: absolute; top: 20px; text-align:center;"><p style="font-size:200%;">Vraag 2</p><p style="font-size:100%; position:relative; top:20px;"></p></div>
+
+<div style="position: absolute; top: 100px; left:100px; text-align:left; font-size:100%;">
+
+<p>While editing a file in vi, an administrator realizes that the wrong file is being changed. Which of the following vi command sequences will allow the administrator to quit without saving any changes?</p><br>
+<ul>
+<li style="list-style:disc;">:Q!</li>
+<li style="list-style:disc;">:q!</li>
+<li style="list-style:disc;">:w!</li>
+<li style="list-style:disc;">:wq!</li>
+</ul>
+
+</div>
+
+	<div id="container" style="position: absolute; bottom: 0; font-size:40%;">
+  		<div id="left"><a href="http://www.linuxamsterdam.nl" target="_blank"><img src="la.svg" width=204px height=68px></a></div>
+  		<div id="right"><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="cc_by-sa.svg" width=88px height=31px></a></div>
+  		<div id="center">LPIC-1 | Section 103.8 | Page 12/12</div>  
+
+	</div>
+</div>
+
+
+<!-- EINDE -->
+</div>
+
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script src="include/ga.js" async="" type="text/javascript"></script>
+<script>
+	if ("ontouchstart" in document.documentElement) {document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";}
+</script>
+
+<script src="include/impress.js"></script>
+<script>impress().init();</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-9117370-1']);_gaq.push(['_trackPageview']);
+	(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+</body>
+</html>
+

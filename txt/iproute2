@@ -1,0 +1,152 @@
+-
+
+eth0
+enp0s3
+wl01
+vmnet1
+vboxnet0
+lo
+
+-
+
+dion@dionysos:~$ ls -l /sys/class/net
+total 0
+lrwxrwxrwx. 1 root root 0 Nov 20 10:39 enp0s25 -> ../../devices/pci0000:00/0000:00:19.0/net/enp0s25
+lrwxrwxrwx. 1 root root 0 Nov 20 10:39 lo -> ../../devices/virtual/net/lo
+lrwxrwxrwx. 1 root root 0 Nov 20 11:33 vboxnet0 -> ../../devices/virtual/net/vboxnet0
+lrwxrwxrwx. 1 root root 0 Nov 20 10:40 vmnet1 -> ../../devices/virtual/net/vmnet1
+lrwxrwxrwx. 1 root root 0 Nov 20 10:40 vmnet8 -> ../../devices/virtual/net/vmnet8
+lrwxrwxrwx. 1 root root 0 Nov 20 10:39 wlo1 -> ../../devices/pci0000:00/0000:00:1c.3/0000:24:00.0/net/wlo1
+
+-
+
+root@dionysos:/sys/class/net/enp0s25/device/power/ ls # en cat
+cd 
+root@dionysos:/sys/class/net/enp0s25/device# cat device 
+0x1502
+
+root@dionysos:/sys/class/net/enp0s25/device# cat vendor
+0x8086
+
+http://www.pcidatabase.com
+
+-
+
+udevadm info --query=all --path=/sys/class/net/eth0
+
+udevadm expects a command and command specific options. It controls the runtime behavior of
+       systemd-udevd, requests kernel events, manages the event queue, and provides simple debugging
+       mechanisms.
+
+-
+
+root@dionysos:~# udevadm info --query=all --path=/sys/class/net/enp0s25 
+P: /devices/pci0000:00/0000:00:19.0/net/enp0s25
+E: DEVPATH=/devices/pci0000:00/0000:00:19.0/net/enp0s25
+E: ID_BUS=pci
+E: ID_MM_CANDIDATE=1
+E: ID_MODEL_FROM_DATABASE=82579LM Gigabit Network Connection
+E: ID_MODEL_ID=0x1502
+E: ID_NET_NAME_MAC=enx2c44fd637989
+E: ID_NET_NAME_PATH=enp0s25
+E: ID_OUI_FROM_DATABASE=Hewlett Packard
+E: ID_PCI_CLASS_FROM_DATABASE=Network controller
+E: ID_PCI_SUBCLASS_FROM_DATABASE=Ethernet controller
+E: ID_VENDOR_FROM_DATABASE=Intel Corporation
+E: ID_VENDOR_ID=0x8086
+E: IFINDEX=2
+E: INTERFACE=enp0s25
+E: SUBSYSTEM=net
+E: SYSTEMD_ALIAS=/sys/subsystem/net/devices/enp0s25
+E: TAGS=:systemd:
+E: USEC_INITIALIZED=541053
+
+-
+
+root@dionysos:~# lspci | grep -i network
+00:19.0 Ethernet controller: Intel Corporation 82579LM Gigabit Network Connection (rev 04)
+24:00.0 Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 34)
+
+-
+
+iproute2 (nieuws systeem)
+http://en.wikipedia.org/wiki/Iproute2
+
+old: ifconfig, route, arp, netstat, etc.
+new: ip, ss, rtmon, tc, lnstat
+
+iproute2 for:
+- identificationq
+- monitoring
+- troubleshooting
+- NON-PERSINSTENT configuration
+
+-
+
+zsh + grml.org = autocompletion (yum install zsh | yum search grml, yum install )
+
+[dion@dionysos]~% ip addr change   
+broadcast  -- specify broadcast IP address
+dev        -- specify device
+label      -- specify tag for device
+local      -- specify local IP address
+peer       -- specify peer IP address (point-to-point)
+scope      -- specify scope for address
+
+---
+
+LAYER 1 - physical device
+
+ethtool -s enp0s25 speed 100 duplex full # -s = change
+ethtool -s enp0s25 speed 100 duplex full autoneg on
+[dion@dionysos]~% ethtool -S enp0s25 # -S = statistics
+
+-
+
+lot of other possibilies: support for hardware features like wake-on-lan, ring parameters
+
+-
+
+PNG mac adres, eerste 8 bits ... eerste bit over de lijn: 0 = unicast 1 = multicast, tweede bit: 0 is echt MAC adres, 1 software MAC adres
+
+ff-ff-ff-ff-ff-ff # broadcast adres
+
+---
+
+LAYER 1 - link status
+
+[dion@dionysos]~% ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT qlen 1000
+    link/ether 2c:44:fd:63:79:89 brd ff:ff:ff:ff:ff:ff
+3: wlo1: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN mode DEFAULT qlen 1000
+    link/ether 6c:88:14:92:57:60 brd ff:ff:ff:ff:ff:ff
+6: vmnet1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
+    link/ether 00:50:56:c0:00:01 brd ff:ff:ff:ff:ff:ff
+7: vmnet8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
+    link/ether 00:50:56:c0:00:08 brd ff:ff:ff:ff:ff:ff
+8: vboxnet0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
+    link/ether 0a:00:27:00:00:00 brd ff:ff:ff:ff:ff:ff
+
+---
+
+ip link show
+
+ip link show dev enp0s25
+
+2: enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT qlen 1000
+    link/ether 2c:44:fd:63:79:89 brd ff:ff:ff:ff:ff:ff
+
+-
+
+PredictableNetworkInterfaceNames
+http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/
+https://en.wikipedia.org/wiki/Consistent_Network_Device_Naming
+Reden: Problemen met multihoming devices
+Vroeger -> eerste in de kernel is eerste eht0, nu op basis van poorten etc.
+
+e
+
+
+

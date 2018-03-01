@@ -1,0 +1,293 @@
+108.2 Systeem Logs 
+
+    syslogd
+    syslog.conf
+    klogd
+    logger
+    anacron
+
+
+---
+
+syslogd
+
+Een Linux systeem logt informatie naar textbestanden.
+In LPIC-1 wordt syslogd behandeld, tegenwoordig gebruiken alle distributies rsyslog (rapid syslog).
+rsyslog is een fork van syslog en bedoelt als een zogenaamde 'drop-in' vervanging voor syslog.
+De demo's gaan voornamelijk uit van rsyslog ipv. syslog aangezien het toch grotendeels compatible is.
+
+http://en.wikipedia.org/wiki/Syslog
+http://en.wikipedia.org/wiki/Rsyslog
+
+DEMO
+
+[dion@localhost ~]$ ps -ef | grep syslog
+root       562     1  0 06:51 ?        00:00:00 /usr/sbin/rsyslogd -n
+dion      8756  8734  0 07:41 pts/0    00:00:00 grep --color=auto syslog
+
+De syslog configuratie wordt als volgt ingedeeld:
+
+facility.priority action
+
+facility: welk programma doet de logging?
+
+priority: welke prioriteit (en hoger) moet gelogd worden?
+
+action: wat moet er gedaan worden als er getriggerd is?
+
+Voorbeelden voor facility:
+auth
+cron
+daemon
+kern
+lpr
+mail
+user
+test
+Zie alle: http://en.wikipedia.org/wiki/Syslog#Facility_levels
+
+Severity:
+0 emerg (panic) - systeem down
+1 alert - ernstig probleem (bv. netwerk naar ISP eruit)
+2 crit - probleem (bv. backup netwerk naar ISP eruit)
+3 err (error) - probleem, maar niet urgent
+4 warning - melding (bv disk voller dan 80%)
+5 notice - andere gedraging dan normaal maar geen fout
+6 info - alleen ter info, ter meting of rapportage (bv. gebruiker logt succesvol in)
+7 debug - alle informatie voor het debuggen van een systeem (elke stap in een proces wordt dan gelogd)
+
+http://en.wikipedia.org/wiki/Syslog#Severity_levels
+
+Actions:
+file - send to file
+user - send to user
+pipe - pipe it into other user
+remote host - send to other host/server
+
+Een ster (*) betekent alle, dus bv *. alle facilities, of .* alle severities.
+---
+
+/etc/syslog.conf
+
+De configuratie van syslog staat in /etc/syslog.conf
+De configuratie van rsyslog staat in /etc/rsyslog.conf
+Deze configuratiefiles maken gebruik van de 'facility.severity action' zoals eerder beschreven.
+
+Betekend log alles van 'cron'
+cron.*                                                  /var/log/cron
+
+uucp,news.crit 
+
+Betekent: Log alles van facility 'uucp' EN 'news' van severity 'crit' en hoger
+Betekent log alles (*) van facility van severity 'info' en hoger behalve alles van facility 'mail', 'authpriv' en 'cron'
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+
+De streep '-' voor de auth betekent, don't flush the cache (blijft in memory, maar bij poweroutage info kwijt).
+
+Je kan ook cron.=crit is alleen de crit (niet de geen erboven).
+
+In 'action' @10.0.0.52 betekent stuur naar systeem met IP adres 10.0.0.52
+
+Na het aanpassen van de /etc/(r)systlog even de (r)syslogserver herstarten:
+# service syslog restart
+# systemctl restart rsyslog
+
+
+cat:
+/var/log/messages
+/var/log/secure
+-/var/log/maillog
+/var/log/cron
+/var/log/spooler
+/var/log/boot.log
+
+* in action krijgt ELKE user een melding
+
+---
+
+logger
+
+---
+
+met logger kan je meteen een logbericht sturen als gebruiker vanuit de CLI.
+Geef de '-p' om de prioriteit mee te geven (anders wordt er niet gelogd).
+Je kan daarna in de /etc/syslog.conf kijken of er een match is, en waar deze gelogd worden.
+
+# logger -p cron.crit 'Dit is het bericht'
+
+---
+
+demo!!!
+
+sudo su
+cat /var/log/secure
+
+vi /etc/rsyslog.conf en voeg toe
+authpriv.=info						/var/log/test
+
+su dion
+sudo su
+
+cat /var/log/test # werkt niet
+
+systemctl restart rsyslog
+
+cat /var/log/test # werkt wel
+
+
+
+---
+
+klogd
+
+Kernel Log Daemon, gebruikt dezelfde configfile as syslog.
+
+In rsyslog is dit geen aparte daemon meer, maar neemt rsyslogd dit voor zijn rekening.
+
+Je kan dit aanpassen in de /etc/rsyslog (of /etc/syslog) door de facility 'kern' te zetten
+
+---
+
+
+Vroeger:
+syslog
+syslogd (daemon)
+klogd (daemon) van kernel messages
+/etc/syslog.conf
+
+Nu:
+rsyslog
+rsyslogd (daemon)
+/etc/rsyslog.conf
+
+
+
+---
+
+syslog
+ - configuration
+ - send to remote server
+ - act as central server
+ - facilities, priorities, acitons
+
+klogd (kernel logger, different proces)
+ - same config file
+
+
+facilities   priorities     (actions)
+----------   ----------     -------
+auth         emerge, panic  file
+cron         alert          user
+daemon       crit           pipe
+ftp          err, error     remote host
+*kern        warning, warn  
+mail         notice
+user         info
+             debug
+
+/etc/syslog.conf!!!
+
+in format:
+facility.priority action
+
+Facilities
+default facility is 'user' but if you are ftp daemon, you will you 'ftp'
+It about the process/programmer to choose the correct facility.
+auth = authentication
+
+Priorities:
+emerge,panic is hightest!!!
+alert
+crit - hard drive fail etc.
+err
+warning - warn
+notice
+info # info is nothong wrong just info (like a user requested a file)
+debug (you are debugging a program, so a lot of information)
+
+like you would do 'auth.info' is like request a logging if a user logs in.
+
+Actions:
+file: write to file (specify file name)
+user: mail the user (specify the user name)
+pipe: pipe it and send it to another command
+host: send it to another host
+
+---
+
+verschil tussen syslog en rsyslog (rsyslog is nieuw, op ubuntu 10.04 en wellicht centos6)
+
+
+cat /etc/syslog.conf
+
+bv in de syslog file:
+#kern.*   /dev/console
+- betekent alle priorities van de kernel loggen naar /dev/console (maar deze staat uit)
+
+*.info;mail.none;authpriv.none;cron.none
+betekend, van alles de info loggen, maar niet 'mail', niet van 'authpriv', niet van 'cron'.
+
+
+authpriv.* /var/log/secure # is alle prios van authpriv loggen naar /var/log/secure
+
+mail.* ./var/log/maillog # elke prioritiy van mail (. betekent dat het in memory gecached kan worden)
+
+*.emerg * # elke emergency naar ELKE user krijgt een melding
+
+uucp,news.crit # is alles van critical en hoger wordt gelogd!!!
+uucp,news=crit # is ALLEEN critical files
+
+als je wilt loggen naar een andere server:
+
+# opslaan van user faciliyt naar andere server
+user.* @192.168.1.240 (dan moet je deze instellen)
+daarna moet je wel de syslog server herstarten:
+# service syslog restart
+(stopt en start zowel 'kerner logger' alsmede 'system logger'
+
+nu gaan we 192.168.120  opzetten
+vi /etc/sysconfig/syslog
+daarin staat:="-m 0" # daarvan maken SYSLOGD_OPTIONS="-m 0 -r" zodat ook remote logging accepteerd
+
+# logger -p user.cirit Danger we are in trouble # deze gaat nar user.crit
+deze gaat remote naar /var/log/ zit in 'tail syslog'
+
+---
+
+To accept remote logs:
+
+add -r to syslogd startup!!!
+
+logger -p facility.priority message # werkt
+
+
+
+
+---
+ /etc/rsyslog.d/
+
+(optioneel) bovenstaande folder kunnen applicaties hun logging plaatsen zonder dat ze hiervoor de /etc/syslog.conf hoeven aan te passen. Handig bij het verwijderen van pakketten (wat halen ze dan weg!?!?)
+
+
+---
+
+syslog
+ksyslog 
+journald (since Fedora 20)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

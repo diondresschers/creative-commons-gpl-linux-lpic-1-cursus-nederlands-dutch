@@ -1,0 +1,75 @@
+109.3 Basic network troubleshooting
+
+    Gewicht: 4
+    Beschrijving: Candidates should be able to troubleshoot networking issues on client hosts.
+
+Onderwerpen:
+
+    Manually and automatically configure network interfaces and routing tables to include adding, starting, stopping, restarting, deleting or reconfiguring network interfaces.
+    Change, view, or configure the routing table and correct an improperly set default route manually.
+    Debug problems associated with the network configuration.
+
+Begrippen en commando's:
+
+    ifconfig
+    ifup
+    ifdown
+    route
+    host
+    hostname
+    dig
+    netstat
+    ping
+    traceroute
+
+---
+
+ifconfig
+
+sudo /etc/init.d/network # stop start restart status <ENTER>
+
+of
+
+sudo /etc/init.d/networking # stop status 
+
+---
+
+sudo ifconfig eth0 down
+sudo ifconfig eth0 up
+
+---
+
+eth toegevoegd
+ifconfig -a # all (also up or down), when you just added a new card
+sudo ifconfig eth1 192.168.4.11 netmask 255.255.255.0
+ifconfig
+
+sudo lsmod | grep -i net
+sudo rmmod vboxnetadp # nu met ifconfig -a dan is er nixs
+
+---
+
+ping 
+
+netstat (alle sockets)
+netstat -n # give numbers
+netstat -ntu # now only Tcp and Udp # empty
+netstat -tuna # now only Tcp and Udp # -> all (works!!)
+
+netstat -r # shows the routing table, same as 'route'
+netstat -r # shows the routing table give NUMBERS not 'GW' etc.
+
+route del default
+sudo route add default gw 192.168.1.1
+
+tip: gebruik ip adres eerst om te testen, als dat werkt doe dhcp
+
+route -n
+
+
+
+
+
+
+
+

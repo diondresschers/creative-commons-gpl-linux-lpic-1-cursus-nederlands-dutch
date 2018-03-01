@@ -1,0 +1,178 @@
+
+    Use various mkfs commands to set up partitions and create various filesystems such as:
+    ext2/ext3/ext4
+    xfs
+    reiserfs v3
+    vfat
+
+Terms and Utilities
+
+    fdisk
+    mkfs
+    mkswap
+
+
+---
+
+fdisk-intro-00
+
+De 'fdisk' tool is naast een commando een menu gestructuteerd programma om partities te maken en wijzigen.
+Aleen 'fdisk -l' laat een lijst met partities zien (vergeet de 'root' rechten niet).
+Wees voorzichtig, want voor je het weet vernachel je je harde schijf partities (hint, gebruik een VM of USB stick).
+
+fdisk-intro-01
+
+Via de &lt;M&lt; van <u>m</u>anual kan je de opties zien die je kan gebruiken.
+Je hebt verschillende opties binnen fdisk, in de volgende slide kan je be beschikbare opties zien.
+
+fdisk-intro-02
+
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+
+fdisk-code-00
+
+fdisk -l
+
+fdisk-code-01
+
+fdisk <i>/dev/sda</i>
+
+fdisk-demo-00
+
+fdisk 
+sudo fdisk -l
+#usb wordt toegevoegd
+sudo fdisk -l
+sudo fdisk /dev/sdb
+M
+P
+N EXT2 P
+N EXT3 P
+N EXT3 P
+N SWAP P
+N FAT P
+N FATEXT
+DEL EXT3
+W
+
+---
+
+mkswap-intro-00
+
+Met 'mkswap' maak je van een swap partitie een swap 'filesystem'
+Daarna moet je de swap nog actief maken met het 'swapon' commando.
+
+mkswap-code-00
+
+mkswap /dev/sdb5
+
+mkswap-demo-00
+
+swapon -s
+s fdisk -l
+swapon -s
+sudo mkswap /dev/sdb5
+
+sudo swapon /dev/sdb5
+swapon -s
+
+---
+
+mkfs-intro-00
+
+Je zet een file system op een partitie met 'mkfs' van <u>m</u>a<u>k</u><u>f</u>ile<u>s</u>ystem.
+Je geeft het type van filesyteem type met '-t' daarbij aan en de partitie.
+
+mkfs-intro-01
+
+De volgende filesystemen zijn van belang:
+ext2 het Linux filesysteem
+ext3 het Linux filesysteem met journalling
+vfat voor Windows FAT
+<a href="http://en.wikipedia.org/wiki/ReiserFS">reiserfs</a>De ontwikkeling zo goed als stil.
+<a href="http://en.wikipedia.org/wiki/XFS">xfs</a> e<u>x</u>tended <u>f</u>ile<u>s</u>ystem
+
+mkfs-code-00
+
+mkfs -t ext4 <i>/dev/sdb3</i>
+
+mkfs-demo-00
+
+sudo fdisk -l
+
+sudo file -s /dev/sdb1
+sudo mkfs -t ext3 /dev/sdb1
+sudo file -s /dev/sdb1
+
+mkfs-demo-01
+
+sudo fdisk -l 
+sudo fdisk /dev/sdb
+2 -t FAT
+w
+sudo fdisk -l 
+sudo file -s /dev/sdb2
+sudo mkfs -t vfat /dev/sdb2
+sudo file -s /dev/sdb2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

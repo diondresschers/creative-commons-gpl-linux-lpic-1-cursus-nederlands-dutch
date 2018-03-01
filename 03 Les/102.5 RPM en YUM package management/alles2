@@ -1,0 +1,175 @@
+-
+
+yum-intro-00
+
+YUM (<u>Y</u>ellowdog <u>U</u>pdate <u>M</u>anager nu <u>Y</u>UM <u>U</u>pdate <u>M</u>anager) is de software management tool van Red Hat gebaseerde distributies.
+Onder water installeert YUM eigenlijk gewoon RPM (<u>R</u>edHat <u>P</u>ackage <u>M</u>anager) packages.
+YUM installeert wel dependancies mee, waar RPM alleen maar waarschuwt.
+
+yum-intro-01
+
+Zoeken naar mogelijke programma's doe je met 'yum seach'.
+Met 'yum install' kan je programma's installeren.
+Verwijderen doe je  met 'yum remove'.
+De optie '-y' geeft op elke vraag tijdens de installatie het antwoord '<u>y</u>es'
+
+yum-code-00
+
+yum search <programmanaam>
+
+yum-code-01
+
+yum install <programmanaam>
+
+yum-code-02
+
+yum remove <programmanaam>
+
+yum-demo-00.html
+(KLAAR)
+
+yum-demo-01.html
+
+sudo rpm -qa
+sudo rpm -qa | grep samba
+yum search samba
+yum install samba
+sudo yum install samba
+sudo rpm -qa | grep samba
+
+yum-demo-02.html
+
+yum remove samba
+sudo yum remove samba
+
+---
+
+yum_conf-intro-00
+
+# /etc/yum.repos.d/
+
+De configuatie van YUM staat in het bestand '/etc/yum.conf'.
+Hierin kan je bv. de GPG security aan of uit zetten.
+In deze file wordt weer verwezen waar de repositories staan.
+Ook wordt er verwezen naar de YUM logfile. 
+
+yum_conf-code-00
+
+cat /etc/yum.conf
+
+yum_conf-demo-00
+
+cat /etc/yum.conf
+
+---
+
+yum_repos_d-intro-00
+
+/etc/yum.repos.d/
+
+Repositories zijn installatiebronnen op internet.
+YUM repositoriy files eindigen op '.repo'.
+Je kan meerdere repositories gebruiken.
+Je kan de repo files ook plaatsen in de '/etc/yum.repos.d' directory
+
+yum_repos_d-code-00
+
+ls /etc/yum.repos.d/
+
+yum_repos_d-demo-00
+
+---
+
+rpm-intro-00
+
+RPM is de <u>Red</u>Hat <u>P</u>ackage <u>M</u>anager
+Je kan individele packages installeren met de optie '-i' RPM.
+Je kan zoeken naar packages met '-q' (<u>q</u>uery) en '-a' (<u>a</u>ll).
+Je kan packages weer verwijderen met '-e' (<u>e</u>rase)
+RPM zal standaard geen packages verwijderen die nog een depency hebben.
+Wil je dit echter wel gebruikt dan de optie 'nodeps', met het risico programma's te breken.
+
+rpm-code-00
+
+rpm -i <i>programmanaam</i>.rpm
+
+rpm-code-01
+
+rpm -qa
+
+rpm-code-02
+
+rpm -e <i>programmanaam</i>.rpm
+
+rpm-demo-00
+
+rpm-demo-01
+
+---
+
+yumdownloader-intro-00
+
+Met 'yumdownloader' kan je individuele 'rpm' files downloaden
+Het zit niet standaard bij YUM, maar je het is onderdeel van 'yum-utils'
+Je hebt dus alleen de 'rpm'-file, er is echter geen programma geinstalleerd.
+
+yumdownloader-code-00
+
+yumdownloader <i>packagenaam</i>
+
+yumdownloader-demo-00
+
+yumdownloader-demo-01
+
+---
+
+rpm2cpio-intro-00
+
+Je kan rpm zijn packages, dus je kan ze ook uitpakken naar 'cpio'
+Dit doe je met het commando 'rpm2cpio'
+'cpio' valt buiten het examen, maar hiermee kan je er weer individele files van maken
+
+rpm2cpio-code-00
+
+rpm2cpio <i>package.rpm</i>
+
+rpm2cpio-code-01
+
+rpm2cpio <i>package.rpm</i> > <i>package</i>.cpio
+
+rpm2cpio-demo-00
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

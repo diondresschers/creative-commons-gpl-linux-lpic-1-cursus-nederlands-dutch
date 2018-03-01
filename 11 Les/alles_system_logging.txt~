@@ -1,0 +1,124 @@
+108.2 Systeem Logs 
+
+
+    syslog.conf
+    syslogd
+    klogd
+    logger
+
+---
+
+syslog
+ - configuration
+ - send to remote server
+ - act as central server
+ - facilities, priorities, acitons
+
+klogd (kernel logger, different proces)
+ - same config file
+
+
+facilities   priorities     (actions)
+----------   ----------     -------
+auth         emerge, panic  file
+cron         alert          user
+daemon       crit           pipe
+ftp          err, error     remote host
+*kern        warning, warn  
+mail         notice
+user         info
+             debug
+
+/etc/syslog.conf!!!
+
+in format:
+facility.priority action
+
+Facilities
+default facility is 'user' but if you are ftp daemon, you will you 'ftp'
+It about the process/programmer to choose the correct facility.
+auth = authentication
+
+Priorities:
+emerge,panic is hightest!!!
+alert
+crit - hard drive fail etc.
+err
+warning - warn
+notice
+info # info is nothong wrong just info (like a user requested a file)
+debug (you are debugging a program, so a lot of information)
+
+like you would do 'auth.info' is like request a logging if a user logs in.
+
+Actions:
+file: write to file (specify file name)
+user: mail the user (specify the user name)
+pipe: pipe it and send it to another command
+host: send it to another host
+
+---
+
+verschil tussen syslog en rsyslog (rsyslog is nieuw, op ubuntu 10.04 en wellicht centos6)
+
+
+cat /etc/syslog.conf
+
+bv in de syslog file:
+#kern.*   /dev/console
+- betekent alle priorities van de kernel loggen naar /dev/console (maar deze staat uit)
+
+*.info;mail.none;authpriv.none;cron.none
+betekend, van alles de info loggen, maar niet 'mail', niet van 'authpriv', niet van 'cron'.
+
+
+authpriv.* /var/log/secure # is alle prios van authpriv loggen naar /var/log/secure
+
+mail.* ./var/log/maillog # elke prioritiy van mail (. betekent dat het in memory gecached kan worden)
+
+*.emerg * # elke emergency naar ELKE user krijgt een melding
+
+uucp,news.crit # is alles van critical en hoger wordt gelogd!!!
+uucp,news=crit # is ALLEEN critical files
+
+als je wilt loggen naar een andere server:
+
+# opslaan van user faciliyt naar andere server
+user.* @192.168.1.240 (dan moet je deze instellen)
+daarna moet je wel de syslog server herstarten:
+# service syslog restart
+(stopt en start zowel 'kerner logger' alsmede 'system logger'
+
+nu gaan we 192.168.120  opzetten
+vi /etc/sysconfig/syslog
+daarin staat:="-m 0" # daarvan maken SYSLOGD_OPTIONS="-m 0 -r" zodat ook remote logging accepteerd
+
+# logger -p user.cirit Danger we are in trouble # deze gaat nar user.crit
+deze gaat remote naar /var/log/ zit in 'tail syslog'
+
+---
+
+To accept remote logs:
+
+add -r to syslogd startup!!!
+
+logger -p facility.priority message # werkt
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+

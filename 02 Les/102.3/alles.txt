@@ -1,0 +1,113 @@
+102.4 
+
+
+    ldd
+    ldconfig
+    /etc/ld.so.conf
+    LD_LIBRARY_PATH
+
+
+---
+
+Wat is een (static) library
+
+- Een stukje code dat gebruikt wordt door een programma
+- De static library is deel van dat programma
+
+---
+
+Wat is een shared library
+
+Een shared library is een stukje code dat door verschillende programma's gebruikt kan worden.
+Met libraries kunnen meerdere programma's gebruik maken van een gedeelde library die in het geheugen geladen is.
+
+---
+
+ldd
+
+- ldd laat van een programma de gedeelde (shared) libraries zien
+
+-
+
+ldd /bin/pwd
+
+-
+
+ldd /bin/pwd
+
+CODE
+dion@laptop:~$ ldd /bin/pwd
+	linux-vdso.so.1 =>  (0x00007fff395c5000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fef81fd5000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fef823bc000)
+
+---
+
+/etc/ld.so.cache
+
+dit is de cache van alle shared libraries, die programma's kunnen gebruiken
+
+---
+
+/etc/ld.so.conf
+
+deze bepaald welke programma's in de cache komen
+in praktijk verwijst deze conf file naar de /etc/ls.so.conf.d directory
+
+CODE
+dion@laptop:~$ cat /etc/ld.so.conf
+include /etc/ld.so.conf.d/*.conf
+
+---
+
+/etc/ld.so.conf.d
+
+hierin staan gegroepeerderde files
+deze files kunnen op hun beurt weer verwijzeren naar shared libraries (so files)
+deze files kunnen ook weer verwijzen naar directories met daarin shared libraries
+
+CODE 
+
+dion@laptop:~$ ls /etc/ld.so.conf.d
+fakeroot-x86_64-linux-gnu.conf  i686-linux-gnu.conf  x86_64-linux-gnu.conf      x86_64-linux-gnu_GL.conf
+i386-linux-gnu_GL.conf          libc.conf            x86_64-linux-gnu_EGL.conf
+
+---
+
+ldconfig
+
+deze (her)laadt de locaties van de shared libraries in de /etc/ld.so.cache
+programma's weten hun shared libraries hierdoor snel(ler) te vinden
+
+CODE
+ldconfig
+---
+
+LD_LIBRARY_PATH
+
+- voeg locaties toe voor shared libraries
+- deze worden eerst geladen en hebben prioriteit boven latere shared libraries
+- handig om code/libraries te testen, echter niet adviseerbaar http://xahlee.info/UnixResource_dir/_/ldpath.html
+
+DEMO
+102.3_ld_library_path_00.html
+---
+
+https://www.youtube.com/watch?v=CqUuNCZMGJU
+
+
+
+
+
+
+
+
+
+---
+ld.so.conf
+
+dion@laptop:/etc$ cat /etc/ld.so.conf
+include /etc/ld.so.conf.d/*.conf
+
+
+

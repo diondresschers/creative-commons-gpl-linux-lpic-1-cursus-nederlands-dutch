@@ -1,0 +1,227 @@
+107.1 Manage user and group accounts and related system files
+
+    Gewicht: 5
+    Beschrijving: Candidates should be able to add, remove, suspend and change user accounts.
+
+Onderwerpen:
+
+    Add, modify and remove users and groups.
+    Manage user/group info in password/group databases.
+    Create and manage special purpose and limited accounts.
+
+Begrippen en commando's:
+
+    /etc/passwd
+    /etc/shadow
+    /etc/group
+    /etc/skel
+    chage
+    groupadd
+    groupdel
+    groupmod
+    passwd
+    useradd
+    userdel
+    usermod
+
+-------------------------
+
+    /etc/passwd
+    /etc/shadow
+    /etc/skel
+
+    useradd
+    passwd
+
+    usermod
+    chage
+    userdel
+
+    /etc/group
+    groupadd
+    groupmod
+    groupdel
+
+---
+
+/etc/passwd
+username:password:uid:gid:info:homedir:shell
+
+staan de gebruikersnamen
+vroeger stond hier de passwoorden (voor de shadow files)
+vroeger encrypted (iedereen heeft read rechten hiertoe)
+bruteforce attack op encrypt password
+
+dion@dionysos:~$ ls -l /etc/passwd
+-rw-r--r--. 1 root root 1958 Oct 27 17:21 /etc/passwd
+
+cat /etc/passwd
+
+lage nummers zijn systeem accounts
+hoge nummers (vanaf 500 of 1000 zijn gebrukers accounts)
+x betekent, pwd opgeslagen in shadow file
+comment = volledige gebruikers naam
+
+/bin/false of /bin/nologin = geen shell
+
+
+
+---
+
+/etc/shadow
+username:password:timesincepwdchange:minpasslifetime:maxpasslifetime:warningdays:inactivedays:accountdisable
+accountdisable = expiredate
+alleen root toegang
+timesincepwchange: dagen since 1 jan 1970
+
+dion@dionysos:~$ ls -l /etc/shadow
+----------. 1 root root 1258 Oct 27 17:21 /etc/shadow
+
+hier is een * als pwd betekent: disabled
+
+minpassage = 0 (je kan altijd je password wijzingen)
+
+maxpasslifetime = hoeveel dagen is het account actief
+
+
+---
+
+/etc/group
+groupname:password:gid:members
+
+meeste groepen hebben geen password (kan wel een gebruiker tijdelijk pw geven)
+
+ls -l /etc/group
+x als pwd is check shadowfile
+groupusername is vaak hetzelfde als userid
+dion:x:1000: #je bent automatisch lid van deze group (CSV)
+
+g
+---
+
+alleen root
+/etc/gshadow !?!?
+groupname:password:gid:members
+
+ls -l /etc/group
+cat /etc/group
+! = no passwd! niemand kan er geen gebruik van maken. :: waar is het password
+# niet veel group paswoorden
+
+
+    /etc/skel
+
+---
+
+useradd 
+-d home_dir
+-m maakt home_dir
+-s definieer shell
+-g initial group
+-G additional groups by name
+-u UID # default +1
+-c coment (put in quotes)
+
+-d + -m (zekerheidje inbouwen)
+
+DEMO
+
+dion@dionysos:~$ sudo useradd -d /home/snoopy -m -G ftp,ntp snoopy # laatste is de username
+cat /etc/password | grep snoopy
+! als pwd is geen paswoord
+
+cat /etc/group | grep snoopy
+
+---
+
+
+usermod (is als useradd)
+
+-L lock
+-U unlock
+-aG add to group # er is ook G, maar dan moet je de groupen allemaal weer noemen
+
+DEMO
+
+ls /home
+usermod -s /bin/sh -c "Snoopy Dog Dog" snoopy
+cat /etc/passwd
+
+# userdel haalt gebruiker ook uit /etc/group
+
+---
+
+sudo passwd snooy
+cat /etc/shadow
+
+/home/dion$ passwd # nu verander je je eigen passwd
+
+su snoopy
+su - snoopy
+
+sudo usermod -L snoopy (lock)
+
+su snoopy
+
+usermod -U snoopy
+
+
+---
+
+groupadd
+-g # specified GID
+
+sudo groupadd -g 10000 pumkinpie
+vi /etc/group
+
+sudo usermod -aG pumpkinpie snoopy
+vi /etc/group
+
+---
+
+sudo groupmod -g 2000000 pumpkinpie # gid
+
+sudo groupdie pumkinpie
+vi /etc/group
+
+---
+
+password ages
+
+chage # change age
+-l user (check user aging)
+-E YYYY-MM-DD (set expiration date)
+
+Special Accounts:
+- set shell to /bin/nologin of /bin/false
+- set expiring password
+- for example apache account use /bin/false
+
+DEMO
+
+sudo chage -l dion # legt /etc/passwd file uit
+sudo chage -l snoopy
+sudo chage -E 2011-07-19 snoopy # expiredate
+
+---
+
+SKEL!!!
+
+dion@dionysos:/etc/skel$ ls -la
+
+dion@dionysos:/etc/skel$ ls -la
+
+---
+
+
+
+
+
+userdel
+-r also delete homedir (recursive)
+
+---
+
+
+
+

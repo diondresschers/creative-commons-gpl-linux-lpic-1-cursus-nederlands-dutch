@@ -1,0 +1,271 @@
+104.2 Maintain the integrity of filesystems
+
+    du
+    df
+    fsck
+    e2fsck
+    mke2fs
+    debugfs
+    dumpe2fs
+    tune2fs
+    xfs tools
+
+104.3 Control Mounting and Unmounting of Filesystems
+
+    /etc/fstab
+    /media
+    mount
+    umount
+
+103.3 Perform basic file management 
+
+    cp
+    find
+    mkdir
+    mv
+    ls
+    rm
+    rmdir
+    touch
+    tar
+    cpio
+    dd
+    file
+    gzip
+    gunzip
+    bzip2
+    file globbing
+
+---
+
+104.2 Maintain the integrity of filesystems
+
+    du
+    df
+    fsck
+    e2fsck
+    mke2fs
+    debugfs
+    dumpe2fs
+    tune2fs
+    xfs tools
+
+---
+
+df
+
+df-intro-00
+
+df (<u>d</u>isk <u>f</u>ree) laat je zien hoeveel ruimte er nog is op je gemounte opslag ruimtes
+-h (<u>h</u>uman readible) zorgt dat het beter leesbaar is (in Mega en Giga bytes).
+Je kan ook mount aangeven na het commando als je alleen deze wilt zien (dus bv 'df boot').
+
+df-intro-01
+
+Optie '-i' laat het aantal inodes zien dat er in gebruik is.
+Elke file heeft een unieke <a href="http://en.wikipedia.org/wiki/Inode" target="_blank">inode</a>.
+Via die inode weet Linux die file op de harde schijf terug te vinden.
+Elke inodes kost ook wat ruimte en je kan op een gegeven moment door al je inodes heen zijn.
+Je kan het aantal inodes meestal verhogen.
+
+df-code-00
+
+df
+
+df-demo-00.html
+
+df-demo-01.html
+
+---
+
+du-intro-00
+
+du <u>d</u>isk <u>u</u>sage geeft disk usage. 
+Het commando laat standaard het aantal bytes zien per directory.
+Alleen het commando laat het zien van de huidige directory.
+'-h' maakt het weer '<u>h</u>uman readable'
+'-d' (<u>d</u>epth) laat zien hoe diep er gezocht kan worden.
+
+du-code-00
+
+du
+
+du-code-01
+
+du -d 1 /
+
+du-demo-00.html
+
+du-demo-01.html
+
+---
+
+fsck-intro-00
+
+fsck (<u>f</u>ile <u>s</u>ystem <u>c</u>hec<u>k</u>) controleert het filesysteem
+Met de optie '-t' kan je het type meegeven (bv. ext3)
+Je kan ook bv. het commando 'fsck.ext3' draaien.
+Je krijgt een melding als het filesysteem nog gemount is (en het wordt afgeraden om deze tool te draaien).
+Draai deze tool ook als 'root'.
+
+
+fsck-code-00
+
+fsck
+
+fsck-code-01
+
+fsck /<i>dev</i>/<i>sdb1</i>
+
+fsck-demo-00.html
+
+---
+
+debugfs-intro-00
+
+'debugfs' is een tool om het filesysteem te debuggen.
+Het geeft een interactief menu.
+Gebruik de optie '-w' <u>w</u>rite om niet alleen te debuggen maar ook om te wijzigen.
+Uiteraard 'sudo' rechten.
+'help' geeft de hulp informatie.
+
+debugfs-code-00
+
+debugfs /<i>dev</i>/<i>sdb1</i>
+
+debugfs-code-01
+
+debugfs -w /<i>dev</i>/<i>sdb1</i>
+
+debugfs-demo-00
+
+---
+
+dumpe2fs-intro-00
+
+'dumpe2fs' <u>dump</u>t info over het <u>E</u>XT(<u>2</u>) filesysteem
+Het geeft onder andere info over de mount, het UUD, de block size en het aantal inodes.
+Vergeet 'sudo' weer niet
+Het filesysteem hoeft niet geunmount te worden.
+
+dumpe2fs-code-00
+
+dumpe2fs /<i>dev</i>/<i>sdb1</i>
+
+dumpe2fs-demo-00
+
+dumpe2fs /dev/sda1
+
+dumpe2fs-demo-01
+
+---
+
+tune2fs-intro-00
+
+tune2fs <u>tun</u>ned een <u>E</u>XT(<u>2</u>) <u>f</u>ile<u>s</u>ysteem.
+Je kan 'features' toevoegen met de '-O' optie.
+Je kan 'features' verwijderen met de -O en dan het '^'-teken voor de feature.
+
+tune2fs-code-00
+
+tune2fs -O <i>has_journal</i> /<i>dev</i>/<i>sdb1</i>
+
+tune2fs-demo-00
+
+---
+
+mke2fs-intro-00
+ 
+'mke2fs' is in veel gevallen hetzelfde programma als 'mkfs'
+'mke2fs' (<u>m</u>a<u>k</u>e <u>E</u>XT(<u>2</u>) <u>f</u>ile<u>s</u>ystem) maakt een filesysteem op een partitie.
+Als er een verschil is tussen 'mkfs' en 'mke2fs' (als het geen symbolic link is) dat 'mke2fs' alleen geschikt is voor 'EXT' filesystemen.
+
+mke2fs-code-00
+
+mke2fs -t ext<i>4</i> /<i>dev</i>/<i>sdb1</i>
+
+mke2fs-demo-00
+mke2fs-demo-01
+
+---
+
+e2fsck-intro-00
+
+Zoals 'mke2fs' het broertje is van 'mkfs' is 'e2fsck' het broertje van 'fsck'
+Je kan er alleen EXT filesystemen mee controleren
+
+e2fsck-code-00
+
+e2fsck /<i>dev</i>/<i>sdb1</i>
+
+e2fsck-demo-00
+
+---
+
+xfs_check-intro-00
+
+xfs_check <u>check</u>ed het <u>XFS</u> file systeem.
+
+xfs_check-code-00
+
+xfs_check /<i>dev</i>/<i>sdb1</i>
+
+---
+
+xfs_repair-intro-00
+
+xfs_repair <u>repair</u> van het <u>XFS</u> file systeem.
+
+xfs_repair-code-00
+
+xfs_repair /<i>dev</i>/<i>sdb1</i>
+
+---
+
+xfs_info-intro-00
+
+xfs_info geeft <u>info</u> over het <u>XFS</u> file systeem.
+
+xfs_info-code-00
+
+xfs_info /<i>dev</i>/<i>sdb1</i>
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

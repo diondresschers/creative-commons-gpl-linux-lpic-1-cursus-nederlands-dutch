@@ -1,0 +1,257 @@
+107.2 Het automatiseren van systeem administratie door het maken van jobs.
+
+    /etc/cron
+
+    /etc/crontab
+    /etc/cron.allow
+    /etc/cron.deny
+
+    /var/spool/cron/*
+    crontab
+
+
+---
+
+/etc/crontab is a file and a command
+
+/etc/cron.hourly
+/etc/cron.daily
+/etc/cron.weekly
+/etc/cron.monthtly
+
+Cron schedululing format
+
+6 tabs
+
+minute hour day month day_of_week command (username) command
+
+Zie http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/ 
+
+* = elke
+
+05  *  *  *  * Elke 5 over (van elk uur, elke dag, elke maand, elke dag van de week)
+00 15  *  *  * Elke dag om 15:00
+15 05  *  *  0 Elke zondagnacht om 05:15
+55 23  5  6  * 5 Juni om 23:55
+
+Daarnaast 
+
+05-10 (5, 6, 7, 8, 9, 10)
+*/2 (is letterlijk 1/2)
+10,30,55 (10, 30, 55)
+sun-tue (3 letters)
+jan-jul (3 letters
+
+---
+
+/etc/crontab
+
+vi /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+(voeg hier toe:)
+  *  *  *  *  * root       echo "test" >> /home/dion/cron.log
+
+---
+
+/etc/cron.d
+
+dion@dionysos:/var/spool$ ls /etc/cron.d
+0hourly  raid-check  sysstat  unbound-anchor
+
+cat /etc/cron.d/0hourly  raid-check  sysstat  unbound-anchor
+cat /etc/cron.d/
+cat /etc/cron.d/
+cat /etc/cron.d/
+
+/etc/cron.d # heeft ook USER net als /etc/crontab, de enige twee plaatsen!!!
+# de andere zijn user cron files... (deze hebben geen USER)
+# we willen niet elke programma toegang geven tot /etc/crontab (bv php kan zijn eigen cron jobs in /etc/cron.d zetten)
+
+---
+
+Er zitten ook bestanden in /etc/cron.hourly /etc/cron.daily etc
+Dit zijn geen cronfiles, maar directe scripts die dayly moeten draaien (hint, maak deze executable)
+
+Niet in CentOS, maar in /etc/crontab staat:
+17 * * * * root cd / && run-parts --report /etc/cron.hourly (oftwel draai de hourly cron om 17:00)
+
+---
+
+dion@host~$ crontab -e # hier zit geen user
+
+cat /home/spowers/loveletters.txt | mail -s "subject" dion@dresschers.net
+# when you save it, it's stored in /var/spool/cron/crontabs
+
+root@dionysos:~# cat /var/spool/cron/dion
+# mm hh DD MM dw cmd
+  *  *  *  *  *  touch /home/dion/personal_cronjob_works
+
+crontab --info
+
+---
+
+date +%Y-%m-%d\ %k:%M
+
+date +%Y-%m-%d\ %k:%M:%S >> /home/dion/df.log && df -h >> /home/dion/df.log
+
+----
+
+EXPLANATION
+
+System Jobs:
+/etc/crontab   # have 'user' field
+/etc/crond.d/* # have 'user' field
+/etc/cron.d{daily,hourly,weekly,monthly} /scripts, no  scheduled info
+
+User Jobs:
+/var/spool/cron/<username> # no username needed (in ubuntu /var/spool/cron/crontabs/<username>)
+created with 'crontab -e'
+
+---
+
+als bash commando mag je dus natuurlijk ook verwijzen naar een shell script :)
+
+anacron
+
+# anacron is looking for a cron didn't run, and it will run it
+
+# anacron is bedoelt voor systemen die niet 24*7 draaien.
+
+De '0' in 0hourly, is bedoelt om als eerste te draaien.
+
+---
+
+anascron - draait bovenop 'cron'
+timestamps are stored in /var/spool/anacron # 
+
+# de timestamps worden hier opgeslagen
+
+---
+
+The AT scheduler vs CRON, AT is bedoelt voor 1x uit te voeren.
+
+at time # ctrl+D to exit
+
+atq # show your actions
+
+# atrm -> remove
+
+---
+
+#!/bin/bash          
+tar -czf /var/my-backup.tgz /home/me/
+
+---
+
+at
+
+# at 17:00 # no date is date
+at> /home/spowers/feedcat.sh
+at> <ctr>+D
+
+atq # shows at queue
+
+atrm #jobid
+
+at now + 1 minute 
+a> reboot #
+a> CTRL+D
+
+atrm 3
+
+at now + 1 week # also usable
+atrm 4
+
+at 15:00 07/19/2011
+
+---
+
+Access Control!!!
+
+/etc/cron.allow
+/etc/cron.deny
+
+---
+
+cron.allow : If this file exists, then the user must be listed in it, in order to use crontab
+
+cron.deny : If cron.allow does not exist but cron.deny does exist then the user must not be listed in the cron.deny file
+
+If neither of the file exists, then only the root user can use the command. In most Linux systems only cron.deny exists and it is empty.
+
+# on my system .deny did exist, .allow didnt
+
+# allow often exists, and if it does it takes precedence!
+
+simpel username toeveogen aan de file per regel!
+
+demo:
+
+crontab -e
+cron.deny 'dion' toeveoegen
+cront.allow 'dion' toevoegen
+negeren van root (deze kan je toevoegen, maar wordt toch genegeerd)
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        1   
+
+
+
+
+
+
+

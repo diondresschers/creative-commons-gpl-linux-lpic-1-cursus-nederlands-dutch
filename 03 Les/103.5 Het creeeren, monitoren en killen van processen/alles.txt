@@ -1,0 +1,346 @@
+---
+&-i
+
+Door een '&' achter het commando te zetten, zet je de job naar de achtergrond.
+Een job (of taak) kan een of meerdere processen starten.
+Draait de job in de voorgrond dan zie je deze dominant (of interactief) in de terminal.
+Je kan een job in de achtergrond laten draaien zodat niet dominant aanwezig is.
+
+&-c
+
+jobnaam &
+
+&-d
+
+sleep 3
+sleep 600
+sleep 600&
+
+---
+
+jobs-i
+
+Met het commando jobs laat je alle jobs (of taken) zien die op dat moment actief zijn
+Het commando 'jobs' geeft de huidge taken weer, deze is echter afhankelijk van de terminal waarin deze opgestart zijn.
+Met de optie '-l' krijg je een <u>l</u>ijst inclusief het job PID
+Met de toetscombinatie &lt;CTRL+C&gt; kan je een job afsluiten
+
+jobs-c
+
+
+jobs
+
+jobs-c
+
+jobs-l
+
+jobs-d
+
+sleep 60 &
+jobs
+jobs -l
+
+---
+
+fg-i
+
+Met 'fg' (<u>f</u>ore<u>g</u>round) kan je jobs die in de achtergrond actief zijn naar de voorgrond halen.
+Je kan echter ook jobs die 'suspend' zijn weer starten (in de voorgrond dus).
+Suspenden van jobs in de voorgrond kan met &lt;CTRL+Z&gt;
+Via 'jobs' kan je het jobnummer vinden dat 'fg' nodig heeft.
+
+fg-c
+
+fg <i>jobnummer</i>
+
+fg-d1
+
+sleep 600 &
+jobs
+fg 1
+CTRL+Z
+
+fg-d2
+
+sleep 1200
+CTRL+Z
+fg 2
+CLTR+Z
+
+---
+
+bg-i
+
+Met 'bg' (<u>b</u>ack<u>g</u>round) kan je taken die 'suspended' zijn weer naar de achtergrond plaatsen.
+ 
+bg-c
+
+bg <i>jobnummer</i>
+
+bg-d
+
+sleep 600
+CTRL+Z
+jobs
+bg 1
+jobs
+
+---
+
+ps-i
+
+Met het commando 'ps' geef je de lopende processen weer.
+Er zijn vele opties, maar de bekendste zijn '-ef' en 'aux'.
+Let op dat opties met streepjes verschillen met opties zonder streepje (dus '-a' anders is dan de optie 'a').
+Het commando 'tree' komt niet voor in het LPIC-examen, maar is zeker de moeite waard op uit te proberen.
+
+ps-i
+
+De optie '-e' (<u>e</u>nvironment) laat alle processen zien
+Met '-f' krijg je <u>f</u>ull format listing.
+'a' geeft alle processen inclusief die van andere gebruikers
+Met 'u' (<u>u</u>sertype) geeft de gebruikersnaam en de startijd van het proces weer.
+De 'x' toont alle processen.
+
+ps-i
+
+Je kan zelf je kolommen samenstellen met de optie '-o'.
+Zo kan je bv. kiezen voor de 'user', de 'cpu', 'pid'.
+
+ps - c
+
+ps
+
+ps -ef
+
+ps-d
+
+ps
+ps -e
+ps -ef
+
+ps-d
+
+ps
+ps -a
+ps -au
+ps -aux
+ 
+ps-d
+
+ps
+ps -o user,pid,comm
+ps -eo  user,pid,comm
+
+---
+
+kill-i
+
+Je kan een process sluiten met commando 'kill'.
+Je moet wel het PID weten.
+Met de optie '-l' kan je zien welke signalen er naar een proces gestuurd worden.
+Mocht het proces niet willen sluiten dan kan je dit forceren met '-9' (wees voorzichtig).
+
+kill-c
+
+kill <i>PID</i>
+
+kill-c
+
+kill -9 <i>PID</i>
+
+kill-d
+
+sleep 600 &
+ps
+kill PID
+
+kill -l 
+
+---
+
+nohup-i
+
+Een proces kan een hangup signaal (zoals een logout) niet overleven.
+Het 'nohup' command zorgt dat dit process immuun word voor het hangup-signaal.
+
+nohup-c
+
+nohup <i>programanaam</u>
+
+nohup-d
+
+sleep 101 &
+nohup sleep 102 &
+# Nu moet je uitloggen en je zal zien dat met een 'ps -ef', 
+de 'sleep 102' het hangup signaal wel overleeft heeft.
+
+---
+
+top-i
+
+Het commando 'top' geeft de actieve processen weer.
+De lijst wordt dynamisch opgebouwd en ververst.
+In 'top' kan je meer opties zien door de &lt;H&gt;-toets
+Zo kan je ook via 'top' met de &lt;K&gt;-toets processen killen.
+De '-i' ('idle') optie negeert de inactieve processen.
+ 
+top-c
+
+top
+
+top-d
+
+top
+
+
+thunderbird opstarten
+top
+k
+kill thunderbird
+
+top-d
+
+top 
+q
+top -i 
+
+---
+
+free-i
+
+Met 'free' krijg je een overzicht van het vrije en gebruikte werkgeheugen.
+Je ziet onder andere ook het swap geheugen die door de kernel gebruikt wordt.
+De '-h' (<u>human readable</u>)optie maakt de gegevens leesbaar
+De '-m' (<u>m</u>egabytes) geeft de gegevens in MegaBytes.
+Optie '-s' kan je gebruiken om het scherm elke x-seconden te verversen.
+
+free-c
+
+free
+
+free -m
+
+free-d
+
+free
+
+free -h
+
+free -s 1
+
+---
+
+uptime-i
+
+'uptime' geeft de tijd sinds laatste start.
+Daarnaast wordt de huidige tijd, de belasting en het aantal ingelogde gebruikers weergegeven.
+De belasting wordt gemeten over de laatste, de laatste 5 en de laatste 15 minuten.
+
+uptime-c
+
+uptime
+
+uptime-d
+uptime
+
+---
+
+killall-i
+
+Met 'killall' kan je meerdere processen in een keer sluiten
+Hier gebruik je niet het PID, maar de naam.
+De optie '-l' geeft een lijst met alle bekende signalen.
+
+killall-c
+killall <i>procesnaam</i>
+
+killall-d
+
+sleep 100 &
+sleep 200 &
+sleep 300 &
+ps -ef | grep sleep
+killall sleep
+ps -ef | grep sleep
+
+---
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

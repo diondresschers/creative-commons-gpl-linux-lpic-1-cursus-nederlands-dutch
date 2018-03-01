@@ -1,0 +1,110 @@
+105.2 Het aanpassen of schrijven van simpele scripts
+
+    for
+    while
+    if
+    test
+    read
+    seq
+
+---
+
+for
+
+#!/bin/bash
+for BESTAND in `ls /home/dion/Documents/png/linuxamsterdam_freesoftwareday/*.JPG`
+  do firefox $BESTAND
+done
+
+-
+ 
+#!is een commentaar, maar #!/bin/bash of #/!/bin/python (also shebang)
+
+-
+
+---
+
+while
+
+while loop:
+
+#!/bin/bash
+NUMMER=1
+while (($NUMMER <= 1005 ))
+do
+  echo "gebruiker met $NUMMER:"
+  id $NUMMER
+  NUMMER=$(:( NUMMER+1 ))
+done
+
+-
+
+-
+
+test
+
+zie man pages voor test!
+ 
+#!/bin/bash
+if test -s /home/$USERNAME
+  then
+  echo "home dir van $USERNAME" bestaat'
+fi
+
+---
+
+
+if 
+
+#!/bin/bash
+echo $USERNAME
+echo "Moet je home dir weg?"
+read ANTWOORD
+if [ $ANTWOORD = "Jahaa!" ];
+then
+  rm -rf /home/$USERNAME
+else
+  touch /home/$USERNAME/nietweg
+fi
+
+---
+
+read kan gebruikers input en inpout van een file lezen
+
+#!/bin/bash
+FILE=/etc/resolv.conf
+while read REGEL
+do
+  echo "regel: $REGEL"
+done < $FILE
+
+---
+
+---
+
+seq
+
+# seq eind
+# seq begin eind
+# seg begin stap eind
+
+#!/bin/bash
+for NUMMER in $(seq 0 60 3600)
+do
+  touch /home/$USERNAME/$NUMMER
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

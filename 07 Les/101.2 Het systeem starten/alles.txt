@@ -1,0 +1,64 @@
+101.2 Het systeem starten
+
+bios
+bootloader
+kernel
+dmesg
+var_log_messages
+init
+
+---
+
+bios
+bootloader
+kernel
+dmesg
+var_log_messages
+init
+
+---
+
+bios-intro-00
+In de BIOS Basic In Out System kan je wijzigingen doen van je hardware (dit is geen onderdeel van het Operating System).
+Deze wordt langzaam vervangen door UEFI
+Boot order
+Vroeger moest je harde schijf gegevens ingeven tijd etc.
+
+ESC-typ geeft je de boot
+
+---
+
+bootloader-intro-00
+Met de ESC-toets 
+Specificeert wat er geboot wordt.
+E-toest om te kunnen editen
+Je ziet de harddrive er gebruikt wordt.
+De kernel wordt weergegeven die gebruikt wordt
+queiet (niet veel info), slash is Grafisch mooi scherm)
+initrd (initial ram dirs. basic tools
+'b' boot
+cd /boot # kernels
+cd /boot/grub
+
+----
+
+dmesg - in memory ook wijzigingen naderhand.
+cat /var/log/dmesg (alleen van startup)
+
+
+var_log_messages allerlei info errors van a
+
+---
+
+init http://en.wikipedia.org/wiki/Init
+Eerste proces dat opstart
+Nu vervangen door 'upstart'
+pstree laat hierarchy zien van processen
+top (< >) om de 'ps' te selecteren.
+
+---
+
+sudo cat /boot/grub/menu.lst
+
+
+

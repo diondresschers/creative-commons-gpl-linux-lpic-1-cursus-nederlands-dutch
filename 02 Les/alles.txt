@@ -1,0 +1,25 @@
+103.7
+    grep
+    egrep
+    fgrep
+    sed
+    regex(7)
+
+
+102.3
+
+    ldd
+    ldconfig
+    /etc/ld.so.conf
+    LD_LIBRARY_PATH
+
+102.4
+
+    /etc/apt/sources.list
+    dpkg
+    dpkg-reconfigure
+    apt-get
+    apt-cache
+    aptitude
+
+

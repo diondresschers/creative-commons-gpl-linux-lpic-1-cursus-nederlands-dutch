@@ -1,0 +1,50 @@
+---
+PERMISSION
+With umask 027, what is the permission of the file that is created?
+
+0750
+0640
+0027
+1027
+1640
+
+Which of the following commands makes /bin/foot executable by everyone but only writeable by its owner?
+
+chmod 557 /bin/foo
+chmod o+rwx, a+rx /bin/foo
+chown 557 /bin/foo
+chmod 755 /bin/foo
+
+---
+
+INODES
+
+You are managging the files on your system. You need to create links. Which of the following correctly describe a hard link (Choose all that apply)?
+
+It is an alias to your file
+All of the aliases will share the common inode
+It is an alias to the directory
+Each alias will use its own inode
+None of the choises
+
+Which of the following Linux filesystems pre-allocates a fixed number of inodes at filesystem make/creation time, and does NOT generate them as needed?
+ext3
+jfs
+reiserfs
+xfs
+---
+QUOTA
+
+Which of the following commands will list the quota of the user foobar?
+repquota foorbar
+quota foorbar
+ls quota foobar
+printquota foobar
+
+
+You administer a system with quota enabled. The powers that be have asked you to add a new user sam. Sam should have the same amount of diskspace available as his colleague Mose. What command yould you use (choose the best answer)?
+repquota -a sam -p mose
+edquota -p mose sam
+quotaon sam -p mose
+quotactl -n sam -p mose
+---

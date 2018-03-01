@@ -1,0 +1,124 @@
+Versie: 2014-08-18-00
+
+
+---
+
+102.4_dpkg_00.html
+
+dpkg -l
+
+dpkg -l | grep firefox
+
+dpkg -l firefox
+
+dpkg -p firefox
+
+---
+
+102.4_dpkg_01.html
+
+wget http://ftp.ps.pl/pub/apache//directory/apacheds/dist/2.0.0-M16/apacheds-2.0.0-M16-i386.deb
+
+dpkg -l apacheds
+
+dpkg -i apacheds
+
+dpkg -l apacheds
+
+dpkg -r apacheds
+
+dpkg -l apacheds
+
+------
+
+102.4_dpkg-reconfigure_00.html
+
+sudo dpkg-reconfigure keyboard-configuration
+
+---
+
+102.4_apt-get_00.html
+
+apt-get update
+
+---
+
+102.4_apt-get_01.html
+
+apt-get install gtkboard
+apt-get remove gtkboard
+
+---
+
+102.4_apt-get_02.html
+
+apt-get upgrade
+
+---
+
+102.4_apt-cache_00.html
+
+apt-cache search gimp
+apt-cache search gimp | grep gimp
+apt-cache show gimp
+
+---
+
+102.4_apt-cache_01.html
+
+apt-cache depends gimp
+apt-cache rdepends python2.7
+
+---
+
+102.4_aptitude_00.html
+
+aptitude search gimp
+
+apt-get intall -y aptitude
+
+aptitude search gimp
+
+---
+
+102.4_aptitude_01.html
+
+aptitude
+
+---
+
+---
+
+--------------
+
+102.4_sources_00.html
+
+cat /etc/apt/sources.list
+
+---
+
+102.4_sources_01.html
+
+apt-cache search spotify
+
+apt-cache search spotify | grep spotify
+
+sudo vim /etc/apt/sources.list 
+
+deb http://repository.spotify.com stable non-free 
+
+apt-get update 
+
+sudo apt-get update
+
+apt-cache search spotify | grep spotify
+ 
+sudo apt-get install spotify-client
+
+---
+
+
+
+
+
+

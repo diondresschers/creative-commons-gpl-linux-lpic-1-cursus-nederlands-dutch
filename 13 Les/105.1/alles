@@ -1,0 +1,86 @@
+105.1 Het aanpassen van de shell environment
+
+    /etc/profile
+    ~/.bash_profile
+    ~/.bash_login
+    ~/.profile
+    ~/.bashrc
+    ~/.bash_logout
+    alias
+    function
+    lists
+    env
+    export
+    set
+    unset
+
+---
+
+alias
+
+Je kan een alias aanmaken voor commando's en opties de je vaak gebruikt.
+Als je de naam van je alias kort maakt je dat veel tijd schelen.
+Je kan alle aliassen zien door 'alias' in te voeren.
+Zo blijkt het commando 'll'' (voor Long Listing) geen commando te zijn maar een alias voor 'ls -l'
+
+
+Bijv: alias l  = ls -latrh
+
+
+---
+
+function
+
+Een function is een klein bash programmaatje dat je kan schrijven om taken makkelijker te maken
+Zowel als de alias, plaats je deze in je ~/.bashrc file.
+
+
+function data() {
+ ...;
+ ;
+ ;
+}
+
+function datagebruik() {
+echo -n "Geef een gebruikersnaam in: "
+read name
+ssh 127.0.0.1 'du -sh /home/$name'
+}
+---
+
+variables
+
+- store information in current shell process
+
+environment variable 
+- store variable for all child processes
+
+-
+
+env
+unset
+set
+export
+
+
+---
+ 
+~env
+
+laat alle variableelen zien
+
+---
+
+BLA="Dion Dresschers"
+echo $BLA
+
+new terminal
+
+echo $BLA
+
+---
+
+
+
+
+

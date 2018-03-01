@@ -1,0 +1,98 @@
+107.1 Manage user and group accounts and related system files
+
+08 - Manage User and Group Accounts and Related System Files
+
+    /etc/passwd
+    /etc/shadow
+    /etc/group
+    /etc/skel
+    chage
+    groupadd
+    groupdel
+    groupmod
+    passwd
+    useradd
+    userdel
+    usermod
+
+
+---
+
+107.3 Localisation and internationalisation
+
+10 - Localisation and Internationalisation
+
+    /etc/timezone
+    /etc/localtime
+    /usr/share/zoneinfo
+    Environment variables
+    /usr/bin/locale
+    tzselect
+    tzconfig
+    date
+    iconv
+    UTF-8
+    ISO-8859
+    ASCII
+    Unicode
+
+---
+
+108.4 Manage printers and printing
+
+14 - Manage Printers and Printing
+
+    CUPS config files, tools and utils
+    /etc/cups
+    lpd legacy interface (lpr, lprm, lpq)
+
+---
+
+
+    tzconfig
+    tzselect
+    /etc/timezone
+    /etc/localtime
+    /usr/share/zoneinfo
+    Environment variables
+    /usr/bin/locale
+    date
+    iconv
+    UTF-8
+    ISO-8859
+    ASCII
+    Unicode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

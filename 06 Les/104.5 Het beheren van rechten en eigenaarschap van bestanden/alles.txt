@@ -1,0 +1,481 @@
+104.5 Het beheren van rechten en eigenaarschap van bestanden
+
+chmod
+chown
+chgrp
+umask
+
+SUID
+GUID
+STICKY BIT
+
+---
+
+rechten-intro-00
+
+Via 'ls -l' zie je de rechten die je staan op een file.
+-rwxrw-r-- 1 dion testusers 0 Sep 15 13:51 <i>bestand</i>
+Het eerste karakter geeft aan of het een directory, softlink, file of blockdevice is.
+Daarna wordt het interessant, de volgende 9 karakters (mode-bits) worden verdeeld in 3 groepen van 3.
+De eerste groep 'rwx' in het voorbeeld geeft de rechten van de eigenaar van de file aan (de user).
+De tweede groep 'rw-' in het voorbeeld geeft de rechten van de groep eigenaar aan.
+De derde groep zijn de rechten 'r--' van iedereen ('rest of the world').
+Dan komt de eerder genoemde eigenaar ('dion' in het voorbeeld).
+Daana komt de groep ('testusers' in het voorbeeld).
+'r' <u>r</u>ead, staat voor lezen
+'w' <u>w</u>rite, staat voor schrijven
+'x' e<u>x</u>ecute, staat voor uitvoeren.
+In het voorbeeld mag de gebruiker 'dion' (de owner) 'rwx', dus lezen, schrijven en uitvoeren
+Iedereen die in de groep 'testusers' zit mag 'rw-', dus lezen en schrijven.
+Anderen mogen 'r--', oftewel lezen.
+
+rechten-code-00
+SUID
+GUID
+STICKY BIT
+ls -l
+
+rechten-demo
+
+ls -l
+touch bla
+sudo touch bla
+ls -l
+
+---
+
+chmod-intro-00
+
+Met 'chmod' van <u>ch</u>ange <u>mod</u>-bits kan je de mode-bits (rwx) veranderen.
+Dit kan via cijfers of door het aan te geven wie welke rechten heeft.
+Per groep van 3 mode-bits kan je de rechten een waarde geven en op tellen.
+Het eerste karakter representeert een waarde van 4, het tweede een van 2 en het derde een 1, mits deze rechten aan staan. Staat de bit uit (een '-' dan heeft deze geen waarde.
+'rwx' heeft dus een waarde van 4+2+1 = 7. 
+'rw-' heeft een waarde van 4+2+0 = 6.
+'-w-' heeft een waarde van 0+2+0 = 2.
+Geef je bv het commando 'chmod 640 <i>bestand</i>' dan geeft je 5 voor de user (dus 'r-x'), 4 voor de group (dus 'r--') en 0 voor de rest '---'.
+Geef je '000' dan heeft niemand wijzig, lees en uitvoer rechten.
+Geef je '777' dan geef je iedereen wijzig, lees en uitvoer rechten.
+Je kan ook de optie '-R' meegeven voor <u>recursief</u>, dus alle files in die directory.
+
+In plaats van rekenen kan je ook rechten geven op basis van de gebruiker en de rechten die deze erbij moet krijgen of eraf moeten worden genomen.
+
+'u' staat voor de<u>u</u>ser.
+'g' staat voor <u>g</u>roup.
+'o' staat voor <u>o</u>ther.
+Geef je echter 'a' dan geldt dat voor <u>a</u>ll (dus 'user', 'group' en 'other')
+Daarna geef je een '+' of een '-' om die rechten toe te voegen of weg te halen.
+Dan komt een (of meerdere karakters) om de rechten te bepalen waarbij dus weer:
+'r' <u>r</u>ead, staat voor lezen
+'w' <u>w</u>rite, staat voor schrijven
+'x' e<u>x</u>ecute, staat voor uitvoeren.
+Als voorbeeld 'chmod ug+rw bestand' dan krijgt zowel de 'user' als 'group' er de rechten 'read' en 'write' bij.
+Wordt bijvoorbeeld 'chmod a-x bestand' gedaan dan wordt voor 'all', dus iedereen de rechten 'execute' weggehaald.
+
+chmod-code-00
+
+chmod 777 <i>bestand</i>
+
+chmod-code-00
+
+chmod u+rwx <i>bestand</i>
+
+chmod-demo-00
+
+(wat wijzigen met 777, 666, 555, en a+wrx)
+
+---
+
+chown-intro-00
+
+Met 'chown' (van <u>ch</u>ange <u>own</u>er) kan je de eigenaar wijzigen (zowel de 'user' als de 'group').
+Geef je een naam op dan geldt dit voor de owner of 'user',
+Geef je twee namen door gescheiden door een dubbele punt ':' dan is de eerste de 'user', en de tweede de 'groep'.
+Geef je alleen een dubbelen punt ':' met daarna een naam, dan geldt het alleen voor de 'group'.
+
+chown-code-00
+
+chown dion <i>bestand</i>
+
+chown-code-01
+
+chown dion:dion <i>bestand</i>
+
+chown-code-02
+
+chown :dion <i>bestand</i>
+
+chown-demo-00
+
+-chown user
+-chown user:user
+-chown :user
+
+---
+
+chgrp-intro-00
+
+Via 'chgrp' kan je in tegenstelling tot 'chown' alleen de 'group' wijzigen.
+
+chgrp-code-00
+
+chgrp <i>groupname</i> <i>bestand</i>
+
+chgrp-demo-00
+
+- chgrp grp bestand
+
+---
+
+umask-intro-00
+
+Maak je onder je account een file of folder aan, dan krijg je daar standaard rechten bij. De waarden van deze standaard rechten worden mede bepaald door de 'umask'.
+Je kan de waarde van umask zien door het commando 'umask' (zonder iets erbij).
+Deze waarde staat ook voor iedereen in '/etc/profile', maar kan ook staan in '/etc/login.defs'.
+Wil je voor je persoonlijke profiel je 'umask' wijzigen dan kan dit in '~/.profile'.
+Voor directories krijg je standaard de waarde '777' minus de waarde van je 'umask', dus is deze '022' dan krijg je uiteindelijk de rechten '755'.
+Voor files krijg je standaard de rechten '666' minus de waarde van 'umask', dus is deze '002' (of '0002') dan krijg je de rechten '664'.
+
+umask-code-00
+
+umask
+
+umask-code-01
+
+umask 022
+
+umask-demo-00
+
+umask
+umask 333
+umask
+
+umask-demo-01
+
+umask
+cat /etc/profile | grep -i umask
+cat /etc/login.defs | grep -i umask
+cat ~/.profile | grep -i umask
+umask
+
+umask-demo-02
+
+umask
+mkdir dir
+ls -l
+touch file
+ls -l
+umask 066
+mkdir dir2
+ls -l
+touch file2
+ls -l
+umask 245
+mkdir dir2
+ls -l
+touch file2
+ls -l
+
+---
+
+suid-intro-00
+
+Je kan ook een zogenaamd 'suid' <u>s</u>et <u>u</u> <u>id</u> zetten.
+Dit doe je op executable files. Staan deze rechten aan en je hebt rechten om de file uit te voeren (e<u>x</u>ecute), dan doe je dit met de rechten van de owner.
+Ben je dus geen 'root' en heb je geen 'sudo' dan kan je alsnog files uitvoeren met 'root' rechten als de 'suid' gezet is en 'root' de eigenaar is van die file.
+Je wijzigt dit met 'chmod' en dan een '4' voor de mod-bits of met 'u+s' (want je zet <u>s</u>ticky voor de <u>u</u>ser.
+
+suid-code-00
+
+chmod u+s <i>executable_file</i>
+./<i>executable_file</i>
+
+suid-code-01
+
+chmod 4761 <i>executable_file</i> 
+./<i>executable_file</i>
+
+suid-demo-00
+
+ls /root
+vi 
+#!/bin/bash
+ls /root
+
+chmod 4777
+chown root ls_root.sh
+
+./ls_root.sh
+sudo ./ls_root.sh
+
+---
+
+sgid-intro-00
+
+Je kan de 'sgid' <u>s</u>et <u>g</u>roup <u>id</u> zetten of executables en op directories.
+Op executable dan gebeurt hetzelfde als met de 'suid'. Je draait die file met de rechten van de 'group'.
+Op directories werkt het anders. Met deze bit gezet, worden alle files aangemaakt met dezelfde 'group' (van die directory), handig om samen te werken.
+
+sgid-code-00
+
+chmod g+s <i>uitvoerbaar_bestand</i>
+
+sgid-code-01
+
+chmod 2660 <i>uitvoerbaar_bestand</i>
+
+sgid-code-02
+
+chmod g+s <i>directory_naam</i>
+
+sgid-intro-03
+
+chmod 2662 <i>directory_naam</i>
+
+sgid-demo-00
+
+ls -l /home/
+chmod g+s /home/dion
+ls -l /home/
+sudo ~/home/dion/wie_is_de_group_owner
+
+
+---
+
+sticky-intro-00
+
+Je kan op directories ook het zgn. sticky bit zetten.
+Hiermee kan in die directory alleen de eigenaar van die file de file verwijderen (of root uiteraard).
+Zie als voorbeeld de '/tmp' directory, waar het sticky bit aan staat en je eigen files 'veilig' zijn.
+ 
+sticky-code-00
+
+chmod o+t <i>directory</i>
+
+sticky-code-01
+
+chmod 1777 <i>directory</i>
+
+sticky-demo-01
+
+ls -l /tmp
+su flip
+cd /tmp
+ls -l
+rm file
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+cd ~/map
+ls -l
+-rw-rw-r-- 1 dion dion 0 Sep 13 09:38 bla.txt
+
+# user # group # all
+
+chown flip bla.txt
+chgrp flip bla.txt
+chown dion:dion bla.txt
+sudo chown :flip bla.txt 
+sudo chown flip: bla.txt
+
+chown -R user /folder
+
+---
+
+- file
+l link
+b block device
+d directory
+xxx xxx xxx Read Write eXecute
+
+421
+
+usr grp other
+
+4+2+1 = 7
+
+chmod 777 bla.txt
+
+chmod ugo-x bla.txt
+chmod ugo+x bla.txt
+
+!ugo - rxw
+
+cat bla.txt # mag
+chmod u-rwx bla.txt 
+cat bla.txt # mag niet :)
+
+chmod 777 bla.txt
+
+---
+
+#on file if execute you can run it
+#link has mostly full access (as it follows the original file)
+#you can't execute a folder, but x means you can do an 'ls Folder'
+
+---
+
+cat /etc/profile | grep umask
+cat /etc/login.defs | grep umask
+cat /etc/login.defs | grep -i umask
+# gives UMASK 022
+
+umask # results in 0002
+
+umask 444 # gooit masker over files en folders heen en haalt het eraf! # tijdelijk
+
+voor files 666
+voor folders 777
+
+vi ~/.profile
+
+---
+
+SUID!!! (set user id/ mostly on files that are owned by root)
+- only executatble files
+suid on executable files (run as owner of the file), if you are not root, an the owner is root and the suid is set you can run it as root
+- IF YOU CAN RUN IT, you can do it of the permissions of user
+
+
+
+GUID!!! (group user id)
+- on execuable files # runs of the permissions of that group
+- on folders (much more used on folders!!! any files inside that files are owned by that group!!!)
+runs of the permissions that owns the file
+
+STICKY BIT
+(was on files or executable, tell the kernel, leave it in memory, now it ignores)
+- in folder (only the owner, or root of the file can delete it!!!, great for tmp folder)
+
+Also
+SUID=4 GUID=2 STIKCY=1
+
+so 4|777 (special permissions)
+
+chmod u+s
+ls -l # zie rood en sticky bit
+
+#voorbeeld of py that runs as root... bv useradd
+
+rwSrwStwT 
+ 
+
+---
+
+GUID!!! 
+chmod g+s folder !!! # if you create files inside that, the 'group' of those files will be the owner of the folder that has the sticky bit # easily to set the group  id for all files
+
+---
+
+sticky bit!
+
+mkdir folder
+chmod 777 folder/
+ls -l
+
+you can delete files in directories you have 'rw' rights to, even if you are not the owner!!! with the sticky bit on, you can NOT delete files you are not the owner...
+
+chmod o+t (sticky bit)!!! /folder for 'others'
+
+# ls -l / # now see the /tmp file that has the sticky bit on!!!
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

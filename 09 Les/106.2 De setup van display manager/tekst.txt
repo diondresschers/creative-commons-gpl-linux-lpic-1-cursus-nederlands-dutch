@@ -1,0 +1,145 @@
+    /etc/inittab
+    xdm configuration files
+    kdm configuration files
+    gdm configuration files
+
+
+
+Display Managers:
+GDM (Gnome) KDM (KDE), XDM (XServer)
+
+How to disable the display manager CentOS:
+sudo vi /etc/inittab 
+#daar zie je runlevels 1 t/m 6
+
+# Run xdm in runlevel 5 (dus de XDM Xserver)
+x:5:respawb
+
+id:5:initdefault: # start standaard in runlevel 5 met GUI, je kan deze veranderen zodat er geen GUI is.
+
+In ubuntu de GUI uitzetten (niet in exam!?). Upstart (geen inittab)
+sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX="" # veranderen naar GRUB_CMDLINE_LINUX="text"
+#daarna:
+sudo update-grub
+sudo reboot
+# je ziet nu dat het tekstmode wordt.
+# Met 'startx' kan je X weer starten.
+
+In ubuntu de manager wijzigen
+sudo apt-get install kdm xdm gdm
+# welke laadt hij!?
+vi /etc/X11/default-display-manager
+daarin zit maar EEN regel: /usr/bin/gdm
+# rebooten
+
+In CentOS display manager wijzigne
+# yum install kdm xdm gdm
+cd /etc/sysconfig
+ls
+(veel Centos instellingen ook netwerk)
+Daarin zit file 'desktop; (lege file) daarin een lijn toevoegen:
+DISPLAYMANAGER="KDE"
+DISPLAYMANAGER="GNOME"
+DISPLAYMANAGER="XDM"
+
+------------------
+Configure Display Manager (CentOS) voor GNOME!!!
+cd /etc/gdm
+custom.conf (of gdm.conf oid.)
+# Heel heel settings!!! Je kan login scherm ook wijzigen ed. (de Greeter)
+[deamon]
+Greeter=/usr/libexec/gdmlogin # deze toevoegen
+
+[greeter]
+DefaultWelcome=false # start niet de standaard die we boven gekozen hebben.
+Welcom=Dit is gewijzigd!! # Deze toeveogen
+
+Voor thinclients!!!
+Toeveogen (ook onder)
+[daemon]
+RemoteGreeter=/usr/libexec/gdmlogin
+
+Remote user loggen in via XDMCP, dus
+[xdmcp] # staat er al
+Enable=true # deze toevoegen
+
+#Gnome gebruikt de kleurendiepte van X, dus deze configureer je in X en niet in GNOME
+
+-------------------------
+Nu voor Centos de KDM wijzigen:
+locate kdmrc
+/usr/share/config/kdm/kdmrc
+cd /usr/share/config/kdm/
+vi kdmrc
+# weer veel config
+zoek op 'GreetString', daar zitten variabelen in 
+Deze 'Greetstring' is Standaard gecomentariseerd.
+GreetingString=Custom baby!!! Oh yeah!
+
+#remote zetten voor thinclients.
+zoeken op Xdmcp
+[Xdmcp]
+Enable=true # was 'false'
+
+Let op dat 'Willing' gezet is. (dit moet zijn /usr/share/config/kdm/Xwilling)
+
+Zoek op 'Xaccess' 
+Zorg dat deze is gezet:
+Xaccess=/usr/share/config/kdm/Xaccess
+
+UseTheme=false # was true, gaat om het inlog verhaal
+
+(opslaan)
+
+--
+cd /usr/share/config/kdm
+ls
+vi Xaccess
+
+#any host can get a login windows
+* # is iedereen was #*
+
+CHOOSER BROADCAST
+* # is iedereen was #*
+--
+
+Het wijzigen van kleurendiepte
+
+vi Xservers
+:0 local /usr/bin/X # voeg toe '-depth 24' # geeft 24 kleurendiepte aan
+
+---
+
+vi /etc/sysconfig/desktop
+#daar toeveogen: DISPLAYMANAGER="KDE"
+# rebooten
+
+---------------
+
+Nu XDM wijzigen
+
+cd /etc/X11/xdm
+
+sudo xdm-config
+# daar ook veel config regels
+vi Xresources # ook veel config.. De UITROEPTEKENS ! zijn commentaar
+
+xlogin*greeting: Welcome to CLIENTHOST # 
+
+# je kan VEEL wijzigen zoals kleuren en fonts. erg makkelijk
+
+!DisplayManager.requestPort: 0 # Dit enable remote client om ernaar toe te conneteren.
+!Daarna naar 'Xaccess' en daar toeveogen #any host can get a login window
+
+vi /etc/sysconfig/desktop (hier weer wijzigne dat de default nu xdm moet worden ipv KDE.
+
+
+
+
+
+
+
+
+
+

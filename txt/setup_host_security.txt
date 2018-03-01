@@ -1,0 +1,111 @@
+110.2 Setup Host Security
+
+---
+
+    Awareness of shadow passwords and how they work.
+    Turn off network services not in use.
+    Understand the role of TCP wrappers.
+
+---
+
+    /etc/nologin
+    /etc/passwd
+    /etc/shadow
+    /etc/xinetd.d/*
+    /etc/xinetd.conf
+    /etc/inetd.d/*
+    /etc/inetd.conf
+    /etc/inittab
+    /etc/init.d/*
+    /etc/hosts.allow
+    /etc/hosts.deny
+
+---
+
+/etc/passwd
+/etc/shadow
+
+vi /etc/passwd # hier staan geen paswoorden, 'x' betekend kijk in de
+vi /etc/shadow # hier staan de paswoorden gehashed
+
+---
+
+/etc/nologin
+
+sudo touch /etc/nologin # nu kan NIEMAND inloggen (behalve de root user)
+
+---
+
+Uitzetten van poorten die je toch niet gebruikt:
+
+dion@dionysos:~$ nmap localhost
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2014-11-17 16:54 CET
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00085s latency).
+rDNS record for 127.0.0.1: localhost.localdomain
+Not shown: 993 closed ports
+PORT     STATE SERVICE
+25/tcp   open  smtp
+111/tcp  open  rpcbind
+443/tcp  open  https
+631/tcp  open  ipp
+902/tcp  open  iss-realsecure
+2222/tcp open  EtherNet/IP-1
+3389/tcp open  ms-wbt-server
+
+-
+
+Uitzetten httpd via systemctl:
+
+[dion@centos7 ~]$ sudo chkconfig httpd on
+Note: Forwarding request to 'systemctl enable httpd.service'.
+ln -s '/usr/lib/systemd/system/httpd.service' '/etc/systemd/system/multi-user.target.wants/httpd.service'
+
+[root@centos7 dion]# systemctl disable httpd.service
+rm '/etc/systemd/system/multi-user.target.wants/httpd.service'
+
+-
+
+CentOS6:
+anders cat /etc/inittab (zie in wat voor runlevel je zit)
+
+/etc/init.d/httpd stop
+chkconfig --level 5 httpd off
+
+-
+
+In Ubuntu (upstart):
+sudo update-rc.d -f apache2 remove # will remove all startup links in /etc/rc0.d etc...
+
+---
+
+TCP Wrappers:
+
+inetd (super server)
+xinetd (new version of super server)
+
+a super server is a process that 
+in Centos /etc/xinitd.d (maar is een lege directory)
+
+
+
+---
+
+/etc/hosts.allow
+/etc/hsots.deny
+vi /etc/hosts.allow
+tftpd: 192.168.1. # anyone stat starts with 192.168.1.
+
+als je in de /etc/hosts.deny # hosts.allow take precedence before hosts.deny 
+
+
+
+
+
+
+
+
+
+
+

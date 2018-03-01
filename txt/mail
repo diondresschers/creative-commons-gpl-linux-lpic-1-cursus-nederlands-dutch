@@ -1,0 +1,89 @@
+common MTAs
+
+Most MTAs
+- sendmail (most popular, most difficult to configure, one of the oldest)
+- qmail (not GPL, public domain, designed to replace sendmail, made witch security in mind)
+- exim (feature rich, MTA, supporting authentication & ACLs
+- postfix (default for many distributions, supports encryption, virtual domains, and clear config files
+
+Sendmail emulation layer (compatibility mode) 
+- for every MTA
+- common
+- remain compatible with sendmail commands, for ease of use and compatibility mode
+
+ex:
+- 'mailq' is command : shows current mail in queueu, regardless of MTA
+
+---
+
+How to make email alias
+- edit /etc/aliases
+- run 'newaliases' achter changing
+- (same convention for all MTAs)
+
+Email forwarding:
+- users can forward their email to other accoutns with /home/user/.forward
+- usually works :)
+
+---
+
+Commandline 'mail' program
+- send email interactively
+- view and read mail
+- simple keystrokes to manage mail
+
+---
+
+cat /etc/aliases 
+sudo vi /etc/aliases
+# je ziet daar:
+bin:		root
+daemon:		root
+adm:		root
+lp:		root
+sync:		root
+
+je kan ook:
+root:		dion
+# het account links hoeft niet eens te bestaan
+
+na het aanpassen van de /etc/aliasses, moet je:
+root@dionysos:~# sudo newaliases
+
+mail root # zonder volledig mail adres wordt het lokaal gestuurd
+Subject:
+hallo
+<CTRL+D>
+
+---
+
+mail # het mailprogramma
+1 # mail 
+? d # delete
+? q # quit
+
+---
+voor forwarding moet je root zijn als eigen gebruiker kan je ook wat aanmaken (in ~/.forward) lokaal
+vi ~/.forward # nieuw
+root # dan wordt al je mail geforward naar de root user
+ of
+
+dion@dresschers.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

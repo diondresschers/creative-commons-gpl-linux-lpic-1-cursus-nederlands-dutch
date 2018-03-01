@@ -1,0 +1,78 @@
+sudo rpm -qa | grep samba
+
+yum search samba
+
+#samba-client.x86_64
+#samba-common.x86_64
+
+yum install samba-client
+
+See dependencies!!!
+#also samba-common
+#NO!
+
+sudo rpm -qa
+sudo rpm -qa | grep samba
+
+yum install samba
+
+yum install samba-common
+
+
+
+---
+
+yum remove samba-client
+
+-y (say yes)
+
+
+
+
+---
+
+chkconfig | grep samba
+
+---
+
+[root@CentOS6 ~]# rpm -e samba-client
+[root@CentOS6 ~]# rpm -e samba
+[root@CentOS6 ~]# rpm -qa | grep samba
+samba-common-3.6.9-169.el6_5.x86_64
+samba-winbind-clients-3.6.9-169.el6_5.x86_64
+samba-winbind-3.6.9-169.el6_5.x86_64
+
+service smb start
+service smb stop
+---
+
+[root@CentOS6 ~]# rpm -e samba-common
+error: Failed dependencies:
+
+[root@CentOS6 ~]# rpm -e --nodeps samba-common
+error: Failed dependencies:
+
+service smb start
+#error!
+
+---
+remove all
+---
+
+yumdownloader samba-clients
+rpm -i *.prm
+#failed
+rpm -i --nodeps *.prm
+# installs but no real output
+
+
+
+
+
+---
+yumdownloader
+
+yum install yum-utils
+---
+
+

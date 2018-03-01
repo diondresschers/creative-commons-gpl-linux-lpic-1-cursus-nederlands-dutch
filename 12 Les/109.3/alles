@@ -1,0 +1,165 @@
+109.3 Basic network troubleshooting
+
+    Gewicht: 4
+    Beschrijving: Candidates should be able to troubleshoot networking issues on client hosts.
+
+Onderwerpen:
+
+    Manually and automatically configure network interfaces and routing tables to include adding, starting, stopping, restarting, deleting or reconfiguring network interfaces.
+    Change, view, or configure the routing table and correct an improperly set default route manually.
+    Debug problems associated with the network configuration.
+
+Begrippen en commando's:
+
+    ifconfig
+    ifup
+    ifdown
+    route
+    host
+    hostname
+    dig
+    netstat
+    ping
+    traceroute
+
+---
+
+ifconfig
+
+sudo /etc/init.d/network # stop start restart status <ENTER>
+
+of
+
+sudo /etc/init.d/networking # stop status 
+
+---
+
+sudo ifconfig eth0 down
+sudo ifconfig eth0 up
+
+---
+
+eth toegevoegd
+ifconfig -a # all (also up or down), when you just added a new card
+sudo ifconfig eth1 192.168.4.11 netmask 255.255.255.0
+ifconfig
+
+sudo lsmod | grep -i net
+sudo rmmod vboxnetadp # nu met ifconfig -a dan is er nixs
+
+---
+
+ping 
+
+netstat (alle sockets)
+netstat -n # give numbers
+netstat -ntu # now only Tcp and Udp # empty
+netstat -tuna # now only Tcp and Udp # -> all (works!!)
+
+netstat -r # shows the routing table, same as 'route'
+netstat -r # shows the routing table give NUMBERS not 'GW' etc.
+
+route del default
+sudo route add default gw 192.168.1.1
+
+tip: gebruik ip adres eerst om te testen, als dat werkt doe dhcp
+
+route -n
+
+---
+
+QUESTIONS!!!!
+
+---
+
+Which of the following is the command used to deactivate a network interface?
+
+ifdown
+ipdown
+net
+netdown
+
+---
+
+Identify the statement that would create a default route using a gateway of 192.168.1.1.
+netstat -add default gw
+route default 192.168.1.1
+ip route default 192.168.1.1
+route add default gw 192.168.1.1
+ifconfig default gw 192.168.1.1eth0
+
+---
+Which statement is true regarding the following /etc/resolv.conf file?
+search example.com
+127.0.0.1
+208.77.188.166
+
+
+There is a syntax error
+If DNS queries to the localhost fail, the server 208.77.188.166 will be queried
+example.com will be appended to all host lookups
+The DNS servers at 127.0.0.1 and 208.77.188.166 will be queried in a round robin fashion
+The DNS server with the shortest ping time will be queried first. If the lookup fails, the second server will
+be queried
+---
+
+Suppose that the command netstat -a hangs for a long time without producing output. You might suspect:A.
+
+a problem with NFS
+a problem with DNS
+a problem with NIS
+a problem with routing
+that the netstat daemon has crashed
+---
+
+You are working on a server that has multiple ethernet network interfaces, and you wish to find out the IP
+address assigned to the eth1 interface.
+Which of the following commands will print the necessary information?
+
+ipconfig /dev/eth1
+ethconfig -d eth1
+ifconfig eth1
+prntconf eth1
+
+---
+
+What is the purpose of the dig command?
+
+To adjust a directory's hidden permissions
+To search for files on the filesystem
+To adjust a file's hidden permissions
+To perform hostname lookups
+To ping all known hosts on the current subnet
+
+---
+
+Which of the following looks like a correct entry in the /etc/hosts file:
+
+localhost 127.0.0.1 localhost.localdomain
+localhost.localdomain localhost 127.0.0.1
+localhost localhost.localdomain 127.0.0.1
+127.0.0.1 localhost.localdomain localhost
+localhost.localdomain 127.0.0.1 localhost
+
+
+---
+
+Which of the following describes the Linux ping packet or datagram?
+
+IP packet with a packet type
+ICMP packet with a message type
+ICMP packet with a payload
+UDP datagram with a protocol type
+UDP datagram with a payload
+
+---
+
+QUESTION 38
+What is the binary conversion of the IP address 192.168.1.10?
+
+11000000.10101000.00000001.00001010
+01101010.11000100.10101000.00000001
+00000001.00001010.11000000.10101000
+10101000.00000001.00001010.11000000
+None of the choices
+

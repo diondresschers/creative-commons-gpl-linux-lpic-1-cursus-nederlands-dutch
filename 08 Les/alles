@@ -1,0 +1,127 @@
+---
+GRUB
+
+ 
+
+
+ Deze bootsector kan bootmanager zoals GRUB) die de kernel van het besturingssysteem laadt en uitvoert.
+
+
+---
+
+GRUB
+
+vi /boot/grub/menu.lst # sometimes it's a symbolic link
+
+
+
+
+
+
+
+
+
+----
+
+
+
+
+
+-----
+
+/boot/grub/menu.lst
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+
+---
+cat /etc/*release*
+cd /boot
+ls
+cd grub
+wc grub.cfg
+cat grub.cfg
+
+
+
+DEMO CAT GRUB en GRUB2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+GRUB on other partitions
+
+sudo grub-install /dev/sda # installeert grub op een schijf
+
+
+---
+
+superblock
+
+Het superblock is het onderdeel van een filesysteem.
+Het superblock bevat metadata over het fileysysteem zoals de grootte en de status.
+Het aanpassen van het superblock kan leiden tot een niet werkend systeem.
+Er worden meerdere backups van het superblock weggeschreven, deze kan je ook weer terugzetten.
+
+sudo dumpe2fs /dev/sda1 | grep -i superblock
+
+Om een superblock terug te zetten
+e2fsck -f -b 8193 /dev/sda1
+
+---
+
+
+
+
+
+
+
+
+
+

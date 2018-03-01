@@ -1,0 +1,86 @@
+106.3 Accessibility
+
+07 - Accessibility
+
+    Sticky/Repeat Keys
+    Slow/Bounce/Toggle Keys
+    Mouse Keys
+    High Contrast Desktop Themes
+    Large Print Desktop Themes
+    Screen Reader
+    Braille Display
+    Screen Magnifier
+    On-Screen Keyboard
+    Gestures
+    Orca
+    GOK
+    emacspeak
+
+    + Sticky/Repeat Keys
+    + Slow/Bounce/Toggle Keys
+    + Mouse Keys
+    + High Contrast Desktop Themes
+    + Large Print Desktop Themes
+    + Screen Reader
+    + Braille Display
+    +Screen Magnifier
+    On-Screen Keyboard
+    Gestures
+    emacspeak
+
+Braille Display
+Een Braille Display is een stukje hardware waarmee blinden tekst op het scherm via de braille tekens kunnen lezen.
+<imga>
+
+High Contrast Desktop Themes
+Je kan het uiterlijk van de desktop veranderen zo dat er meer contrast zichtbaar is. De knoppen, randen en eventueel iconen worden duidelijker weergegeven.
+
+Large Print Desktop Themes
+Je kan ervoor kiezen dat het standaard lettertype groter wordt weergegeven. Zo wordt de tekst duidelijker weergegeven.
+
+On Screen Keubaord
+GOK = Gnome Onscreen Keyboard
+On-Screen Keyboard
+<image>
+
+Sticky Keys
+ipv bv ALT+F2, druk eerst ALT dan pas F2
+
+Slow Keys
+Een korte aanslag (bv. een perongeluke aanslag) van een letter doet niks, als je de toets langer indrukt wordt de aanslag geaccepteerd.
+
+Bounce Keys
+Het negeren van dubbele aanslagen (bv twee keer een 'a' wordt geregistereerd als 'a'
+
+Mouse Keys
+Als je een nummeriek gedeelte hebt op je toetsenbord kan je de toetsen gebruiken om de muis te besturen (bv 4 is links en 8 is naar boven).
+
+Screen Reader
+Orca is een screenreader
+<image>
+
+emacspeak
+Screen reader voor de tekst editor 'emacs'
+http://emacspeak.sourceforge.net/
+
+Screen Magnifier
+KMAG & Orca Magnifier
+
+High Contrast Desktop Themes
+<screenshot>
+
+Gestures
+Je kan een zelf gekozen actie activeren zie zelf te bepalen bewegingen van de muis (of de touchpad).
+http://sourceforge.net/projects/easystroke/
+
+
+
+
+
+
+
+
+
+
+
+

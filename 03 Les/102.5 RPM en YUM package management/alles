@@ -1,0 +1,109 @@
+---
+
+    yum
+    /etc/yum.conf
+    /etc/yum.repos.d/
+    rpm
+    rpm2cpio
+    yumdownloader
+
+---
+
+---
+
+chkconfig | grep samba
+
+---
+
+[root@CentOS6 ~]# rpm -e samba-client
+[root@CentOS6 ~]# rpm -e samba
+[root@CentOS6 ~]# rpm -qa | grep samba
+samba-common-3.6.9-169.el6_5.x86_64
+samba-winbind-clients-3.6.9-169.el6_5.x86_64
+samba-winbind-3.6.9-169.el6_5.x86_64
+
+service smb start
+service smb stop
+---
+
+[root@CentOS6 ~]# rpm -e samba-common
+error: Failed dependencies:
+
+[root@CentOS6 ~]# rpm -e --nodeps samba-common
+error: Failed dependencies:
+
+service smb start
+#error!
+
+---
+remove all
+---
+
+yumdownloader samba-clients
+rpm -i *.prm
+#failed
+rpm -i --nodeps *.prm
+# installs but no real output
+
+
+
+
+
+---
+yumdownloader
+
+yum install yum-utils
+---
+
+
+
+
+---
+
+yum remove samba-client
+
+-y (say yes)
+
+
+
+
+
+
+
+
+
+
+---
+yumdownloader
+
+yum install yum-utils
+---
+
+yumdownloader samba-client
+rpm -i samba-client-3.6.9-169.el6_5.x86_64.rpm.prm
+#failed
+rpm -i --nodeps *.prm
+# installs but no real output
+
+---
+
+
+rpm2cpio samba-client-3.6.9-169.el6_5.x86_64.rpm > samba.cpio
+less samba.cpio
+(files)
+
+cpio -ivd < samba.cpio
+
+
+GEEN EXAM!
+cpio (niks met installeren te maken, wel met acrhiferen), maakt files!
+
+bv cat ->
+./usr/bin/findsmb
+#bv fies
+
+---
+
+
+
+

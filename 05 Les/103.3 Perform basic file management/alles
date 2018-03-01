@@ -1,0 +1,366 @@
+
+
+103.3 Perform basic file management 
+
+    cp
+    find
+    mkdir
+    mv
+    ls
+    rm
+    rmdir
+    touch
+    tar
+    cpio
+    dd
+    file
+    gzip
+    gunzip
+    bzip2
+    file globbing 
+
+---
+
+touch-intro-00
+
+'touch' raakt een bestand aan, waardoor de modificatie en toegangs tijden gewijzig worden.
+Als het betand nog niet bestaat wordt deze automatisch aangemaakt
+
+touch-code-00
+
+touch bestaand_bestand
+
+touch-code-01
+
+touch niet_bestaand_bestand
+
+touch-demo-00
+
+---
+
+cp-intro-00
+
+Met 'cp' <u>c</u>o<u>p</u>ieeren we een bestand of een directory
+Gebruik '-r' om <u>r</u>ecursief te copieren bij directories
+De optie '-u' <u>u</u>pdate alleen alle nieuwere bestanden
+Met '-a' maak je een archief aan (niet alles wordt opnieuw gecopieerd).
+
+cp-code-00
+
+cp <i>bestand nieuw_bestand</i>
+
+cp-code-00
+
+cp <i>directory nieuwe_directory</i>
+
+cp-demo-00
+
+cp-demo-01
+
+---
+
+find-intro-00
+
+Je kan met 'find' realtime zoeken naar bestanden.
+Je kan zoeken op naam maar ook bijvoorbeeld op creatiedatum.
+Je geeft ook die directory op waarin 'find' moet zoeken (let op dat dit een hele tijd kan duren).
+
+find-code-00
+
+find / -name <i>bestand.txt</i>
+
+find-code-01 
+
+find . -cmin -60
+
+find-demo-00
+find-demo-01
+find-demo-02
+
+---
+
+mkdir-intro-00
+
+'mkdir' staat voor <u>m</u>a<u>k</u>e <u>dir</u>irectory.
+De opties '-p' maakt ook niet bestaande <u>p</u>arent directories aan.
+
+mkdir-code-00
+
+mkdir <i>nieuwe_directory</i>
+
+mkdir-demo-00
+mkdir-demo-00
+
+---
+
+mv-intro-00
+
+Met 'mv' van <u>m</u>o<u>v</u>e kan je bestanden 'moven' oftewel hernoemen.
+Dit commando werkt zowel op bestanden als directories.
+De optie '-f' <u>f</u>orceert zaken en vraagt niet eerst om een bevestiging.
+
+mv-code-00
+
+mv oud_bestand.txt nieuwe_naam.txt
+
+mv-code-00
+
+mv oude_dir nieuwe_dir
+
+mv-demo-00 
+mv-demo-01
+
+---
+
+ls-intro-00
+
+'ls' laat een <u>l</u>i<u>s</u>t zien van de directory
+Optie '-l' laat een <u>l</u>ange ls zien met ook tijden, eigenaren en rechten op die file.
+'-a' laat <u>a</u>lle files zien, dus ook de verborgen (.) bestanden.
+'-t' sorteert de 'ls' op basis van aanpas tijd.
+'-r' sorteert <u>r</u>everse.
+
+ls-code-00
+
+ls
+
+ls-code-01
+
+ls /
+
+ls-code-02
+
+ls ~
+
+ls-demo-00
+ls-demo-01
+ls-demo-02
+
+---
+
+rm-intro-00
+
+rm (<u>r</u>e<u>m</u>ove) verwijdert een bestand
+Officieel voor files, maar kan ook voor directories gebruikt worden.
+Optie '-r' verwijdert <u>r<u>ecursief bestanden.
+Optie '-f' <u>f</u>orceert en vraagt niet om bevestiging.
+
+rm-code-00
+
+rm bestand.txt
+
+rm-code-01
+
+rm -r directory
+
+rm-demo-00
+
+---
+
+rmdir-intro-00
+
+Je kan een directory naast vewijderen met 'rm' ook weghalen met 'rmdir' (<u>r</u>e<u>m</u>ove <u>dir</u>ectory).
+De directory moet wel eerst helemaal leeg zijn.
+
+rmdir-code-00
+
+rmdir <i>lege_directory</i>
+
+rmdir-demo-00
+
+---
+
+tar-intro-00
+
+'tar' staat voor <u>t</u>ape <u>ar</u>chive.
+Alhoewel tapes niet veel gebruikt meer worden, is het een methode om meerdere files te backuppen (of te 'tarrren').
+Een 'tar' file is een soort file waar weer meedere files inzitten.
+Via 'tar' files kan je niet alleen 'tar' files tarren en untarren, maar ook nog op verschillende manieren comprimeren.
+
+tar-intro-01
+-c <u>c</u>reert een tar file
+-x e<u>x</u>traheert een tar file
+-v (<u>v</u>erbose) geeft veel informatie
+-f defineer de getarde of te untarde <u>f</u>ile.
+-z zorgt dat de tar file nog gezipt wordt.
+
+tar-code-00 
+
+tar -cvf file.tar *
+
+tar-code-01
+
+tar -xvf file.tar
+
+tar-demo-00
+tar-demo-01
+
+---
+
+cpio-intro-00
+
+Met 'cpio' kan je bestanden inpakken en uitpakken zoals 'tar'.
+Je kan echter ook input geven van het 'find' commando, waardoor je meer keuzes welke bestanden je wilt achriferen.
+De optie '-o' (van <u>o</u>out) maakt er een archief van.
+Met '-H' kan je het type achrifering kiezen.
+De '-t' van <u>t</u>ry laat zien wat voor bestanden er in het archief zitten.
+
+cpio-code-00
+
+cpio -o -H tar > backup.tar
+
+cpio-code-01
+
+find ~ name "<i>belangrijk*</i>" cpio -o -H tar > <i>backup</i>.tar
+
+cpio-demo-00
+
+cpio-demo-01
+
+---
+
+dd-intro-00
+
+Je kan een <u>d</u>isk <u>d</u>upliceren met 'dd'.
+Je kan hele hard disks copieren of bijvoorbeeld een CD-ROM
+Daarbij moet je 'if' aangeven (een <u>i</u>nput <u>f</u>ile).
+En je geeft een 'Of' aangeven (een <u>o</u>utput <u>f</u>ile).
+
+dd-code-00
+
+dd if=/dev/<i>cdrom</i> of=/<i>directory</i>/<i>example.iso</i>
+
+dd-code-00
+
+dd if=/dev/<i>sda1</i> of=/<i>directory</i>/<i>backup_hard_disk</i>
+
+---
+
+file-intro-00
+
+'file' geeft informatie over een <u>file</u>
+
+file-code-00
+
+file <i>bestand</i>
+
+file-demo-00
+
+---
+
+gzip-intro-00
+
+Met 'gzip' kan je bestanden 'u>G</u>NU <u>zip</u>ppen.
+De optie '-r' doet dat recursief.
+Je kan als optie een cijfer van '-1' t/m '-9' opgeven van sneller tot betere compressie
+
+gzip-code-00
+
+gzip <i>bestand</i>
+
+gzip-code-01
+
+gzip -r <i>directory</i>
+
+gzip-demo-00
+gzip-demo-01
+
+---
+
+gunzip-intro-00
+
+Met 'gunzip' kan je bestanden <u>G</u>NU <u>unzip</u>ppen.
+De optie '-r' doet dat recursief.
+
+gunzip-intro-00
+
+gunzip bestand.gz
+
+gunzip-demo-00
+gunzip-demo-01
+
+---
+
+bzip2-intro-00
+
+'bzip2' (<u>b</u>lock sorting <u>zip</u> <u>2<u> kan ook zippen
+'bzip2' heeft een betere compressie dan gzip (maar is daardoor langzamer).
+Met de optie '-d' (<u>d</u>ecrompress) kan je bestanden weer uitpakken.
+
+bzip2-code-00
+
+bzip2 bestand.txt
+
+bzip2-code-01
+
+bzip2 -d bestand.txt.gz
+
+bzip2-demo-00
+bzip2-demo-01
+
+---
+
+file_globbing-intro-00
+
+'file globbing' is geen commando maar het matchen van files op basis van een patroon.
+
+file_globbing-code-00
+
+ls [a-z]*
+
+file_globbing-demo-00
+file_globbing-code-01
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

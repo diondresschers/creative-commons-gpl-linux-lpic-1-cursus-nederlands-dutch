@@ -1,0 +1,156 @@
+104.4 Het beheren van disk quota's
+
+quota
+quotaon
+edquota
+repquota
+
+
+---
+
+quota-intro-00
+'quota' oftewel gebruikers data limieten staat niet standaard op een desktop.
+Je kan het installeren met 'apt-get install quota' of 'yum install quota'.
+Je zet de quota aan op een filesysteem.
+Met 'quota' kan je je eigen user quota zien.
+
+quota-demo-00
+
+---
+
+quotaon-intro-00
+
+Je kan de quota aan zetten met 'quotaon'.
+Je zal quota's bijvoorbeeld in home-directories willen zetten.
+Quota kan je niet op een enkele directory zetten.
+Geef wel het mountpunt op.
+Je moet in de /etc/fstab bij de opties wel 'usrquota' (voor user quota).
+Gebruik 'grpquota' voor de group quota.
+Je krijgt daarbij de bestanden 'aquota.user' en/of 'aquota.group'.
+Deze bestanden zijn geen ASCII bestanden maar binaries.
+
+quotaon-intro-01
+
+Je komt in een file (met 'vi' of 'nano') waar je de volende instellingen ziet:
+'blocks' 'soft' 'hard'
+Je ziet het aantal 'blocks' dat de gebruiker in gebruik heeft.
+Je kan een 'soft'-limiet instellen (deze kan tijdelijk overschreven worden), na een week (default) mag je geen data meer bij plaatsen.
+Je ziet een 'hard' limiet, hier mag je niet overeen.
+
+quotaon-intro-02
+
+Je ziet ook de volgende instellingen:
+'inodes' 'soft' 'hard'
+Het aantal 'inodes' dat je gebruikt.
+De 'soft' limiet van 'inodes' deze mag je weer overschrijven voor een week, je krijgt ook (weer) een notificatie.
+De 'hard' limiet mag je dus weer niet overschrijven.
+
+quotaon-code-00
+
+quotaon <i>/mnt/disk</i>
+
+quotaon-demo-00
+
+---
+
+edquoata-demo-00
+
+Met 'edquota' (<u>ed</u>it <u>quota</u> kan je quota's gaan zetten.
+Geef de optie '-u' mee om de desbetreffende gebruiker te selecteren.
+
+ed
+edquota -u <i>dion<i>
+
+edquoata-demo-00
+edquoata-demo-01
+edquoata-demo-02
+
+---
+
+repquota-intro-00
+
+Via 'repquota' (<u>rep</u>ort <u>quota</u>) kan je de huidge quota settings zien van iedereen op dat filesysteem.
+Geef de optie '-s' om de block <u>s</u>ize in human readable formaat weer te geven.
+
+repquota-code-00
+
+repquota <i>/mnt/disk</i>
+
+repquota-demo-00
+
+---
+
+
+
+
+
+
+
+
+
+
+---
+
+sudo yum search quota
+sudo yum install quota
+sudo vi /etc/fstab # add usrquota+grpquota
+sudo umount /extra_disk
+sudo mount -a
+sudo quotaoff /extra_disk
+mount
+
+[dion@CentOS6 /]$ sudo quotacheck /extra_disk
+quotacheck: Cannot create new quotafile /extra_disk/aquota.user.new: Permission denied
+quotacheck: Cannot initialize IO on new quotafile: Permission denied
+
+[dion@CentOS6 /]$ sudo quotacheck /extra_disk
+quotacheck: Cannot create new quotafile /extra_disk/aquota.user.new: Permission denied
+quotacheck: Cannot initialize IO on new quotafile: Permission denied
+
+cat /etc/selinux/config
+sestatus
+getenforce
+setenforce --help
+sudo setenforce Permissive
+getenforce
+
+quotacheck /extra_disk
+tree /extra_disk
+yum install tree
+tree /extra_disk
+
+cd /extra_disk
+sudo cat aquota.user
+
+---
+-c, --create-files        create new quota files
+-u, --user                check user files
+-g, --group               check group files
+---
+cat /etc/passwd
+
+sudo edquota -u flip # used soft hard limit!!
+
+sudo quotaon /extra_disk
+
+sudo repquota /extra_disk
+
+# use grace!!!
+
+---
+
+sudo edquota -g <groupname>
+
+quota # geeft de quota voor de gebruiker zelf!!!
+
+
+
+
+
+
+
+
+
+
+
+

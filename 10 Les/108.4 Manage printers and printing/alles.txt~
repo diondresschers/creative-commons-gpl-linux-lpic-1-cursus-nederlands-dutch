@@ -1,0 +1,88 @@
+108.4 Manage printers and printing
+
+
+    CUPS config files, tools and utils
+    /etc/cups
+    lpd legacy interface (lpr, lprm, lpq)
+
+---
+
+CUPS
+
+Management via 
+http://localhost:631
+
+Files:
+/etc/cups/cupsd.conf
+ - server config
+ - control access and options
+
+/etc/cups/printer.conf
+ - configuration file for individual printers
+
+---
+
+http://localhost:631/
+Draait al out of the box! RHEL7
+
+Apple
+http://en.wikipedia.org/wiki/CUPS
+
+CUPS (formerly an acronym for Common Unix Printing System, but now with no official expansion[citation needed]) is a modular printing system for Unix-like computer operating systems which allows a computer to act as a print server. A computer running CUPS is a host that can accept print jobs from client computers, process them, and send them to the appropriate printer.
+
+
+STEP1 
+--
+URI -> connection
+
+http:
+ipp:
+lpd:
+socket:
+:9100 voor HP
+--
+Driver
+--
+Selecteer een driver, of upload een PPD text file (kan ook van Mac).
+---
+
+je kan ook lynx gebruiken voor cups..
+
+---
+
+FILES!!!
+
+cupsd.conf + printers.conf!!!
+
+In de cupds.conf file staat:
+# Only listen for connections from the local machine.
+Listen localhost:631 # verander in 'Listen 631' dan wordt naar elk ip geluisterd
+Listen /var/run/cups/cups.sock
+
+---
+
+De toegevoegde printers staan in: printers.conf!!! #bv 3 printers in 1 file.
+Hierin 'DeviceURI socket://192.168.1.100:9100 # of usb of http oid.
+
+---
+
+Manage print Qs!
+
+/var/spool/cups -> active print jobs are stored here (will be stay here)
+
+This is the 'lp' legacy (old system but we can still use them in cups)
+
+lpq -> shows information about current queued print jobs, us -q flag to list all printers
+lprm -> delete specific print job, job number listed by lpq command 'lprm-' will delete all jobs
+lpr -> sends file to printer, use '-Pprintername' (geen fout) to specify non-default
+
+---
+
+
+
+
+
+
+--
+
+

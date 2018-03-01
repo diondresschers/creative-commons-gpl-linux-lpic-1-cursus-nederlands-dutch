@@ -1,0 +1,46 @@
+nfs_vi_nfw_sys_01
+nfs_vi_nfw_appl_01
+nfs_vi_nfw_swap_01
+nfs_vi_nfw_data_01
+nfs_xen_fra_pnfw_resources
+nfs_vi_nfw_backup_01
+
+
+
+http://linuxconfig.net/network-tools/subnet-calculator
+
+ipcalc -n 10.0.0.2 255.255.255.0
+ipcalc 10.0.0.2 255.255.255.0 -n
+ipcalc -n 10.0.0.2/24
+ipcalc -n 10.0.0.2/24
+
+
+IP private adressen (worden niet gerouteerd op internet):
+Class A
+10/8
+172.16/12
+192.168/16
+
+IP public adressen
+1 tot 239
+
+127/8 host local
+127.0.0.1 localhost
+
+
+IP address
+Gateway / Router (moet in hetzelfde netwerk zitten)
+Network adres
+Broadcast Adres
+
+VLAN
+
+Laag 2 broadcast 
+
+Switch -> Verbind computers in hetzelfde netwerk bv 172.16.5.0/24
+Router -> Verbindt verschillende Netwerken bv 10.1.0.0/16 en 192.168.1.0/24. De router moet zelf een IP address geconfigureerd hebben.
+
+
+
+
+

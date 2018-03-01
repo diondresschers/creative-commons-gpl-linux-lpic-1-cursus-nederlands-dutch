@@ -1,0 +1,235 @@
+---
+
+103.7 
+Zoeken in teksten met reguliere expressies
+
+ grep
+ egrep
+ fgrep
+ sed
+ regex
+
+---
+grep
+* Via grep kan je zoeken in de inhoud van bestanden
+* Grep accepteert ook text input (stdin)
+* Optie '-i' (insensitive) maakt het hoofdletterongevoelig
+* Optie '-n' geeft regelnummers voor de resultaten
+
+103.7_00.html
+103.7_01.html
+103.7_02.html
+---
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_grep_00.html
+
+ls
+
+ls | grep e
+
+ls | grep est
+
+ls | grep een
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_grep_01.html
+
+cat bestand_twee.txt
+
+cat bestand_twee.txt | grep e
+
+cat bestand_twee.txt | grep a
+
+cat bestand_twee.txt | grep aw
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_grep_02.html
+
+ls
+
+cat bestand_een.txt 
+
+grep e bestand_een.txt
+
+cat bestand_twee.txt
+
+grep be bestand_twee.txt
+
+grep -i be bestand_twee.txt 
+
+grep -in be bestand_twee.txt
+
+grep th *
+
+---
+regex
+
+* regex staat voor 'regular' 'expressions'
+* regex is geen commando
+* Je kan regex oa. gebruiken in combinatie met 'grep'
+* Met regex kan je via zelf te definieren patronen zoeken op bepaalde delen in een tekst
+
+
+---
+
+* ^ Geeft aan waarmee een tekst moet beginnen
+* $ Geeft aan waarmee een tekst moet eindigen
+* . Is elke karakter (dit moet er precies een zijn, mag niet leeg zijn)
+
+http://regexone.com/
+http://en.wikipedia.org/wiki/Regex
+
+---
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_regex_00.html
+
+cat bestand_twee.txt
+
+grep ^w bestand_twee.txt
+
+grep th$ bestand_twee.txt
+
+grep b. bestand_twee.txt
+
+grep b..n bestand_twee.txt
+
+---
+
+egrep
+
+* egrep staat voor extended grep
+* Je kan met grep reguliere expressies uitvoeren
+* Echter kent egrep meer regex zoekmogelijkheden dan grep
+* Je kan ipv. egrep ook 'grep' met de optie -E geven
+
+---
+
+* () Is een groepering om bv de expressie te verduidelijken
+* | Is een 'of'-teken, bv. 'a|b' is 'a' of 'b'
+* [] Geeft een reeks aan, bv. van 'a-z'
+
+---
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_egrep_00.html
+
+cat bestand_twee.txt 
+
+egrep '^(a|e|i|o)' bestand_twee.txt
+
+grep -E '^(a|e|i|o)' bestand_twee.txt
+
+grep '^(a|e|i|o)' bestand_twee.txt
+
+egrep '^(a|e|i|o)ll' bestand_twee.txt
+
+---
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_egrep_01.html
+
+cat bestand_twee.txt
+
+egrep '^[a-d]' bestand_twee.txt
+
+egrep '^[a-z]' bestand_twee.txt
+
+egrep '^[A-Z]' bestand_twee.txt
+
+egrep '^([a-z]|[A-Z])' bestand_twee.txt
+
+egrep '^[0-9]' bestand_twee.txt 
+
+echo '3 times a lady' >> bestand_twee.txt
+
+egrep '^[0-9]' bestand_twee.txt
+
+---
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_sed_00.html
+
+cat bestand_twee.txt
+
+sed -r 's/^e|e$/E/' bestand_twee.txt
+
+sed -r 's/(^e|e$)/E/' bestand_twee.txt 
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+fgrep
+
+* fgrep staat voor fast grep
+* fgrep kent geen reguliere expressies
+* Als je zoekt op '$', dan zoek je letterlijk op een dollarteken
+* Zo vind fgrep makkelijk bv '.'., '^' en '$'
+
+---
+
+TermRecord -o ~/Documents/_Linux\ Cursus\ 1/presentaties/02\ Les/103.7_fgrep_00.html
+
+cat bestand_twee.txt
+
+grep . bestand_twee.txt
+
+fgrep . bestand_twee.txt
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

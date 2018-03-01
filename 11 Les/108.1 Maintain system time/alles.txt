@@ -1,0 +1,70 @@
+108.1
+
+
+
+    /etc/ntp.conf
+    ntpd
+
+
+
+---
+
+---
+
+
+
+----
+
+www.pool.ntp.org
+
+http://www.pool.ntp.org/en/
+klik op europe dan op nl: http://www.pool.ntp.org/zone/nl
+
+dion@dionysos:~$ sudo ntpdate 0.nl.pool.ntp.org
+12 Nov 15:37:35 ntpdate[6404]: adjust time server 95.211.120.4 offset 0.002161 sec
+
+# mijn klock zat 0.002161 sec verkeerd :)  # dat is al redelijk in buurt (krijg je niet beter)
+---
+
+yum install ntp
+dion@dionysos:~$ service ntpd start
+Redirecting to /bin/systemctl start  ntpd.service
+
+dion@dionysos:~$ sudo ntpdate 0.nl.pool.ntp.org
+12 Nov 15:46:39 ntpdate[7050]: the NTP socket is in use, exiting
+# we zijn nu zelf een NTP server
+
+dion@dionysos:~$ sudo vi /etc/ntp.conf # opzetten van eigen ntp server maar ook je eigen client:
+
+in die file:(hint zoek naar zitten die beginnen met 'server xxxx'
+
+# Use public servers from the pool.ntp.org project.
+# Please consider joining the pool (http://www.pool.ntp.org/join.html).
+server 0.centos.pool.ntp.org iburst
+server 1.centos.pool.ntp.org iburst
+server 2.centos.pool.ntp.org iburst
+server 3.centos.pool.ntp.org iburst
+
+iburst = stuur 8 packets ipv 1.
+
+# service ntp restart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
